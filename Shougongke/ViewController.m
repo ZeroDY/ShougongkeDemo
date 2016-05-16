@@ -26,4 +26,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)mainTest{
+    NSLog(@"主分支测试");
+}
+
 @end
