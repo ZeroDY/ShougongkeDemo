@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     NSLog(@"测试手工客 git 版本1");
+    NSLog(@"测试手工客 git 版本2");
 }
 
 - (void)didReceiveMemoryWarning {
