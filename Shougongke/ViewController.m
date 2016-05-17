@@ -17,21 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NSLog(@"测试手工客 git 版本1");
-    NSLog(@"测试手工客 git 版本2");
+
 }
 
-- (void)test{
-    NSLog(@"测试分支");
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)mainTest{
-    NSLog(@"主分支测试");
-}
 
 @end
