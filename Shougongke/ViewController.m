@@ -21,6 +21,10 @@
     NSLog(@"测试手工客 git 版本2");
 }
 
+- (void)test{
+    NSLog(@"测试分支");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
