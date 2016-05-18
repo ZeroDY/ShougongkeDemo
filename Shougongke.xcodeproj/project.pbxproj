@@ -13,6 +13,9 @@
 		19D20A221CE9D7B400614167 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D20A201CE9D7B400614167 /* Main.storyboard */; };
 		19D20A271CE9D7B400614167 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D20A251CE9D7B400614167 /* LaunchScreen.storyboard */; };
 		19E019881CEAED9100A520C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19E019871CEAED9100A520C4 /* Assets.xcassets */; };
+		19E01A1A1CEC6BAC00A520C4 /* DYBannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E01A171CEC6BAC00A520C4 /* DYBannerCollectionViewCell.m */; };
+		19E01A1B1CEC6BAC00A520C4 /* DYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E01A191CEC6BAC00A520C4 /* DYBannerView.m */; };
+		19E01A1E1CEC6DA800A520C4 /* SystemsDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E01A1D1CEC6DA800A520C4 /* SystemsDetection.m */; };
 		DBA80A6ED5549B5AB262A3C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1994A056B7A9C74EC05BE10 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +31,12 @@
 		19D20A261CE9D7B400614167 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19D20A281CE9D7B400614167 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19E019871CEAED9100A520C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		19E01A161CEC6BAC00A520C4 /* DYBannerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYBannerCollectionViewCell.h; sourceTree = "<group>"; };
+		19E01A171CEC6BAC00A520C4 /* DYBannerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYBannerCollectionViewCell.m; sourceTree = "<group>"; };
+		19E01A181CEC6BAC00A520C4 /* DYBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYBannerView.h; sourceTree = "<group>"; };
+		19E01A191CEC6BAC00A520C4 /* DYBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYBannerView.m; sourceTree = "<group>"; };
+		19E01A1C1CEC6DA800A520C4 /* SystemsDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemsDetection.h; sourceTree = "<group>"; };
+		19E01A1D1CEC6DA800A520C4 /* SystemsDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemsDetection.m; sourceTree = "<group>"; };
 		6F3F5D28B83825AC8AA73357 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C1994A056B7A9C74EC05BE10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -65,6 +74,7 @@
 		19D20A161CE9D7B400614167 /* Shougongke */ = {
 			isa = PBXGroup;
 			children = (
+				19E01A141CEC6BAB00A520C4 /* DYTools */,
 				19D20A1A1CE9D7B400614167 /* AppDelegate.h */,
 				19D20A1B1CE9D7B400614167 /* AppDelegate.m */,
 				19D20A1D1CE9D7B400614167 /* ViewController.h */,
@@ -84,6 +94,27 @@
 				19D20A181CE9D7B400614167 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		19E01A141CEC6BAB00A520C4 /* DYTools */ = {
+			isa = PBXGroup;
+			children = (
+				19E01A151CEC6BAC00A520C4 /* DYBannerView */,
+				19E01A1C1CEC6DA800A520C4 /* SystemsDetection.h */,
+				19E01A1D1CEC6DA800A520C4 /* SystemsDetection.m */,
+			);
+			path = DYTools;
+			sourceTree = "<group>";
+		};
+		19E01A151CEC6BAC00A520C4 /* DYBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				19E01A161CEC6BAC00A520C4 /* DYBannerCollectionViewCell.h */,
+				19E01A171CEC6BAC00A520C4 /* DYBannerCollectionViewCell.m */,
+				19E01A181CEC6BAC00A520C4 /* DYBannerView.h */,
+				19E01A191CEC6BAC00A520C4 /* DYBannerView.m */,
+			);
+			path = DYBannerView;
 			sourceTree = "<group>";
 		};
 		9B72403479CC903D16DADBD3 /* Pods */ = {
@@ -224,7 +255,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E01A1B1CEC6BAC00A520C4 /* DYBannerView.m in Sources */,
 				19D20A1F1CE9D7B400614167 /* ViewController.m in Sources */,
+				19E01A1E1CEC6DA800A520C4 /* SystemsDetection.m in Sources */,
+				19E01A1A1CEC6BAC00A520C4 /* DYBannerCollectionViewCell.m in Sources */,
 				19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */,
 				19D20A191CE9D7B400614167 /* main.m in Sources */,
 			);
