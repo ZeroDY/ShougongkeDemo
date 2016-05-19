@@ -31,10 +31,10 @@
     }
     if ([platform isEqualToString:@"iPhone 6 Plus"]
         || [platform isEqualToString:@"iPhone 6s Plus"]) {
-        return @"737";
+        return @"736";
     }
     else{
-        return @"unknow";
+        return @"736";
     }
 }
 

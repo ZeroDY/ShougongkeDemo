@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1949AE871CEDD754005A85AD /* SGKCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE661CEDD754005A85AD /* SGKCourseViewController.m */; };
+		1949AE881CEDD754005A85AD /* SGKHandCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE6D1CEDD754005A85AD /* SGKHandCircleViewController.m */; };
+		1949AE891CEDD754005A85AD /* SGKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE741CEDD754005A85AD /* SGKHomeViewController.m */; };
+		1949AE8A1CEDD754005A85AD /* SGKUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE7B1CEDD754005A85AD /* SGKUserViewController.m */; };
+		1949AE8B1CEDD754005A85AD /* SGKShijiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE831CEDD754005A85AD /* SGKShijiViewController.m */; };
+		1949AE921CEE0A33005A85AD /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE911CEE0A33005A85AD /* InfoViewController.m */; };
 		19D20A191CE9D7B400614167 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A181CE9D7B400614167 /* main.m */; };
 		19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A1B1CE9D7B400614167 /* AppDelegate.m */; };
 		19D20A1F1CE9D7B400614167 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A1E1CE9D7B400614167 /* ViewController.m */; };
@@ -16,11 +22,25 @@
 		19E01A1A1CEC6BAC00A520C4 /* DYBannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E01A171CEC6BAC00A520C4 /* DYBannerCollectionViewCell.m */; };
 		19E01A1B1CEC6BAC00A520C4 /* DYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E01A191CEC6BAC00A520C4 /* DYBannerView.m */; };
 		19E01A1E1CEC6DA800A520C4 /* SystemsDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E01A1D1CEC6DA800A520C4 /* SystemsDetection.m */; };
+		19E01A241CEC9D0900A520C4 /* SGKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E01A231CEC9D0900A520C4 /* SGKMainViewController.m */; };
 		DBA80A6ED5549B5AB262A3C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1994A056B7A9C74EC05BE10 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1075BAA17AD7A9DF894338E1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		1949AE651CEDD754005A85AD /* SGKCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCourseViewController.h; sourceTree = "<group>"; };
+		1949AE661CEDD754005A85AD /* SGKCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKCourseViewController.m; sourceTree = "<group>"; };
+		1949AE6C1CEDD754005A85AD /* SGKHandCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKHandCircleViewController.h; sourceTree = "<group>"; };
+		1949AE6D1CEDD754005A85AD /* SGKHandCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKHandCircleViewController.m; sourceTree = "<group>"; };
+		1949AE731CEDD754005A85AD /* SGKHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKHomeViewController.h; sourceTree = "<group>"; };
+		1949AE741CEDD754005A85AD /* SGKHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKHomeViewController.m; sourceTree = "<group>"; };
+		1949AE7A1CEDD754005A85AD /* SGKUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKUserViewController.h; sourceTree = "<group>"; };
+		1949AE7B1CEDD754005A85AD /* SGKUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKUserViewController.m; sourceTree = "<group>"; };
+		1949AE821CEDD754005A85AD /* SGKShijiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKShijiViewController.h; sourceTree = "<group>"; };
+		1949AE831CEDD754005A85AD /* SGKShijiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKShijiViewController.m; sourceTree = "<group>"; };
+		1949AE8C1CEDD7FA005A85AD /* Public.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Public.h; sourceTree = "<group>"; };
+		1949AE901CEE0A33005A85AD /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		1949AE911CEE0A33005A85AD /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		19D20A141CE9D7B400614167 /* Shougongke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shougongke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D20A181CE9D7B400614167 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19D20A1A1CE9D7B400614167 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -37,6 +57,9 @@
 		19E01A191CEC6BAC00A520C4 /* DYBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYBannerView.m; sourceTree = "<group>"; };
 		19E01A1C1CEC6DA800A520C4 /* SystemsDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemsDetection.h; sourceTree = "<group>"; };
 		19E01A1D1CEC6DA800A520C4 /* SystemsDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemsDetection.m; sourceTree = "<group>"; };
+		19E01A221CEC9D0900A520C4 /* SGKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKMainViewController.h; sourceTree = "<group>"; };
+		19E01A231CEC9D0900A520C4 /* SGKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKMainViewController.m; sourceTree = "<group>"; };
+		19E01A351CECACDA00A520C4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6F3F5D28B83825AC8AA73357 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C1994A056B7A9C74EC05BE10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -53,6 +76,233 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1949AE621CEDD754005A85AD /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		1949AE631CEDD754005A85AD /* Course(教程) */ = {
+			isa = PBXGroup;
+			children = (
+				1949AE641CEDD754005A85AD /* Controller */,
+				1949AE671CEDD754005A85AD /* HttpRequest */,
+				1949AE681CEDD754005A85AD /* Model */,
+				1949AE691CEDD754005A85AD /* View */,
+			);
+			name = "Course(教程)";
+			path = Course;
+			sourceTree = "<group>";
+		};
+		1949AE641CEDD754005A85AD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1949AE651CEDD754005A85AD /* SGKCourseViewController.h */,
+				1949AE661CEDD754005A85AD /* SGKCourseViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1949AE671CEDD754005A85AD /* HttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HttpRequest;
+			sourceTree = "<group>";
+		};
+		1949AE681CEDD754005A85AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1949AE691CEDD754005A85AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1949AE6A1CEDD754005A85AD /* HandCircle(手工圈) */ = {
+			isa = PBXGroup;
+			children = (
+				1949AE6B1CEDD754005A85AD /* Controller */,
+				1949AE6E1CEDD754005A85AD /* HttpRequest */,
+				1949AE6F1CEDD754005A85AD /* Model */,
+				1949AE701CEDD754005A85AD /* View */,
+			);
+			name = "HandCircle(手工圈)";
+			path = HandCircle;
+			sourceTree = "<group>";
+		};
+		1949AE6B1CEDD754005A85AD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1949AE6C1CEDD754005A85AD /* SGKHandCircleViewController.h */,
+				1949AE6D1CEDD754005A85AD /* SGKHandCircleViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1949AE6E1CEDD754005A85AD /* HttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HttpRequest;
+			sourceTree = "<group>";
+		};
+		1949AE6F1CEDD754005A85AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1949AE701CEDD754005A85AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1949AE711CEDD754005A85AD /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				1949AE721CEDD754005A85AD /* Controller */,
+				1949AE751CEDD754005A85AD /* HttpRequest */,
+				1949AE761CEDD754005A85AD /* Model */,
+				1949AE771CEDD754005A85AD /* View */,
+			);
+			name = "Home(首页)";
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1949AE721CEDD754005A85AD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1949AE731CEDD754005A85AD /* SGKHomeViewController.h */,
+				1949AE741CEDD754005A85AD /* SGKHomeViewController.m */,
+				1949AE901CEE0A33005A85AD /* InfoViewController.h */,
+				1949AE911CEE0A33005A85AD /* InfoViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1949AE751CEDD754005A85AD /* HttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HttpRequest;
+			sourceTree = "<group>";
+		};
+		1949AE761CEDD754005A85AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1949AE771CEDD754005A85AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1949AE781CEDD754005A85AD /* Me(我的) */ = {
+			isa = PBXGroup;
+			children = (
+				1949AE791CEDD754005A85AD /* Controller */,
+				1949AE7C1CEDD754005A85AD /* HttpRequest */,
+				1949AE7D1CEDD754005A85AD /* Model */,
+				1949AE7E1CEDD754005A85AD /* View */,
+			);
+			name = "Me(我的)";
+			path = Me;
+			sourceTree = "<group>";
+		};
+		1949AE791CEDD754005A85AD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1949AE7A1CEDD754005A85AD /* SGKUserViewController.h */,
+				1949AE7B1CEDD754005A85AD /* SGKUserViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1949AE7C1CEDD754005A85AD /* HttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HttpRequest;
+			sourceTree = "<group>";
+		};
+		1949AE7D1CEDD754005A85AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1949AE7E1CEDD754005A85AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1949AE7F1CEDD754005A85AD /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				1949AE8C1CEDD7FA005A85AD /* Public.h */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		1949AE801CEDD754005A85AD /* Shiji(市集) */ = {
+			isa = PBXGroup;
+			children = (
+				1949AE811CEDD754005A85AD /* Controller */,
+				1949AE841CEDD754005A85AD /* HttpRequest */,
+				1949AE851CEDD754005A85AD /* Model */,
+				1949AE861CEDD754005A85AD /* View */,
+			);
+			name = "Shiji(市集)";
+			path = Shiji;
+			sourceTree = "<group>";
+		};
+		1949AE811CEDD754005A85AD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1949AE821CEDD754005A85AD /* SGKShijiViewController.h */,
+				1949AE831CEDD754005A85AD /* SGKShijiViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1949AE841CEDD754005A85AD /* HttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HttpRequest;
+			sourceTree = "<group>";
+		};
+		1949AE851CEDD754005A85AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1949AE861CEDD754005A85AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		19D20A0B1CE9D7B400614167 = {
 			isa = PBXGroup;
 			children = (
@@ -75,13 +325,23 @@
 			isa = PBXGroup;
 			children = (
 				19E01A141CEC6BAB00A520C4 /* DYTools */,
-				19D20A1A1CE9D7B400614167 /* AppDelegate.h */,
-				19D20A1B1CE9D7B400614167 /* AppDelegate.m */,
+				1949AE621CEDD754005A85AD /* Category */,
+				1949AE711CEDD754005A85AD /* Home(首页) */,
+				1949AE631CEDD754005A85AD /* Course(教程) */,
+				1949AE6A1CEDD754005A85AD /* HandCircle(手工圈) */,
+				1949AE801CEDD754005A85AD /* Shiji(市集) */,
+				1949AE781CEDD754005A85AD /* Me(我的) */,
+				1949AE7F1CEDD754005A85AD /* Other */,
+				19E01A221CEC9D0900A520C4 /* SGKMainViewController.h */,
+				19E01A231CEC9D0900A520C4 /* SGKMainViewController.m */,
 				19D20A1D1CE9D7B400614167 /* ViewController.h */,
 				19D20A1E1CE9D7B400614167 /* ViewController.m */,
+				19D20A1A1CE9D7B400614167 /* AppDelegate.h */,
+				19D20A1B1CE9D7B400614167 /* AppDelegate.m */,
 				19E019871CEAED9100A520C4 /* Assets.xcassets */,
 				19D20A201CE9D7B400614167 /* Main.storyboard */,
 				19D20A251CE9D7B400614167 /* LaunchScreen.storyboard */,
+				19E01A351CECACDA00A520C4 /* PrefixHeader.pch */,
 				19D20A281CE9D7B400614167 /* Info.plist */,
 				19D20A171CE9D7B400614167 /* Supporting Files */,
 			);
@@ -256,11 +516,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				19E01A1B1CEC6BAC00A520C4 /* DYBannerView.m in Sources */,
+				1949AE871CEDD754005A85AD /* SGKCourseViewController.m in Sources */,
 				19D20A1F1CE9D7B400614167 /* ViewController.m in Sources */,
+				1949AE881CEDD754005A85AD /* SGKHandCircleViewController.m in Sources */,
 				19E01A1E1CEC6DA800A520C4 /* SystemsDetection.m in Sources */,
 				19E01A1A1CEC6BAC00A520C4 /* DYBannerCollectionViewCell.m in Sources */,
+				19E01A241CEC9D0900A520C4 /* SGKMainViewController.m in Sources */,
+				1949AE921CEE0A33005A85AD /* InfoViewController.m in Sources */,
 				19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */,
+				1949AE8A1CEDD754005A85AD /* SGKUserViewController.m in Sources */,
 				19D20A191CE9D7B400614167 /* main.m in Sources */,
+				1949AE8B1CEDD754005A85AD /* SGKShijiViewController.m in Sources */,
+				1949AE891CEDD754005A85AD /* SGKHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +562,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -339,6 +607,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -374,6 +643,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Shougongke/PrefixHeader.pch";
 				INFOPLIST_FILE = Shougongke/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -388,6 +660,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Shougongke/PrefixHeader.pch";
 				INFOPLIST_FILE = Shougongke/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

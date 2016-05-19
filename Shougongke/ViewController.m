@@ -10,6 +10,7 @@
 #import "SystemsDetection.h"
 #import "DYBannerView.h"
 #import "Masonry.h"
+#import "SGKMainViewController.h"
 
 @interface ViewController ()<DYBannerViewDelegate>
 
@@ -34,7 +35,7 @@
     
     
     self.bannerView = [[DYBannerView alloc] init];
-    self.bannerView.currentPageIndicatorTintColor = [UIColor colorWithRed:0.902 green:0.239 blue:0.231 alpha:1.000];
+    self.bannerView.currentPageIndicatorTintColor = mainColor;
     self.bannerView.pageIndicatorTintColor = [UIColor whiteColor];
     self.bannerView.cycleEnabled = NO;
     [self.bannerView configBannerWithDelegate:self
@@ -52,6 +53,13 @@
     }];
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    SGKMainViewController *mainVC = [[SGKMainViewController alloc]init];
+    [self presentViewController:mainVC animated:YES completion:^{
+        
+    }];
+}
+
 - (void)bannerImageView:(UIImageView *)imageView loadImage:(NSString *)nameOrUrl{
     imageView.image = [UIImage imageNamed:nameOrUrl];
 }
@@ -59,6 +67,12 @@
 - (void)bannerView:(DYBannerView *)bannerView didSelectAtIndex:(NSUInteger)index{
     if (bannerView == self.bannerView) {
         NSLog(@"选中-- bannerView1 - %@",@(index));
+//        if (index == 4) {
+            SGKMainViewController *mainVC = [[SGKMainViewController alloc]init];
+            [self presentViewController:mainVC animated:YES completion:^{
+                
+            }];
+//        }
     }
 }
 

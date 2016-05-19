@@ -17,6 +17,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+
+    /**
+     *  设置全局属性
+     *  UINavigationBar
+     */
+    NSDictionary *navigationBarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil];
+    [[UINavigationBar appearance] setTitleTextAttributes:navigationBarTitleTextAttributes];
+    [[UINavigationBar appearance] setBarTintColor:mainColor];
+    
+    //设置状态栏的字体颜色模式
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+    /**
+     *	UITabBarItem
+     */
+    NSDictionary *normalBarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor darkGrayColor],NSForegroundColorAttributeName, nil];
+    NSDictionary *selectedBarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:mainColor,NSForegroundColorAttributeName, nil];
+    [[UITabBarItem appearance]setTitlePositionAdjustment:UIOffsetMake(0, -4)];
+    [[UITabBarItem appearance]setTitleTextAttributes:normalBarTitleTextAttributes forState:UIControlStateNormal];
+    [[UITabBarItem appearance]setTitleTextAttributes:selectedBarTitleTextAttributes forState:UIControlStateSelected];
+    
     return YES;
 }
 

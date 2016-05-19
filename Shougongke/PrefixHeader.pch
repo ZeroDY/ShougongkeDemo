@@ -1,0 +1,17 @@
+//
+//  PrefixHeader.pch
+//  Shougongke
+//
+//  Created by 周德艺 on 16/5/18.
+//  Copyright © 2016年 周德艺. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Public.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
