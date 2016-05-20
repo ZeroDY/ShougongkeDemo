@@ -15,8 +15,8 @@
 //获取颜色
 #define RGBA(r, g, b, a)          [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 #define RGB(r, g, b)               RGBA(r, g, b, 1.0f)
-#define trueColor                  RGB(235, 87, 84)
-#define mainColor                  RGB(230, 61, 59)
+#define mainColor                  RGB(235, 87, 84)
+#define fontColor                  RGB(64, 64, 64)
 //#define IMAGENAME(name)           [UIImage imageNamed:@"name"]
 
 ////字体

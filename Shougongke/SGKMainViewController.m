@@ -7,7 +7,7 @@
 //
 
 #import "SGKMainViewController.h"
-#import "InfoViewController.h"
+#import "TestViewController.h"
 
 @interface SGKMainViewController ()
 
@@ -51,6 +51,7 @@
         _homeNavigationController.tabBarItem.title = @"首页";
         _homeNavigationController.tabBarItem.image = [[UIImage imageNamed:@"sgk_tab_home_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         _homeNavigationController.tabBarItem.selectedImage = [[UIImage imageNamed:@"sgk_tab_home_selected"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        self.navigationController.navigationBar.translucent = NO;
     }
     return _homeNavigationController;
 }

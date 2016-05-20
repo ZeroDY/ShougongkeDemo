@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		191E64C81CEECFF600E5FAA5 /* SGKHomeTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 191E64C71CEECFF600E5FAA5 /* SGKHomeTableHeaderView.m */; };
+		191E64CB1CEEFC6800E5FAA5 /* SGKRelationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 191E64CA1CEEFC6800E5FAA5 /* SGKRelationTableViewCell.m */; };
 		1949AE871CEDD754005A85AD /* SGKCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE661CEDD754005A85AD /* SGKCourseViewController.m */; };
 		1949AE881CEDD754005A85AD /* SGKHandCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE6D1CEDD754005A85AD /* SGKHandCircleViewController.m */; };
 		1949AE891CEDD754005A85AD /* SGKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE741CEDD754005A85AD /* SGKHomeViewController.m */; };
 		1949AE8A1CEDD754005A85AD /* SGKUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE7B1CEDD754005A85AD /* SGKUserViewController.m */; };
 		1949AE8B1CEDD754005A85AD /* SGKShijiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE831CEDD754005A85AD /* SGKShijiViewController.m */; };
-		1949AE921CEE0A33005A85AD /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE911CEE0A33005A85AD /* InfoViewController.m */; };
+		1949AE921CEE0A33005A85AD /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE911CEE0A33005A85AD /* TestViewController.m */; };
 		19D20A191CE9D7B400614167 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A181CE9D7B400614167 /* main.m */; };
 		19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A1B1CE9D7B400614167 /* AppDelegate.m */; };
 		19D20A1F1CE9D7B400614167 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A1E1CE9D7B400614167 /* ViewController.m */; };
@@ -28,6 +30,10 @@
 
 /* Begin PBXFileReference section */
 		1075BAA17AD7A9DF894338E1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		191E64C61CEECFF600E5FAA5 /* SGKHomeTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKHomeTableHeaderView.h; sourceTree = "<group>"; };
+		191E64C71CEECFF600E5FAA5 /* SGKHomeTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKHomeTableHeaderView.m; sourceTree = "<group>"; };
+		191E64C91CEEFC6800E5FAA5 /* SGKRelationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKRelationTableViewCell.h; sourceTree = "<group>"; };
+		191E64CA1CEEFC6800E5FAA5 /* SGKRelationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKRelationTableViewCell.m; sourceTree = "<group>"; };
 		1949AE651CEDD754005A85AD /* SGKCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCourseViewController.h; sourceTree = "<group>"; };
 		1949AE661CEDD754005A85AD /* SGKCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKCourseViewController.m; sourceTree = "<group>"; };
 		1949AE6C1CEDD754005A85AD /* SGKHandCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKHandCircleViewController.h; sourceTree = "<group>"; };
@@ -39,8 +45,8 @@
 		1949AE821CEDD754005A85AD /* SGKShijiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKShijiViewController.h; sourceTree = "<group>"; };
 		1949AE831CEDD754005A85AD /* SGKShijiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKShijiViewController.m; sourceTree = "<group>"; };
 		1949AE8C1CEDD7FA005A85AD /* Public.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Public.h; sourceTree = "<group>"; };
-		1949AE901CEE0A33005A85AD /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
-		1949AE911CEE0A33005A85AD /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		1949AE901CEE0A33005A85AD /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		1949AE911CEE0A33005A85AD /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		19D20A141CE9D7B400614167 /* Shougongke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shougongke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D20A181CE9D7B400614167 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19D20A1A1CE9D7B400614167 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -171,9 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				1949AE721CEDD754005A85AD /* Controller */,
-				1949AE751CEDD754005A85AD /* HttpRequest */,
-				1949AE761CEDD754005A85AD /* Model */,
 				1949AE771CEDD754005A85AD /* View */,
+				1949AE761CEDD754005A85AD /* Model */,
+				1949AE751CEDD754005A85AD /* HttpRequest */,
 			);
 			name = "Home(首页)";
 			path = Home;
@@ -184,8 +190,8 @@
 			children = (
 				1949AE731CEDD754005A85AD /* SGKHomeViewController.h */,
 				1949AE741CEDD754005A85AD /* SGKHomeViewController.m */,
-				1949AE901CEE0A33005A85AD /* InfoViewController.h */,
-				1949AE911CEE0A33005A85AD /* InfoViewController.m */,
+				1949AE901CEE0A33005A85AD /* TestViewController.h */,
+				1949AE911CEE0A33005A85AD /* TestViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,6 +213,10 @@
 		1949AE771CEDD754005A85AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				191E64C61CEECFF600E5FAA5 /* SGKHomeTableHeaderView.h */,
+				191E64C71CEECFF600E5FAA5 /* SGKHomeTableHeaderView.m */,
+				191E64C91CEEFC6800E5FAA5 /* SGKRelationTableViewCell.h */,
+				191E64CA1CEEFC6800E5FAA5 /* SGKRelationTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -518,15 +528,17 @@
 				19E01A1B1CEC6BAC00A520C4 /* DYBannerView.m in Sources */,
 				1949AE871CEDD754005A85AD /* SGKCourseViewController.m in Sources */,
 				19D20A1F1CE9D7B400614167 /* ViewController.m in Sources */,
+				191E64C81CEECFF600E5FAA5 /* SGKHomeTableHeaderView.m in Sources */,
 				1949AE881CEDD754005A85AD /* SGKHandCircleViewController.m in Sources */,
 				19E01A1E1CEC6DA800A520C4 /* SystemsDetection.m in Sources */,
 				19E01A1A1CEC6BAC00A520C4 /* DYBannerCollectionViewCell.m in Sources */,
 				19E01A241CEC9D0900A520C4 /* SGKMainViewController.m in Sources */,
-				1949AE921CEE0A33005A85AD /* InfoViewController.m in Sources */,
+				1949AE921CEE0A33005A85AD /* TestViewController.m in Sources */,
 				19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */,
 				1949AE8A1CEDD754005A85AD /* SGKUserViewController.m in Sources */,
 				19D20A191CE9D7B400614167 /* main.m in Sources */,
 				1949AE8B1CEDD754005A85AD /* SGKShijiViewController.m in Sources */,
+				191E64CB1CEEFC6800E5FAA5 /* SGKRelationTableViewCell.m in Sources */,
 				1949AE891CEDD754005A85AD /* SGKHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

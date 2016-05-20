@@ -26,6 +26,7 @@
     NSDictionary *navigationBarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil];
     [[UINavigationBar appearance] setTitleTextAttributes:navigationBarTitleTextAttributes];
     [[UINavigationBar appearance] setBarTintColor:mainColor];
+    [[UINavigationBar appearance] setTranslucent:NO];
     
     //设置状态栏的字体颜色模式
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];

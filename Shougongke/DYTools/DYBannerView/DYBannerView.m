@@ -73,7 +73,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_pageController]-0-|" options:0 metrics:0 views:NSDictionaryOfVariableBindings(_pageController)]];
     self.scrollEnabled = YES;
     self.cycleEnabled = YES;
-    self.interval = 2;
+    self.interval = 2.6;
     self.scrollDirection = DYBannerViewScrollDirectionHorizontal;
 }
 
