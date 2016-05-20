@@ -54,7 +54,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-Shougongke.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -69,9 +69,24 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UITableView+FDTemplateLayoutCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0A2C215B1D676864EB10C9153B188114</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>28BFFDC5A62CD9FDE7533D50617CE158</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
@@ -83,11 +98,6 @@
 			<true/>
 		</dict>
 		<key>5813251FEA21E4AEE97385709F1912DE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5A8E7F81F8FDB795488039B37FCC0D62</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,12 +132,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2FE87384A67337831E53490EEA8BF11</key>
+		<key>DF3AA69A049030717B408A7E79868577</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F8161EFAFE906049A7D17E6D73F2D07C</key>
+		<key>E2FE87384A67337831E53490EEA8BF11</key>
 		<dict>
 			<key>primary</key>
 			<true/>

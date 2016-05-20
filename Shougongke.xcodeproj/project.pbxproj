@@ -25,11 +25,10 @@
 		19E01A1B1CEC6BAC00A520C4 /* DYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E01A191CEC6BAC00A520C4 /* DYBannerView.m */; };
 		19E01A1E1CEC6DA800A520C4 /* SystemsDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E01A1D1CEC6DA800A520C4 /* SystemsDetection.m */; };
 		19E01A241CEC9D0900A520C4 /* SGKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E01A231CEC9D0900A520C4 /* SGKMainViewController.m */; };
-		DBA80A6ED5549B5AB262A3C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1994A056B7A9C74EC05BE10 /* libPods.a */; };
+		671F8C77510090F548A1CFB5 /* libPods-Shougongke.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CDB22086622D49F8DBC98B /* libPods-Shougongke.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1075BAA17AD7A9DF894338E1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		191E64C61CEECFF600E5FAA5 /* SGKHomeTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKHomeTableHeaderView.h; sourceTree = "<group>"; };
 		191E64C71CEECFF600E5FAA5 /* SGKHomeTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKHomeTableHeaderView.m; sourceTree = "<group>"; };
 		191E64C91CEEFC6800E5FAA5 /* SGKRelationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKRelationTableViewCell.h; sourceTree = "<group>"; };
@@ -66,8 +65,9 @@
 		19E01A221CEC9D0900A520C4 /* SGKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKMainViewController.h; sourceTree = "<group>"; };
 		19E01A231CEC9D0900A520C4 /* SGKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKMainViewController.m; sourceTree = "<group>"; };
 		19E01A351CECACDA00A520C4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		6F3F5D28B83825AC8AA73357 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		C1994A056B7A9C74EC05BE10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		22CDB22086622D49F8DBC98B /* libPods-Shougongke.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Shougongke.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64860FFB2E3476A0D91F3C1A /* Pods-Shougongke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shougongke.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shougongke/Pods-Shougongke.debug.xcconfig"; sourceTree = "<group>"; };
+		C344B72F8A01118871E8C86C /* Pods-Shougongke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shougongke.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shougongke/Pods-Shougongke.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBA80A6ED5549B5AB262A3C9 /* libPods.a in Frameworks */,
+				671F8C77510090F548A1CFB5 /* libPods-Shougongke.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,8 +318,8 @@
 			children = (
 				19D20A161CE9D7B400614167 /* Shougongke */,
 				19D20A151CE9D7B400614167 /* Products */,
-				9B72403479CC903D16DADBD3 /* Pods */,
-				A9F4700E4F2855621B8C9C66 /* Frameworks */,
+				4BA99D6FC762A2FA9E0BECE0 /* Pods */,
+				DA92130C71EF562F7DC62136 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -387,19 +387,19 @@
 			path = DYBannerView;
 			sourceTree = "<group>";
 		};
-		9B72403479CC903D16DADBD3 /* Pods */ = {
+		4BA99D6FC762A2FA9E0BECE0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1075BAA17AD7A9DF894338E1 /* Pods.debug.xcconfig */,
-				6F3F5D28B83825AC8AA73357 /* Pods.release.xcconfig */,
+				64860FFB2E3476A0D91F3C1A /* Pods-Shougongke.debug.xcconfig */,
+				C344B72F8A01118871E8C86C /* Pods-Shougongke.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A9F4700E4F2855621B8C9C66 /* Frameworks */ = {
+		DA92130C71EF562F7DC62136 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C1994A056B7A9C74EC05BE10 /* libPods.a */,
+				22CDB22086622D49F8DBC98B /* libPods-Shougongke.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -411,12 +411,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19D20A2B1CE9D7B400614167 /* Build configuration list for PBXNativeTarget "Shougongke" */;
 			buildPhases = (
-				AD7A0FF47A33ED062A1CB37F /* Check Pods Manifest.lock */,
+				F540602338CDBC39A7BB53EA /* 📦 Check Pods Manifest.lock */,
 				19D20A101CE9D7B400614167 /* Sources */,
 				19D20A111CE9D7B400614167 /* Frameworks */,
 				19D20A121CE9D7B400614167 /* Resources */,
-				37BE7CFF6530B6A273629160 /* Embed Pods Frameworks */,
-				68D99DB2750B57AF62D66F41 /* Copy Pods Resources */,
+				87308F4C356A7D7EEE96A371 /* 📦 Embed Pods Frameworks */,
+				0093BA9794C2AAC8C04EFAE4 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -473,44 +473,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		37BE7CFF6530B6A273629160 /* Embed Pods Frameworks */ = {
+		0093BA9794C2AAC8C04EFAE4 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Shougongke/Pods-Shougongke-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		68D99DB2750B57AF62D66F41 /* Copy Pods Resources */ = {
+		87308F4C356A7D7EEE96A371 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Shougongke/Pods-Shougongke-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AD7A0FF47A33ED062A1CB37F /* Check Pods Manifest.lock */ = {
+		F540602338CDBC39A7BB53EA /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -651,7 +651,7 @@
 		};
 		19D20A2C1CE9D7B400614167 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1075BAA17AD7A9DF894338E1 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 64860FFB2E3476A0D91F3C1A /* Pods-Shougongke.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -668,7 +668,7 @@
 		};
 		19D20A2D1CE9D7B400614167 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F3F5D28B83825AC8AA73357 /* Pods.release.xcconfig */;
+			baseConfigurationReference = C344B72F8A01118871E8C86C /* Pods-Shougongke.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

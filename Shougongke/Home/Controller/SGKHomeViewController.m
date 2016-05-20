@@ -264,7 +264,7 @@
 - (SGKHomeTableHeaderView *)relationsHeaderView{
     if (!_relationsHeaderView) {
         _relationsHeaderView = [[SGKHomeTableHeaderView alloc]init];
-        _headerView1.titleLabel.text = @"大家都在看";
+        _relationsHeaderView.titleLabel.text = @"大家都在看";
         [_relationsHeaderView.signinButton addTarget:self action:@selector(signin) forControlEvents:UIControlEventTouchUpInside];
     }
     return _relationsHeaderView;
@@ -273,8 +273,8 @@
 - (SGKHomeTableHeaderView *)talentHeaderView{
     if (!_talentHeaderView) {
         _talentHeaderView = [[SGKHomeTableHeaderView alloc]init];
-        _headerView2.titleLabel.text = @"达人推荐";
-        _headerView2.signinButton.hidden = YES;
+        _talentHeaderView.titleLabel.text = @"达人推荐";
+        _talentHeaderView.signinButton.hidden = YES;
     }
     return _talentHeaderView;
 }
@@ -282,8 +282,8 @@
 - (SGKHomeTableHeaderView *)hotTopicHeaderView{
     if (!_hotTopicHeaderView) {
         _hotTopicHeaderView = [[SGKHomeTableHeaderView alloc]init];
-        _headerView3.titleLabel.text = @"热门专题";
-        _headerView3.signinButton.hidden = YES;
+        _hotTopicHeaderView.titleLabel.text = @"热门专题";
+        _hotTopicHeaderView.signinButton.hidden = YES;
     }
     return _hotTopicHeaderView;
 }
