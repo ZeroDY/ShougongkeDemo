@@ -10,6 +10,12 @@
 #import "TestViewController.h"
 #import "DYBannerView.h"
 #import "SGKHomeTableHeaderView.h"
+#import "SGKRelationCell.h"
+#import "UITableView+FDTemplateLayoutCell.h"
+
+
+static NSString *relationTableViewCell = @"SGKRelationTableViewCell";
+
 
 @interface SGKHomeViewController ()<UITableViewDelegate,UITableViewDataSource,DYBannerViewDelegate>
 
@@ -35,6 +41,7 @@
     self.navigationItem.leftBarButtonItem = self.leftItem;
     self.navigationItem.rightBarButtonItem = self.rightItem;
 
+    
     [self setStatusBarBackgroundColor:mainColor];
 }
 
@@ -99,7 +106,11 @@
         return 135;
     }
     if (section == 1) {
-        return 70;
+        return [tableView fd_heightForCellWithIdentifier:relationTableViewCell
+                                                  cacheByIndexPath:indexPath
+                                                     configuration:^(SGKRelationCell *cell) {
+                                                         [self configureCell:cell atIndexPath:indexPath];
+                                                     }];
     }
     if (section == 2) {
         return 220;
@@ -130,13 +141,13 @@
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     if (section == 0) {
-        static NSString *bannerIdentifier = @"HomeTableViewSection0";
+        static NSString *bannerIdentifier = @"HomeBannerCell";
         UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:bannerIdentifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bannerIdentifier];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 
-            [cell addSubview:self.bannerView];
+            [cell.contentView addSubview:self.bannerView];
             [self.bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.mas_equalTo(cell.mas_top);
                 make.left.mas_equalTo(cell.mas_left);
@@ -144,21 +155,42 @@
                 make.bottom.mas_equalTo(cell.mas_bottom);
             }];
         }
-        
+        return cell;
+    }
+    if (section == 1) {
+        SGKRelationCell *cell = [tableView dequeueReusableCellWithIdentifier:relationTableViewCell];
+        [self configureCell:cell atIndexPath:indexPath];
         return cell;
     }
     static NSString *cellIdentifier = @"cellIdentifier";
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-//        NSBundle *bundle = [NSBundle mainBundle];
-//        NSArray *nibArray = [bundle loadNibNamed:cellIdentifier owner:nil options:nil];
-//        cell = (<#UITableViewCell#> *)[nibArray objectAtIndex:0];
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     return cell;
 }
+
+- (void)configureCell:(SGKRelationCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    NSInteger row = indexPath.row;
+    if (row == 0) {
+        [cell.titleImageView sd_setImageWithURL:[NSURL URLWithString:@"http://img4.shougongke.com/Public/images/common/salon.jpg"]];
+        cell.subjectLabel.text = @"今晚8点哈妮主讲";
+        cell.titleLabel.text = @"五彩幸运手绳｜盘编器经典8股做法 最经典的8股线编的手绳（4根红色、4根彩色），编好之后4根红色线呈连贯的螺旋状，其他四色线呈另一条螺旋状盘旋而下。这个款式用盘编器做起来非常简单，不会被8股线的走向弄得晕头转向。很适合新手入门。";
+        cell.otherLabel.text = @"抢先占座";
+    }
+    if (row == 1) {
+        [cell.titleImageView sd_setImageWithURL:[NSURL URLWithString:@"http://img4.shougongke.com/Public/images/app/index01.jpg"]];
+        cell.subjectLabel.text = @"好友动态";
+        cell.titleLabel.text = @"看看好友们都在玩啥呢？";
+    }
+    if (row == 2) {
+        [cell.titleImageView sd_setImageWithURL:[NSURL URLWithString:@"http://img4.shougongke.com/Public/images/app/index03.jpg"]];
+        cell.subjectLabel.text = @"最新活动";
+        cell.titleLabel.text = @"看视频学手工,马上成为手工达人";
+    }
+}
+
 #pragma mark -- DYBanner delegate
 
 - (void)bannerImageView:(UIImageView *)imageView loadImage:(NSString *)nameOrUrl{
@@ -250,13 +282,13 @@
 - (UITableView *)tableView{
     if (_tableView == nil) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        [_tableView registerClass:[SGKRelationCell class] forCellReuseIdentifier:relationTableViewCell];
         _tableView.dataSource = self;
         _tableView.delegate = self;
         [_tableView setTableFooterView:[UIView new]];
         [_tableView setSeparatorColor:[UIColor clearColor]];
         _tableView.backgroundColor = [UIColor whiteColor];
-        _tableView.rowHeight = UITableViewAutomaticDimension;
-        _tableView.estimatedRowHeight = 50;
+//        _tableView.estimatedRowHeight = 50;
     }
     return _tableView;
 }
@@ -293,14 +325,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end
