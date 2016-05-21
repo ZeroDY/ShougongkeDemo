@@ -56,10 +56,11 @@
         [_signinButton setImage:[UIImage imageNamed:@"sgk_sgb_icon_orange"] forState:UIControlStateNormal];
         _signinButton.imageEdgeInsets = UIEdgeInsetsMake(0, 32, 0, -32);
         _signinButton.titleEdgeInsets = UIEdgeInsetsMake(0, -25, 0, 25);
-        _signinButton.layer.shouldRasterize = YES;
         _signinButton.layer.cornerRadius = 4.0f;
         _signinButton.layer.borderColor = RGB(250, 210, 125).CGColor;
         _signinButton.layer.borderWidth = 1;
+        _signinButton.layer.masksToBounds = YES;
+        _signinButton.layer.shouldRasterize = YES;
         _signinButton.layer.rasterizationScale = [UIScreen mainScreen].scale;
     }
     return _signinButton;

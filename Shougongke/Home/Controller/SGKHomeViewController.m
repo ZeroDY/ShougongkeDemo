@@ -12,9 +12,17 @@
 #import "SGKHomeTableHeaderView.h"
 #import "SGKRelationCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "SGKHotTopicCell.h"
+#import "SGKTalentCell.h"
+#import "TalentObject.h"
+#import "Slide.h"
+#import "TopicObject.h"
+#import "DYNetworking+HomeHttpRequest.h"
 
 
-static NSString *relationTableViewCell = @"SGKRelationTableViewCell";
+static NSString *relationCellIdentifier = @"SGKRelationCell";
+static NSString *talentCellIdentifier = @"SGKTalentCell.h";
+static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 
 
 @interface SGKHomeViewController ()<UITableViewDelegate,UITableViewDataSource,DYBannerViewDelegate>
@@ -27,6 +35,9 @@ static NSString *relationTableViewCell = @"SGKRelationTableViewCell";
 @property (nonatomic, strong) SGKHomeTableHeaderView *relationsHeaderView;
 @property (nonatomic, strong) SGKHomeTableHeaderView *talentHeaderView;
 @property (nonatomic, strong) SGKHomeTableHeaderView *hotTopicHeaderView;
+@property (nonatomic, strong) NSArray *topicArray;
+@property (nonatomic, strong) TalentObject *talent;
+
 
 @end
 
@@ -36,12 +47,16 @@ static NSString *relationTableViewCell = @"SGKRelationTableViewCell";
     [super viewDidLoad];
     [self setTitle:@"首页"];
     [self.view setBackgroundColor:[UIColor whiteColor]];
+    
+    self.topicArray = [NSArray array];
+//    self.talent = [TalentObject new];
+    self.bannerImageArray = [NSArray array];
+    
     [self.view addSubview:self.tableView];
     
     self.navigationItem.leftBarButtonItem = self.leftItem;
     self.navigationItem.rightBarButtonItem = self.rightItem;
 
-    
     [self setStatusBarBackgroundColor:mainColor];
 }
 
@@ -57,6 +72,21 @@ static NSString *relationTableViewCell = @"SGKRelationTableViewCell";
     [super viewWillAppear:animated];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
+    }];
+    
+    [DYNetworking getHomeVCData:^(NSArray *slideArr) {
+        NSMutableArray *array = [NSMutableArray array];
+        for (Slide *slide in slideArr) {
+            [array addObject:slide.host_pic];
+        }
+        self.bannerImageArray = [NSArray arrayWithArray:array];
+        [self.bannerView configBannerWithDelegate:self
+                                           images:self.bannerImageArray];
+    } talent:^(TalentObject *talent) {
+        self.talent = talent;
+    } topicArr:^(NSArray *topicArr) {
+        self.topicArray = topicArr;
+        [self.tableView reloadData];
     }];
 }
 /**
@@ -78,9 +108,12 @@ static NSString *relationTableViewCell = @"SGKRelationTableViewCell";
         return 3;
     }
     if (section == 2) {
-        return 2;
+        if (self.talent) {
+            return 1;
+        }
+        return 0;
     }
-    return 20;
+    return self.topicArray.count;
     
 }
 -(CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
@@ -91,7 +124,10 @@ static NSString *relationTableViewCell = @"SGKRelationTableViewCell";
     if (section == 1) {
         return 62.0f;
     }
-    return 50.0f;
+    if (section == 2) {
+        return 50.0f;
+    }
+    return 40.0f;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     if (section == 0) {
@@ -106,16 +142,24 @@ static NSString *relationTableViewCell = @"SGKRelationTableViewCell";
         return 135;
     }
     if (section == 1) {
-        return [tableView fd_heightForCellWithIdentifier:relationTableViewCell
+        return [tableView fd_heightForCellWithIdentifier:relationCellIdentifier
                                                   cacheByIndexPath:indexPath
                                                      configuration:^(SGKRelationCell *cell) {
                                                          [self configureCell:cell atIndexPath:indexPath];
                                                      }];
     }
     if (section == 2) {
-        return 220;
+        return [tableView fd_heightForCellWithIdentifier:talentCellIdentifier
+                                        cacheByIndexPath:indexPath
+                                           configuration:^(SGKTalentCell *cell) {
+                                               [cell setTalent:self.talent];
+                                           }];;
     }
-    return 210;
+    return [tableView fd_heightForCellWithIdentifier:hotTopicCellIdentifier
+                                    cacheByIndexPath:indexPath
+                                       configuration:^(SGKHotTopicCell *cell) {
+                                           [cell setTopic:self.topicArray[indexPath.row]];
+                                       }];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -158,16 +202,17 @@ static NSString *relationTableViewCell = @"SGKRelationTableViewCell";
         return cell;
     }
     if (section == 1) {
-        SGKRelationCell *cell = [tableView dequeueReusableCellWithIdentifier:relationTableViewCell];
+        SGKRelationCell *cell = [tableView dequeueReusableCellWithIdentifier:relationCellIdentifier];
         [self configureCell:cell atIndexPath:indexPath];
         return cell;
     }
-    static NSString *cellIdentifier = @"cellIdentifier";
-    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    if (section == 2) {
+        SGKTalentCell *cell = [tableView dequeueReusableCellWithIdentifier:talentCellIdentifier];
+        [cell setTalent:self.talent];
+        return cell;
     }
+    SGKHotTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:hotTopicCellIdentifier];
+    [cell setTopic:self.topicArray[row]];
     return cell;
 }
 
@@ -192,7 +237,6 @@ static NSString *relationTableViewCell = @"SGKRelationTableViewCell";
 }
 
 #pragma mark -- DYBanner delegate
-
 - (void)bannerImageView:(UIImageView *)imageView loadImage:(NSString *)nameOrUrl{
     [imageView sd_setImageWithURL:[NSURL URLWithString:nameOrUrl] placeholderImage:[UIImage imageNamed:@"chatBgImg"]];
 }
@@ -203,8 +247,6 @@ static NSString *relationTableViewCell = @"SGKRelationTableViewCell";
 
 
 #pragma mark -- scroll delegate
-
-//
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat offsetY = scrollView.contentOffset.y + _tableView.contentInset.top;//注意
@@ -233,18 +275,18 @@ static NSString *relationTableViewCell = @"SGKRelationTableViewCell";
 
 #pragma mark - getter and setter
 
-- (NSArray *)bannerImageArray{
-    if (!_bannerImageArray) {
-        _bannerImageArray = @[
-                              @"http://img4.shougongke.com/Public/data/version/201605/146370796233878.jpg",
-                              @"http://img4.shougongke.com/Public/data/version/201605/146370861045370.jpg",
-                              @"http://img4.shougongke.com/Public/data/version/201605/146370831829925.jpg",
-                              @"http://img4.shougongke.com/Public/data/version/201605/146370880290143.jpg",
-                              @"http://img4.shougongke.com/Public/data/version/201605/146310518970413.jpg"
-                              ];
-    }
-    return _bannerImageArray;
-}
+//- (NSArray *)bannerImageArray{
+//    if (!_bannerImageArray) {
+//        _bannerImageArray = @[
+//                              @"http://img4.shougongke.com/Public/data/version/201605/146370796233878.jpg",
+//                              @"http://img4.shougongke.com/Public/data/version/201605/146370861045370.jpg",
+//                              @"http://img4.shougongke.com/Public/data/version/201605/146370831829925.jpg",
+//                              @"http://img4.shougongke.com/Public/data/version/201605/146370880290143.jpg",
+//                              @"http://img4.shougongke.com/Public/data/version/201605/146310518970413.jpg"
+//                              ];
+//    }
+//    return _bannerImageArray;
+//}
 
 - (DYBannerView *)bannerView{
     if (!_bannerView) {
@@ -252,7 +294,7 @@ static NSString *relationTableViewCell = @"SGKRelationTableViewCell";
         _bannerView.currentPageIndicatorTintColor = mainColor;
         _bannerView.pageIndicatorTintColor = [UIColor whiteColor];
         [_bannerView configBannerWithDelegate:self
-                                           images:self.bannerImageArray];
+                                       images:self.bannerImageArray];
     }
     return _bannerView;
 }
@@ -282,13 +324,14 @@ static NSString *relationTableViewCell = @"SGKRelationTableViewCell";
 - (UITableView *)tableView{
     if (_tableView == nil) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        [_tableView registerClass:[SGKRelationCell class] forCellReuseIdentifier:relationTableViewCell];
+        [_tableView registerClass:[SGKRelationCell class] forCellReuseIdentifier:relationCellIdentifier];
+        [_tableView registerClass:[SGKTalentCell class] forCellReuseIdentifier:talentCellIdentifier];
+        [_tableView registerClass:[SGKHotTopicCell class] forCellReuseIdentifier:hotTopicCellIdentifier];
         _tableView.dataSource = self;
         _tableView.delegate = self;
         [_tableView setTableFooterView:[UIView new]];
         [_tableView setSeparatorColor:[UIColor clearColor]];
         _tableView.backgroundColor = [UIColor whiteColor];
-//        _tableView.estimatedRowHeight = 50;
     }
     return _tableView;
 }

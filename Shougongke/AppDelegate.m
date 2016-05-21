@@ -19,6 +19,9 @@
     // Override point for customization after application launch.
     
 
+    [DYNetworking updateBaseUrl:@"http://m.shougongke.com"];
+    [DYNetworking enableInterfaceDebug:YES];
+    [DYNetworking cacheGetRequest:YES shoulCachePost:YES];
     /**
      *  设置全局属性
      *  UINavigationBar
