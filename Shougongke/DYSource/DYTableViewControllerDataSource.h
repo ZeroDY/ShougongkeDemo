@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^TableViewCellConfigureBlock)(id cell, id item);
+
 @interface DYTableViewControllerDataSource : NSObject<UITableViewDataSource>
 
-@property (nonatomic, copy) NSArray *dataArray;
-@property (nonatomic, copy) NSString *cellIdentifier;
+- (id)initWithItems:(NSArray *)anItems
+     cellIdentifier:(NSString *)aCellIdentifier
+ configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock;
+
+- (id)itemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

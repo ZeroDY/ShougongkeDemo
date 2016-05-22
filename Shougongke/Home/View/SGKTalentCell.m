@@ -59,14 +59,11 @@
     
     [self.level_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.bg_imgView.mas_centerX);
-        make.centerY.mas_equalTo(self.head_imgView.mas_bottom);
-        make.height.mas_equalTo(14);
-        make.width.mas_equalTo(54);
-    }];
+        make.centerY.mas_equalTo(self.head_imgView.mas_bottom);    }];
     
     [self.userName_lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.bg_imgView.mas_centerX);
-        make.top.mas_equalTo(self.level_imgView.mas_bottom).offset(6);
+        make.top.mas_equalTo(self.head_imgView.mas_bottom).offset(14);
     }];
     
     [self.sex_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -99,8 +96,18 @@
     [self.bg_imgView sd_setImageWithURL:[NSURL URLWithString:talent.bg_image]
                        placeholderImage:[UIImage imageNamed:@"personalpage_bg"]];
     [self.head_imgView sd_setImageWithURL:[NSURL URLWithString:talent.avatar]];
-    [self.level_imgView setImage:[UIImage imageNamed:@"sgk_leve_vip"]];
-    [self.sex_imgView setImage:[UIImage imageNamed:@"sgk_icon_usergender_girl"]];
+    NSString *levelName = @"sgk_leve_lv";
+    if (!talent.level.level) {
+        levelName = @"sgk_leve_vip";
+    }else{
+        levelName = [levelName stringByAppendingString:talent.level.level];
+    }
+    [self.level_imgView setImage:[UIImage imageNamed:levelName]];
+    if ([talent.gender integerValue]==1) {
+        [self.sex_imgView setImage:[UIImage imageNamed:@"sgk_icon_usergender_boy"]];
+    }else{
+        [self.sex_imgView setImage:[UIImage imageNamed:@"sgk_icon_usergender_girl"]];
+    }
     self.addr_lab.text = talent.region;
     self.userName_lab.text = talent.uname;
     self.info_lab.text = [NSString stringWithFormat:@"教程%@·粉丝%@·手工圈%@",talent.coursecount,talent.fen_num,talent.circle_count];

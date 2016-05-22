@@ -22,6 +22,9 @@
 		191E64CE1CF0070100E5FAA5 /* SGKTalentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 191E64CD1CF0070100E5FAA5 /* SGKTalentCell.m */; };
 		1945EDB41CF1938800279CFB /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1945EDB31CF1938800279CFB /* HomeViewModel.m */; };
 		1945EDB71CF1975800279CFB /* Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1945EDB61CF1975800279CFB /* Relation.m */; };
+		1945EDBC1CF1D3D400279CFB /* SGKSlideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1945EDBB1CF1D3D400279CFB /* SGKSlideCell.m */; };
+		1945EDBF1CF2059600279CFB /* SGKPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1945EDBE1CF2059600279CFB /* SGKPublishView.m */; };
+		1945EDC21CF224C600279CFB /* SGKSubjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1945EDC11CF224C600279CFB /* SGKSubjectDetailViewController.m */; };
 		1949AE871CEDD754005A85AD /* SGKCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE661CEDD754005A85AD /* SGKCourseViewController.m */; };
 		1949AE881CEDD754005A85AD /* SGKHandCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE6D1CEDD754005A85AD /* SGKHandCircleViewController.m */; };
 		1949AE891CEDD754005A85AD /* SGKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE741CEDD754005A85AD /* SGKHomeViewController.m */; };
@@ -69,6 +72,12 @@
 		1945EDB31CF1938800279CFB /* HomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
 		1945EDB51CF1975800279CFB /* Relation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relation.h; sourceTree = "<group>"; };
 		1945EDB61CF1975800279CFB /* Relation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relation.m; sourceTree = "<group>"; };
+		1945EDBA1CF1D3D400279CFB /* SGKSlideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKSlideCell.h; sourceTree = "<group>"; };
+		1945EDBB1CF1D3D400279CFB /* SGKSlideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKSlideCell.m; sourceTree = "<group>"; };
+		1945EDBD1CF2059600279CFB /* SGKPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKPublishView.h; sourceTree = "<group>"; };
+		1945EDBE1CF2059600279CFB /* SGKPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKPublishView.m; sourceTree = "<group>"; };
+		1945EDC01CF224C600279CFB /* SGKSubjectDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKSubjectDetailViewController.h; sourceTree = "<group>"; };
+		1945EDC11CF224C600279CFB /* SGKSubjectDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKSubjectDetailViewController.m; sourceTree = "<group>"; };
 		1949AE651CEDD754005A85AD /* SGKCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCourseViewController.h; sourceTree = "<group>"; };
 		1949AE661CEDD754005A85AD /* SGKCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKCourseViewController.m; sourceTree = "<group>"; };
 		1949AE6C1CEDD754005A85AD /* SGKHandCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKHandCircleViewController.h; sourceTree = "<group>"; };
@@ -252,6 +261,8 @@
 				1949AE741CEDD754005A85AD /* SGKHomeViewController.m */,
 				1949AE901CEE0A33005A85AD /* TestViewController.h */,
 				1949AE911CEE0A33005A85AD /* TestViewController.m */,
+				1945EDC01CF224C600279CFB /* SGKSubjectDetailViewController.h */,
+				1945EDC11CF224C600279CFB /* SGKSubjectDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,6 +297,10 @@
 				191E64CD1CF0070100E5FAA5 /* SGKTalentCell.m */,
 				191225791CF0CCC9008FC557 /* SGKHotTopicCell.h */,
 				1912257A1CF0CCC9008FC557 /* SGKHotTopicCell.m */,
+				1945EDBA1CF1D3D400279CFB /* SGKSlideCell.h */,
+				1945EDBB1CF1D3D400279CFB /* SGKSlideCell.m */,
+				1945EDBD1CF2059600279CFB /* SGKPublishView.h */,
+				1945EDBE1CF2059600279CFB /* SGKPublishView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -579,11 +594,14 @@
 				1949AE871CEDD754005A85AD /* SGKCourseViewController.m in Sources */,
 				19D20A1F1CE9D7B400614167 /* ViewController.m in Sources */,
 				191225661CF070F8008FC557 /* DYNetworking.m in Sources */,
+				1945EDC21CF224C600279CFB /* SGKSubjectDetailViewController.m in Sources */,
+				1945EDBF1CF2059600279CFB /* SGKPublishView.m in Sources */,
 				191E64C81CEECFF600E5FAA5 /* SGKHomeTableHeaderView.m in Sources */,
 				1949AE881CEDD754005A85AD /* SGKHandCircleViewController.m in Sources */,
 				191225621CF070DD008FC557 /* SystemsDetection.m in Sources */,
 				191E64CE1CF0070100E5FAA5 /* SGKTalentCell.m in Sources */,
 				19E01A241CEC9D0900A520C4 /* SGKMainViewController.m in Sources */,
+				1945EDBC1CF1D3D400279CFB /* SGKSlideCell.m in Sources */,
 				1949AE921CEE0A33005A85AD /* TestViewController.m in Sources */,
 				1912255D1CF070B1008FC557 /* DYBannerCollectionViewCell.m in Sources */,
 				191225691CF0718C008FC557 /* Slide.m in Sources */,

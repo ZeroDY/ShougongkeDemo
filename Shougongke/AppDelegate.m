@@ -27,9 +27,12 @@
      *  UINavigationBar
      */
     NSDictionary *navigationBarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:navigationBarTitleTextAttributes];
     [[UINavigationBar appearance] setBarTintColor:mainColor];
     [[UINavigationBar appearance] setTranslucent:NO];
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                         forBarMetrics:UIBarMetricsDefault];
     
     //设置状态栏的字体颜色模式
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];

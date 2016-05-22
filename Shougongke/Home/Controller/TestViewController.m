@@ -10,4 +10,13 @@
 
 @implementation TestViewController
 
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
+- (BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
 @end

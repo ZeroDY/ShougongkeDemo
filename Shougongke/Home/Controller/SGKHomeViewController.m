@@ -19,8 +19,12 @@
 #import "TopicObject.h"
 #import "DYNetworking+HomeHttpRequest.h"
 #import "HomeViewModel.h"
+#import "DYTableViewControllerDataSource.h"
+#import "SGKSlideCell.h"
+#import "SGKPublishView.h"
+#import "SGKSubjectDetailViewController.h"
 
-
+static NSString *slideCellIdentifier = @"SGKSlideCell";
 static NSString *relationCellIdentifier = @"SGKRelationCell";
 static NSString *talentCellIdentifier = @"SGKTalentCell.h";
 static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
@@ -30,7 +34,6 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 @property (nonatomic, strong) UIBarButtonItem *rightItem;
 @property (nonatomic, strong) UIBarButtonItem *leftItem;
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) DYBannerView *bannerView;
 @property (nonatomic, strong) SGKHomeTableHeaderView *relationsHeaderView;
 @property (nonatomic, strong) SGKHomeTableHeaderView *talentHeaderView;
 @property (nonatomic, strong) SGKHomeTableHeaderView *hotTopicHeaderView;
@@ -54,7 +57,6 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
     
     [DYNetworking getHomeViewControllerData:^(HomeViewModel *homeViewModel) {
         self.homeViewModel = homeViewModel;
-        [self.bannerView configBannerWithDelegate:self images:self.homeViewModel.bannerImageArray];
         [self.tableView reloadData];
     } fail:^(NSError *error) {
         
@@ -70,12 +72,17 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 
 
 - (void)viewWillAppear:(BOOL)animated{
+    self.navigationController.hidesBarsOnSwipe = YES;//滑动隐藏 navigation
     [super viewWillAppear:animated];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
-
 }
+
+- (void)viewWillDisappear:(BOOL)animated{
+    self.navigationController.hidesBarsOnSwipe = NO;//关闭滑动隐藏 navigation
+}
+
 /**
  *	签到
  */
@@ -84,25 +91,7 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 }
 
 #pragma mark - tableView delegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 4;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0) {
-        return 1;
-    }
-    if (section == 1) {
-        return self.homeViewModel.relationArray.count;
-    }
-    if (section == 2) {
-        if (self.homeViewModel) {
-            return 1;
-        }
-        return 0;
-    }
-    return self.homeViewModel.topicArray.count;
-    
-}
+
 -(CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
@@ -126,7 +115,11 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger section = indexPath.section;
     if (section == 0) {
-        return 135;
+        return [tableView fd_heightForCellWithIdentifier:slideCellIdentifier
+                                        cacheByIndexPath:indexPath
+                                           configuration:^(SGKSlideCell *cell) {
+                                               [cell configCell:self images:self.homeViewModel.bannerImageArray];
+                                           }];
     }
     if (section == 1) {
         return [tableView fd_heightForCellWithIdentifier:relationCellIdentifier
@@ -162,30 +155,50 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
     return nil;
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *footView = [UIView new];
     footView.backgroundColor = RGB(247, 239, 239);
     return footView;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 3) {
+        TopicObject *topic = self.homeViewModel.topicArray[indexPath.row];
+        SGKSubjectDetailViewController *viewController = [SGKSubjectDetailViewController new];
+        viewController.url = topic.mob_h5_url;
+        [self.navigationController setNavigationBarHidden:NO animated:NO];
+        viewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+}
+
+
+#pragma mark - tableViewDatasource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 4;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (section == 0) {
+        return 1;
+    }
+    if (section == 1) {
+        return self.homeViewModel.relationArray.count;
+    }
+    if (section == 2) {
+        if (self.homeViewModel) {
+            return 1;
+        }
+        return 0;
+    }
+    return self.homeViewModel.topicArray.count;
+    
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     if (section == 0) {
-        static NSString *bannerIdentifier = @"HomeBannerCell";
-        UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:bannerIdentifier];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bannerIdentifier];
-            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-
-            [cell.contentView addSubview:self.bannerView];
-            [self.bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.mas_equalTo(cell.mas_top);
-                make.left.mas_equalTo(cell.mas_left);
-                make.right.mas_equalTo(cell.mas_right);
-                make.bottom.mas_equalTo(cell.mas_bottom);
-            }];
-        }
+        SGKSlideCell *cell = [tableView dequeueReusableCellWithIdentifier:slideCellIdentifier];
+        [cell configCell:self images:self.homeViewModel.bannerImageArray];
         return cell;
     }
     if (section == 1) {
@@ -214,25 +227,26 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 
 
 #pragma mark -- scroll delegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    CGFloat offsetY = scrollView.contentOffset.y + _tableView.contentInset.top;//注意
-    CGFloat panTranslationY = [scrollView.panGestureRecognizer translationInView:self.tableView].y;
-    if (offsetY > 80) {
-        if (panTranslationY > 50) { //下滑趋势，显示
-            [self.navigationController setNavigationBarHidden:NO animated:YES];
-        }
-        else if(panTranslationY < -50) {  //上滑趋势，隐藏
-            [self.navigationController setNavigationBarHidden:YES animated:YES];
-        }
-    }
-    else if(offsetY < 20 ) {
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
-    }
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    CGFloat offsetY = scrollView.contentOffset.y + _tableView.contentInset.top;//注意
+//    CGFloat panTranslationY = [scrollView.panGestureRecognizer translationInView:self.tableView].y;
+//    if (offsetY > 80) {
+//        if (panTranslationY > 50) { //下滑趋势，显示
+//            [self.navigationController setNavigationBarHidden:NO animated:YES];
+//        }
+//        else if(panTranslationY < -50) {  //上滑趋势，隐藏
+//            [self.navigationController setNavigationBarHidden:YES animated:YES];
+//        }
+//    }
+//    else if(offsetY < 20 ) {
+//        [self.navigationController setNavigationBarHidden:NO animated:YES];
+//    }
+//}
 
 - (void)showleft{
     NSLog(@"left");
+    [SGKPublishView showPublishViewAddedTo:self];
 }
 
 - (void)showright{
@@ -241,14 +255,6 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 
 
 #pragma mark - getter and setter
-- (DYBannerView *)bannerView{
-    if (!_bannerView) {
-        _bannerView = [[DYBannerView alloc]init];
-        _bannerView.currentPageIndicatorTintColor = mainColor;
-        _bannerView.pageIndicatorTintColor = [UIColor whiteColor];
-    }
-    return _bannerView;
-}
 
 - (UIBarButtonItem *)leftItem{
     if (!_leftItem) {
@@ -275,6 +281,7 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 - (UITableView *)tableView{
     if (_tableView == nil) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        [_tableView registerClass:[SGKSlideCell class] forCellReuseIdentifier:slideCellIdentifier];
         [_tableView registerClass:[SGKRelationCell class] forCellReuseIdentifier:relationCellIdentifier];
         [_tableView registerClass:[SGKTalentCell class] forCellReuseIdentifier:talentCellIdentifier];
         [_tableView registerClass:[SGKHotTopicCell class] forCellReuseIdentifier:hotTopicCellIdentifier];
