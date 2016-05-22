@@ -20,6 +20,8 @@
 		191E64C81CEECFF600E5FAA5 /* SGKHomeTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 191E64C71CEECFF600E5FAA5 /* SGKHomeTableHeaderView.m */; };
 		191E64CB1CEEFC6800E5FAA5 /* SGKRelationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 191E64CA1CEEFC6800E5FAA5 /* SGKRelationCell.m */; };
 		191E64CE1CF0070100E5FAA5 /* SGKTalentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 191E64CD1CF0070100E5FAA5 /* SGKTalentCell.m */; };
+		1945EDB41CF1938800279CFB /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1945EDB31CF1938800279CFB /* HomeViewModel.m */; };
+		1945EDB71CF1975800279CFB /* Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1945EDB61CF1975800279CFB /* Relation.m */; };
 		1949AE871CEDD754005A85AD /* SGKCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE661CEDD754005A85AD /* SGKCourseViewController.m */; };
 		1949AE881CEDD754005A85AD /* SGKHandCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE6D1CEDD754005A85AD /* SGKHandCircleViewController.m */; };
 		1949AE891CEDD754005A85AD /* SGKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE741CEDD754005A85AD /* SGKHomeViewController.m */; };
@@ -63,6 +65,10 @@
 		191E64CA1CEEFC6800E5FAA5 /* SGKRelationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKRelationCell.m; sourceTree = "<group>"; };
 		191E64CC1CF0070100E5FAA5 /* SGKTalentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKTalentCell.h; sourceTree = "<group>"; };
 		191E64CD1CF0070100E5FAA5 /* SGKTalentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKTalentCell.m; sourceTree = "<group>"; };
+		1945EDB21CF1938800279CFB /* HomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
+		1945EDB31CF1938800279CFB /* HomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
+		1945EDB51CF1975800279CFB /* Relation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relation.h; sourceTree = "<group>"; };
+		1945EDB61CF1975800279CFB /* Relation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Relation.m; sourceTree = "<group>"; };
 		1949AE651CEDD754005A85AD /* SGKCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCourseViewController.h; sourceTree = "<group>"; };
 		1949AE661CEDD754005A85AD /* SGKCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKCourseViewController.m; sourceTree = "<group>"; };
 		1949AE6C1CEDD754005A85AD /* SGKHandCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKHandCircleViewController.h; sourceTree = "<group>"; };
@@ -261,6 +267,10 @@
 				191225711CF07599008FC557 /* TopicObject.m */,
 				1912257C1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.h */,
 				1912257D1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m */,
+				1945EDB21CF1938800279CFB /* HomeViewModel.h */,
+				1945EDB31CF1938800279CFB /* HomeViewModel.m */,
+				1945EDB51CF1975800279CFB /* Relation.h */,
+				1945EDB61CF1975800279CFB /* Relation.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -580,6 +590,7 @@
 				19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */,
 				1912257E1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m in Sources */,
 				1949AE8A1CEDD754005A85AD /* SGKUserViewController.m in Sources */,
+				1945EDB41CF1938800279CFB /* HomeViewModel.m in Sources */,
 				1912255E1CF070B1008FC557 /* DYBannerView.m in Sources */,
 				191225781CF0ADA4008FC557 /* DYTableViewControllerDataSource.m in Sources */,
 				19D20A191CE9D7B400614167 /* main.m in Sources */,
@@ -587,6 +598,7 @@
 				1912256F1CF07477008FC557 /* TalentObject.m in Sources */,
 				1949AE8B1CEDD754005A85AD /* SGKShijiViewController.m in Sources */,
 				191E64CB1CEEFC6800E5FAA5 /* SGKRelationCell.m in Sources */,
+				1945EDB71CF1975800279CFB /* Relation.m in Sources */,
 				1949AE891CEDD754005A85AD /* SGKHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

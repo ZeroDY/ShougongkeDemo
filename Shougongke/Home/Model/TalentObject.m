@@ -11,6 +11,7 @@
 @implementation TalentObject
 
 @end
+
 @implementation LevelObject
 
 @end

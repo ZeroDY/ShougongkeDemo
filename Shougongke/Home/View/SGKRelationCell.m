@@ -10,6 +10,10 @@
 
 @interface SGKRelationCell()
 
+@property (nonatomic, strong) UIImageView *titleImageView;
+@property (nonatomic, strong) UILabel *subjectLabel;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *otherLabel;
 @property (nonatomic, strong) UIView *line;
 
 @end
@@ -30,8 +34,14 @@
     return self;
 }
 
-- (void)layout{
+- (void)setRelation:(Relation *)relation{
+    _relation = relation;
+    self.subjectLabel.text = relation.subject;
+    self.titleLabel.text = relation.title;
+    [self.titleImageView sd_setImageWithURL:[NSURL URLWithString:relation.pic_url]];
+}
 
+- (void)layout{
     [self.titleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(49.0);
         make.width.mas_equalTo(49.0);
@@ -81,7 +91,6 @@
 - (UILabel *)subjectLabel{
     if (!_subjectLabel) {
         _subjectLabel = [[UILabel alloc] init];
-//        _subjectLabel.textColor = [UIColor darkGrayColor];
         _subjectLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightThin];
     }
     return _subjectLabel;
@@ -99,7 +108,6 @@
 - (UILabel *)otherLabel{
     if (!_otherLabel) {
         _otherLabel = [[UILabel alloc] init];
-//        _otherLabel.textColor = [UIColor darkGrayColor];
         _otherLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightUltraLight];
     }
     return _otherLabel;

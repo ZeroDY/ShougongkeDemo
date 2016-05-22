@@ -7,12 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Relation.h"
 
 @interface SGKRelationCell : UITableViewCell
 
-@property (nonatomic, strong) UIImageView *titleImageView;
-@property (nonatomic, strong) UILabel *subjectLabel;
-@property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) UILabel *otherLabel;
+@property (nonatomic, strong) Relation *relation;
 
 @end

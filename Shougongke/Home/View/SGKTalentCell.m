@@ -95,7 +95,9 @@
 
 #pragma mark - getter setter
 - (void)setTalent:(TalentObject *)talent{
-    [self.bg_imgView sd_setImageWithURL:[NSURL URLWithString:talent.bg_image]];
+    _talent = talent;
+    [self.bg_imgView sd_setImageWithURL:[NSURL URLWithString:talent.bg_image]
+                       placeholderImage:[UIImage imageNamed:@"personalpage_bg"]];
     [self.head_imgView sd_setImageWithURL:[NSURL URLWithString:talent.avatar]];
     [self.level_imgView setImage:[UIImage imageNamed:@"sgk_leve_vip"]];
     [self.sex_imgView setImage:[UIImage imageNamed:@"sgk_icon_usergender_girl"]];
