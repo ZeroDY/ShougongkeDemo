@@ -15,8 +15,5 @@
 + (void)getHomeViewControllerData:(void (^) (HomeViewModel *homeViewModel))homeViewModelBlock
                              fail:(DYResponseFail)failBlock;
 
-+ (void)getHomeVCData:(void (^) (NSArray *slideArr))slideArrBlock
-               talent:(void (^) (TalentObject *talent))talentBlock
-             topicArr:(void (^) (NSArray *topicArr))topicArrBlock;
 
 @end

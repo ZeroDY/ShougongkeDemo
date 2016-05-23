@@ -16,6 +16,15 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pkd-yM-Zmo">
+                                <rect key="frame" x="61" y="371" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="uTo-3m-0MI"/>
+                                </items>
+                                <color key="tintColor" red="1" green="0.60613525170000004" blue="0.17829574449999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>

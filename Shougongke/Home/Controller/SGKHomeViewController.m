@@ -23,6 +23,8 @@
 #import "SGKSlideCell.h"
 #import "SGKPublishView.h"
 #import "SGKSubjectDetailViewController.h"
+#import "SGKActivityViewController.h"
+#import "SGKTalentListViewController.h"
 
 static NSString *slideCellIdentifier = @"SGKSlideCell";
 static NSString *relationCellIdentifier = @"SGKRelationCell";
@@ -81,6 +83,7 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 
 - (void)viewWillDisappear:(BOOL)animated{
     self.navigationController.hidesBarsOnSwipe = NO;//关闭滑动隐藏 navigation
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 /**
@@ -157,19 +160,29 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *footView = [UIView new];
-    footView.backgroundColor = RGB(247, 239, 239);
+    footView.backgroundColor = tableviewBgColor;
     return footView;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 3) {
+    UIViewController *newViewController;
+    if (indexPath.section == 1 && indexPath.row == 2) {
+        newViewController = [SGKActivityViewController new];
+    }
+    else if (indexPath.section == 2) {
+        newViewController = [SGKTalentListViewController new];
+    }
+    else if (indexPath.section == 3) {
         TopicObject *topic = self.homeViewModel.topicArray[indexPath.row];
         SGKSubjectDetailViewController *viewController = [SGKSubjectDetailViewController new];
         viewController.url = topic.mob_h5_url;
-        [self.navigationController setNavigationBarHidden:NO animated:NO];
-        viewController.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:viewController animated:YES];
+        newViewController = viewController;
+    }else{
+        newViewController = [TestViewController new];
     }
+    newViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:newViewController animated:YES];
+
 }
 
 
@@ -218,31 +231,12 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 
 #pragma mark -- DYBanner delegate
 - (void)bannerImageView:(UIImageView *)imageView loadImage:(NSString *)nameOrUrl{
-    [imageView sd_setImageWithURL:[NSURL URLWithString:nameOrUrl] placeholderImage:[UIImage imageNamed:@"chatBgImg"]];
+    [imageView sd_setImageWithURL:[NSURL URLWithString:nameOrUrl] placeholderImage:[UIImage imageNamed:@"slide_bg"]];
 }
 
 - (void)bannerView:(DYBannerView *)bannerView didSelectAtIndex:(NSUInteger)index{
     NSLog(@"--%@",self.homeViewModel.bannerImageArray[index]);
 }
-
-
-#pragma mark -- scroll delegate
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//    CGFloat offsetY = scrollView.contentOffset.y + _tableView.contentInset.top;//注意
-//    CGFloat panTranslationY = [scrollView.panGestureRecognizer translationInView:self.tableView].y;
-//    if (offsetY > 80) {
-//        if (panTranslationY > 50) { //下滑趋势，显示
-//            [self.navigationController setNavigationBarHidden:NO animated:YES];
-//        }
-//        else if(panTranslationY < -50) {  //上滑趋势，隐藏
-//            [self.navigationController setNavigationBarHidden:YES animated:YES];
-//        }
-//    }
-//    else if(offsetY < 20 ) {
-//        [self.navigationController setNavigationBarHidden:NO animated:YES];
-//    }
-//}
 
 - (void)showleft{
     NSLog(@"left");

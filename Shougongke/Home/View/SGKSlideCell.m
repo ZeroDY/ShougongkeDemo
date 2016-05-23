@@ -37,7 +37,8 @@
         make.left.mas_equalTo(self.contentView.mas_left);
         make.right.mas_equalTo(self.contentView.mas_right);
         make.bottom.mas_equalTo(self.contentView.mas_bottom);
-        make.height.mas_equalTo(self.contentView.mas_width).multipliedBy(0.42);;
+        make.height.mas_equalTo(self.contentView.mas_width).multipliedBy(0.42);
+//        make.height.mas_equalTo(135);
     }];
 }
 

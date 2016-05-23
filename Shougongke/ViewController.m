@@ -24,7 +24,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     NSString *platform = [SystemsDetection getDeviceVersCoding];
-    NSLog(@"------  %@",platform);
     NSArray *array = @[
                        [NSString stringWithFormat:@"newfeature_01_%@",platform],
                        [NSString stringWithFormat:@"newfeature_02_%@",platform],

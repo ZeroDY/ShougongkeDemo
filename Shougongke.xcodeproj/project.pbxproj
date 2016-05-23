@@ -38,6 +38,15 @@
 		19D20A271CE9D7B400614167 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D20A251CE9D7B400614167 /* LaunchScreen.storyboard */; };
 		19E019881CEAED9100A520C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19E019871CEAED9100A520C4 /* Assets.xcassets */; };
 		19E01A241CEC9D0900A520C4 /* SGKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E01A231CEC9D0900A520C4 /* SGKMainViewController.m */; };
+		19EF6E181CF2E1AA002E4C2A /* SGKBackToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E171CF2E1AA002E4C2A /* SGKBackToolBar.m */; };
+		19EF6E1B1CF30B72002E4C2A /* SGKActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E1A1CF30B72002E4C2A /* SGKActivityViewController.m */; };
+		19EF6E1E1CF30CBC002E4C2A /* SGKActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E1D1CF30CBC002E4C2A /* SGKActivityCell.m */; };
+		19EF6E211CF30DB1002E4C2A /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E201CF30DB1002E4C2A /* Activity.m */; };
+		19EF6E261CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E251CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.m */; };
+		19EF6E2A1CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E291CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.m */; };
+		19EF6E2D1CF35860002E4C2A /* TalentListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E2C1CF35860002E4C2A /* TalentListModel.m */; };
+		19EF6E301CF35BF8002E4C2A /* SGKTalentListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E2F1CF35BF8002E4C2A /* SGKTalentListCell.m */; };
+		19FC04C41CF36E05005EAAD7 /* SGKTalentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FC04C31CF36E05005EAAD7 /* SGKTalentListViewController.m */; };
 		671F8C77510090F548A1CFB5 /* libPods-Shougongke.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CDB22086622D49F8DBC98B /* libPods-Shougongke.a */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +113,24 @@
 		19E01A221CEC9D0900A520C4 /* SGKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKMainViewController.h; sourceTree = "<group>"; };
 		19E01A231CEC9D0900A520C4 /* SGKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKMainViewController.m; sourceTree = "<group>"; };
 		19E01A351CECACDA00A520C4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		19EF6E161CF2E1AA002E4C2A /* SGKBackToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKBackToolBar.h; sourceTree = "<group>"; };
+		19EF6E171CF2E1AA002E4C2A /* SGKBackToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKBackToolBar.m; sourceTree = "<group>"; };
+		19EF6E191CF30B72002E4C2A /* SGKActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGKActivityViewController.h; path = Shougongke/Home/Controller/SGKActivityViewController.h; sourceTree = SOURCE_ROOT; };
+		19EF6E1A1CF30B72002E4C2A /* SGKActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGKActivityViewController.m; path = Shougongke/Home/Controller/SGKActivityViewController.m; sourceTree = SOURCE_ROOT; };
+		19EF6E1C1CF30CBC002E4C2A /* SGKActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKActivityCell.h; sourceTree = "<group>"; };
+		19EF6E1D1CF30CBC002E4C2A /* SGKActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKActivityCell.m; sourceTree = "<group>"; };
+		19EF6E1F1CF30DB1002E4C2A /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		19EF6E201CF30DB1002E4C2A /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		19EF6E241CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+ActivityHttpRequest.h"; sourceTree = "<group>"; };
+		19EF6E251CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DYNetworking+ActivityHttpRequest.m"; sourceTree = "<group>"; };
+		19EF6E281CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+TalentListHttpRequest.h"; sourceTree = "<group>"; };
+		19EF6E291CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DYNetworking+TalentListHttpRequest.m"; sourceTree = "<group>"; };
+		19EF6E2B1CF35860002E4C2A /* TalentListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalentListModel.h; sourceTree = "<group>"; };
+		19EF6E2C1CF35860002E4C2A /* TalentListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalentListModel.m; sourceTree = "<group>"; };
+		19EF6E2E1CF35BF8002E4C2A /* SGKTalentListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKTalentListCell.h; sourceTree = "<group>"; };
+		19EF6E2F1CF35BF8002E4C2A /* SGKTalentListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKTalentListCell.m; sourceTree = "<group>"; };
+		19FC04C21CF36E05005EAAD7 /* SGKTalentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKTalentListViewController.h; sourceTree = "<group>"; };
+		19FC04C31CF36E05005EAAD7 /* SGKTalentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKTalentListViewController.m; sourceTree = "<group>"; };
 		22CDB22086622D49F8DBC98B /* libPods-Shougongke.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Shougongke.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64860FFB2E3476A0D91F3C1A /* Pods-Shougongke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shougongke.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shougongke/Pods-Shougongke.debug.xcconfig"; sourceTree = "<group>"; };
 		C344B72F8A01118871E8C86C /* Pods-Shougongke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shougongke.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shougongke/Pods-Shougongke.release.xcconfig"; sourceTree = "<group>"; };
@@ -259,10 +286,14 @@
 			children = (
 				1949AE731CEDD754005A85AD /* SGKHomeViewController.h */,
 				1949AE741CEDD754005A85AD /* SGKHomeViewController.m */,
+				19EF6E191CF30B72002E4C2A /* SGKActivityViewController.h */,
+				19EF6E1A1CF30B72002E4C2A /* SGKActivityViewController.m */,
 				1949AE901CEE0A33005A85AD /* TestViewController.h */,
 				1949AE911CEE0A33005A85AD /* TestViewController.m */,
 				1945EDC01CF224C600279CFB /* SGKSubjectDetailViewController.h */,
 				1945EDC11CF224C600279CFB /* SGKSubjectDetailViewController.m */,
+				19FC04C21CF36E05005EAAD7 /* SGKTalentListViewController.h */,
+				19FC04C31CF36E05005EAAD7 /* SGKTalentListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -274,14 +305,22 @@
 				191225681CF0718C008FC557 /* Slide.m */,
 				1912256D1CF07477008FC557 /* TalentObject.h */,
 				1912256E1CF07477008FC557 /* TalentObject.m */,
+				19EF6E2B1CF35860002E4C2A /* TalentListModel.h */,
+				19EF6E2C1CF35860002E4C2A /* TalentListModel.m */,
 				191225701CF07599008FC557 /* TopicObject.h */,
 				191225711CF07599008FC557 /* TopicObject.m */,
-				1912257C1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.h */,
-				1912257D1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m */,
 				1945EDB21CF1938800279CFB /* HomeViewModel.h */,
 				1945EDB31CF1938800279CFB /* HomeViewModel.m */,
 				1945EDB51CF1975800279CFB /* Relation.h */,
 				1945EDB61CF1975800279CFB /* Relation.m */,
+				19EF6E1F1CF30DB1002E4C2A /* Activity.h */,
+				19EF6E201CF30DB1002E4C2A /* Activity.m */,
+				1912257C1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.h */,
+				1912257D1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m */,
+				19EF6E241CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.h */,
+				19EF6E251CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.m */,
+				19EF6E281CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.h */,
+				19EF6E291CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,16 +330,20 @@
 			children = (
 				191E64C61CEECFF600E5FAA5 /* SGKHomeTableHeaderView.h */,
 				191E64C71CEECFF600E5FAA5 /* SGKHomeTableHeaderView.m */,
+				1945EDBA1CF1D3D400279CFB /* SGKSlideCell.h */,
+				1945EDBB1CF1D3D400279CFB /* SGKSlideCell.m */,
 				191E64C91CEEFC6800E5FAA5 /* SGKRelationCell.h */,
 				191E64CA1CEEFC6800E5FAA5 /* SGKRelationCell.m */,
 				191E64CC1CF0070100E5FAA5 /* SGKTalentCell.h */,
 				191E64CD1CF0070100E5FAA5 /* SGKTalentCell.m */,
 				191225791CF0CCC9008FC557 /* SGKHotTopicCell.h */,
 				1912257A1CF0CCC9008FC557 /* SGKHotTopicCell.m */,
-				1945EDBA1CF1D3D400279CFB /* SGKSlideCell.h */,
-				1945EDBB1CF1D3D400279CFB /* SGKSlideCell.m */,
 				1945EDBD1CF2059600279CFB /* SGKPublishView.h */,
 				1945EDBE1CF2059600279CFB /* SGKPublishView.m */,
+				19EF6E1C1CF30CBC002E4C2A /* SGKActivityCell.h */,
+				19EF6E1D1CF30CBC002E4C2A /* SGKActivityCell.m */,
+				19EF6E2E1CF35BF8002E4C2A /* SGKTalentListCell.h */,
+				19EF6E2F1CF35BF8002E4C2A /* SGKTalentListCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -420,6 +463,7 @@
 		19D20A161CE9D7B400614167 /* Shougongke */ = {
 			isa = PBXGroup;
 			children = (
+				19EF6E151CF2E1AA002E4C2A /* Common */,
 				191225551CF070B1008FC557 /* DYSource */,
 				1949AE621CEDD754005A85AD /* Category */,
 				1949AE711CEDD754005A85AD /* Home(首页) */,
@@ -450,6 +494,15 @@
 				19D20A181CE9D7B400614167 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		19EF6E151CF2E1AA002E4C2A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				19EF6E161CF2E1AA002E4C2A /* SGKBackToolBar.h */,
+				19EF6E171CF2E1AA002E4C2A /* SGKBackToolBar.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		4BA99D6FC762A2FA9E0BECE0 /* Pods */ = {
@@ -595,8 +648,10 @@
 				19D20A1F1CE9D7B400614167 /* ViewController.m in Sources */,
 				191225661CF070F8008FC557 /* DYNetworking.m in Sources */,
 				1945EDC21CF224C600279CFB /* SGKSubjectDetailViewController.m in Sources */,
+				19EF6E1B1CF30B72002E4C2A /* SGKActivityViewController.m in Sources */,
 				1945EDBF1CF2059600279CFB /* SGKPublishView.m in Sources */,
 				191E64C81CEECFF600E5FAA5 /* SGKHomeTableHeaderView.m in Sources */,
+				19EF6E1E1CF30CBC002E4C2A /* SGKActivityCell.m in Sources */,
 				1949AE881CEDD754005A85AD /* SGKHandCircleViewController.m in Sources */,
 				191225621CF070DD008FC557 /* SystemsDetection.m in Sources */,
 				191E64CE1CF0070100E5FAA5 /* SGKTalentCell.m in Sources */,
@@ -606,14 +661,21 @@
 				1912255D1CF070B1008FC557 /* DYBannerCollectionViewCell.m in Sources */,
 				191225691CF0718C008FC557 /* Slide.m in Sources */,
 				19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */,
+				19EF6E211CF30DB1002E4C2A /* Activity.m in Sources */,
 				1912257E1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m in Sources */,
+				19FC04C41CF36E05005EAAD7 /* SGKTalentListViewController.m in Sources */,
 				1949AE8A1CEDD754005A85AD /* SGKUserViewController.m in Sources */,
 				1945EDB41CF1938800279CFB /* HomeViewModel.m in Sources */,
 				1912255E1CF070B1008FC557 /* DYBannerView.m in Sources */,
+				19EF6E181CF2E1AA002E4C2A /* SGKBackToolBar.m in Sources */,
+				19EF6E2D1CF35860002E4C2A /* TalentListModel.m in Sources */,
 				191225781CF0ADA4008FC557 /* DYTableViewControllerDataSource.m in Sources */,
 				19D20A191CE9D7B400614167 /* main.m in Sources */,
+				19EF6E301CF35BF8002E4C2A /* SGKTalentListCell.m in Sources */,
+				19EF6E2A1CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.m in Sources */,
 				191225721CF07599008FC557 /* TopicObject.m in Sources */,
 				1912256F1CF07477008FC557 /* TalentObject.m in Sources */,
+				19EF6E261CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.m in Sources */,
 				1949AE8B1CEDD754005A85AD /* SGKShijiViewController.m in Sources */,
 				191E64CB1CEEFC6800E5FAA5 /* SGKRelationCell.m in Sources */,
 				1945EDB71CF1975800279CFB /* Relation.m in Sources */,
