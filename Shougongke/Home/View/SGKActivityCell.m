@@ -52,15 +52,11 @@
     
     [self.line mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(0.5);
-        make.left.mas_equalTo(self.containView.mas_left);
-        make.right.mas_equalTo(self.containView.mas_right);
-        make.bottom.mas_equalTo(self.containView.mas_bottom);
+        make.left.right.bottom.mas_equalTo(self.containView);
     }];
     
     [self.title_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.containView.mas_top);
-        make.left.mas_equalTo(self.containView.mas_left);
-        make.right.mas_equalTo(self.containView.mas_right);
+        make.top.left.right.mas_equalTo(self.containView);
         make.height.mas_equalTo(self.contentView.mas_width).multipliedBy(0.36);
     }];
     

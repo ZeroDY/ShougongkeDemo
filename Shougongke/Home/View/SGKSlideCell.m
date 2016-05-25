@@ -21,6 +21,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.translatesAutoresizingMaskIntoConstraints= YES;
         [self.contentView addSubview:self.bannerView];
         [self layout];
     }
@@ -33,10 +34,7 @@
 
 - (void)layout{
     [self.bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.contentView.mas_top);
-        make.left.mas_equalTo(self.contentView.mas_left);
-        make.right.mas_equalTo(self.contentView.mas_right);
-        make.bottom.mas_equalTo(self.contentView.mas_bottom);
+        make.top.left.bottom.right.mas_equalTo(self.contentView);
         make.height.mas_equalTo(self.contentView.mas_width).multipliedBy(0.42);
 //        make.height.mas_equalTo(135);
     }];

@@ -33,8 +33,7 @@
 
 - (void)layout{
     [self.bg_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.contentView.mas_top).offset(10);
-        make.left.right.bottom.mas_equalTo(self.contentView);
+        make.edges.mas_equalTo(self.contentView).insets(UIEdgeInsetsMake(10, 0, 0, 0));
         make.height.mas_equalTo(200);
     }];
     

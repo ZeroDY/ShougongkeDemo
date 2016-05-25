@@ -62,8 +62,7 @@
     
     [self.line mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(0.5);
-        make.left.mas_equalTo(self.containView.mas_left);
-        make.right.mas_equalTo(self.containView.mas_right);
+        make.left.right.mas_equalTo(self.containView);
         make.top.mas_equalTo(self.containView.mas_bottom);
     }];
     
