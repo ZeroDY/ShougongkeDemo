@@ -18,7 +18,7 @@
 		1912257B1CF0CCC9008FC557 /* SGKHotTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912257A1CF0CCC9008FC557 /* SGKHotTopicCell.m */; };
 		1912257E1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912257D1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m */; };
 		191317A91CF54AD900F23E84 /* DYSegmentContainerlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 191317A61CF54AD900F23E84 /* DYSegmentContainerlView.m */; };
-		191317AA1CF54AD900F23E84 /* DYSegmentControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 191317A81CF54AD900F23E84 /* DYSegmentControlView.m */; };
+		191317AA1CF54AD900F23E84 /* DYSegmentControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 191317A81CF54AD900F23E84 /* DYSegmentControllerView.m */; };
 		191317AD1CF54FE300F23E84 /* SGKCourseControllerTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 191317AC1CF54FE300F23E84 /* SGKCourseControllerTitleView.m */; };
 		191317B01CF556D900F23E84 /* SGKCoursePicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 191317AF1CF556D900F23E84 /* SGKCoursePicViewController.m */; };
 		191317B31CF556F800F23E84 /* SGKCourseVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 191317B21CF556F800F23E84 /* SGKCourseVideoViewController.m */; };
@@ -80,8 +80,8 @@
 		1912257D1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DYNetworking+HomeHttpRequest.m"; sourceTree = "<group>"; };
 		191317A51CF54AD900F23E84 /* DYSegmentContainerlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYSegmentContainerlView.h; sourceTree = "<group>"; };
 		191317A61CF54AD900F23E84 /* DYSegmentContainerlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYSegmentContainerlView.m; sourceTree = "<group>"; };
-		191317A71CF54AD900F23E84 /* DYSegmentControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYSegmentControlView.h; sourceTree = "<group>"; };
-		191317A81CF54AD900F23E84 /* DYSegmentControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYSegmentControlView.m; sourceTree = "<group>"; };
+		191317A71CF54AD900F23E84 /* DYSegmentControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYSegmentControllerView.h; sourceTree = "<group>"; };
+		191317A81CF54AD900F23E84 /* DYSegmentControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYSegmentControllerView.m; sourceTree = "<group>"; };
 		191317AB1CF54FE300F23E84 /* SGKCourseControllerTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCourseControllerTitleView.h; sourceTree = "<group>"; };
 		191317AC1CF54FE300F23E84 /* SGKCourseControllerTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKCourseControllerTitleView.m; sourceTree = "<group>"; };
 		191317AE1CF556D900F23E84 /* SGKCoursePicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCoursePicViewController.h; sourceTree = "<group>"; };
@@ -206,8 +206,8 @@
 			children = (
 				191317A51CF54AD900F23E84 /* DYSegmentContainerlView.h */,
 				191317A61CF54AD900F23E84 /* DYSegmentContainerlView.m */,
-				191317A71CF54AD900F23E84 /* DYSegmentControlView.h */,
-				191317A81CF54AD900F23E84 /* DYSegmentControlView.m */,
+				191317A71CF54AD900F23E84 /* DYSegmentControllerView.h */,
+				191317A81CF54AD900F23E84 /* DYSegmentControllerView.m */,
 			);
 			path = DYSegment;
 			sourceTree = "<group>";
@@ -709,7 +709,7 @@
 				191225691CF0718C008FC557 /* Slide.m in Sources */,
 				19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */,
 				19EF6E211CF30DB1002E4C2A /* Activity.m in Sources */,
-				191317AA1CF54AD900F23E84 /* DYSegmentControlView.m in Sources */,
+				191317AA1CF54AD900F23E84 /* DYSegmentControllerView.m in Sources */,
 				191317B61CF5571100F23E84 /* SGKCourseSubViewController.m in Sources */,
 				1912257E1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m in Sources */,
 				19FC04C41CF36E05005EAAD7 /* SGKTalentListViewController.m in Sources */,

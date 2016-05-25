@@ -1,5 +1,5 @@
 //
-//  DYSegmentControlView.h
+//  DYSegmentControllerView.h
 //  TestProject
 //
 //  Created by 周德艺 on 16/5/24.
@@ -15,12 +15,12 @@ typedef enum : NSUInteger {
     DYSementStyleWidthEqualFull,
 } DYSementStyle;
 
-@interface DYSegmentControlView : UIScrollView
+@interface DYSegmentControllerView : UIScrollView
 
 
 @property (nonatomic, assign) CGFloat buttonWidth;/**< 自动 */
 @property (nonatomic, assign) CGFloat lineWidth;/**< 默认等于 button 宽 */
-@property (nonatomic, assign) CGFloat space;/**< 间距，默认10 */
+@property (nonatomic, assign) CGFloat space;/**< 间距，默认20 */
 
 @property (nonatomic, strong) UIColor *selectedColor;/**< 默认 red */
 @property (nonatomic, strong) UIColor *unselectedColor;/**< default black */

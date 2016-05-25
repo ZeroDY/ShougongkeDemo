@@ -35,6 +35,7 @@
     
     [self createTitleView];
     [self createContainerView];
+    self.automaticallyAdjustsScrollViewInsets = NO;//关键
 }
 
 -(void)createTitleView
@@ -51,13 +52,12 @@
 -(void)createContainerView
 {
     SGKCoursePicViewController *pictureVC = [[SGKCoursePicViewController alloc]init];
-    pictureVC.view.backgroundColor = [UIColor blueColor];
     SGKCourseVideoViewController *videoVC = [[SGKCourseVideoViewController alloc]init];
-    videoVC.view.backgroundColor = [UIColor lightGrayColor];
     SGKCourseSubViewController *subjectVC = [[SGKCourseSubViewController alloc]init];
-    subjectVC.view.backgroundColor = [UIColor orangeColor];
+    [self addChildViewController:pictureVC];
+    [self addChildViewController:videoVC];
+    [self addChildViewController:subjectVC];
     self.controllerArray = @[pictureVC,videoVC,subjectVC];
-    
     __weak typeof(self) weakSelf = self;
     self.containerView = [[DYSegmentContainerlView alloc]initWithSeleterConditionTitleArr:self.controllerArray andBtnBlock:^(int index) {
         [weakSelf.titleView updateSelecterToolsIndex:index];

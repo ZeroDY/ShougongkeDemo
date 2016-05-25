@@ -62,7 +62,6 @@
         _tableView = [[UITableView alloc]init];
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        _tableView.backgroundColor = [UIColor yellowColor];
         [_tableView setTableFooterView:[[UIView alloc]init]];
         //[_tableView setSeparatorColor:[UIColor clearColor]];
         _tableView.rowHeight = UITableViewAutomaticDimension;

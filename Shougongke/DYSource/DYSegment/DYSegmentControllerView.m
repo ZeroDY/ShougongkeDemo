@@ -1,18 +1,18 @@
 //
-//  DYSegmentControlView.m
+//  DYSegmentControllerView.m
 //  TestProject
 //
 //  Created by 周德艺 on 16/5/24.
 //  Copyright © 2016年 周德艺. All rights reserved.
 //
 
-#import "DYSegmentControlView.h"
+#import "DYSegmentControllerView.h"
 #import "Masonry.h"
 
 #define WIDTH [UIScreen mainScreen].bounds.size.width
 #define HEIGHT [UIScreen mainScreen].bounds.size.height
 
-@interface DYSegmentControlView()
+@interface DYSegmentControllerView()
 
 @property (nonatomic, assign) DYSementStyle style;
 @property (nonatomic, copy) BtnClick btnClick;
@@ -25,7 +25,7 @@
 @property(nonatomic,retain)UIView *bottomLine;
 @end
 
-@implementation DYSegmentControlView
+@implementation DYSegmentControllerView
 
 - (instancetype)initWithStyle:(DYSementStyle)style{
     self = [super init];
@@ -84,17 +84,17 @@
             UIButton *lastBtn = nil;
             for (UIButton *btn in self.btnArr) {
                 [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.centerY.mas_equalTo(self.containView.mas_centerY).offset(-2);
+                    make.centerY.mas_equalTo(self.containView.mas_centerY);
                     if (lastBtn) {
-                        make.left.mas_equalTo(lastBtn.mas_right).offset(15);
+                        make.left.mas_equalTo(lastBtn.mas_right).offset(self.space);
                     }else{
-                        make.left.mas_equalTo(self.containView.mas_left).offset(15);
+                        make.left.mas_equalTo(self.containView.mas_left).offset(self.space);
                     }
                 }];
                 lastBtn = btn;
             }
             [self.containView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.right.mas_equalTo(lastBtn.mas_right).offset(20);
+                make.right.mas_equalTo(lastBtn.mas_right).offset(self.space);
             }];
             break;
         }
@@ -118,23 +118,19 @@
             UIButton *lastBtn = nil;
             for (UIButton *btn in self.btnArr) {
                 [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.centerY.mas_equalTo(self.containView.mas_centerY).offset(-2);
-                    
+                    make.centerY.mas_equalTo(self.containView.mas_centerY);
+                    make.width.mas_equalTo(self.buttonWidth);
                     if (lastBtn) {
-                        make.left.mas_equalTo(lastBtn.mas_right).offset(15);
+                        make.left.mas_equalTo(lastBtn.mas_right).offset(self.space);
                     }else{
-                        make.left.mas_equalTo(self.containView.mas_left).offset(15);
+                        make.left.mas_equalTo(self.containView.mas_left).offset(self.space);
                     }
-                    if(self.buttonWidth > 0){
-                        make.width.mas_equalTo(self.buttonWidth);
-                    }else{
-                        make.width.mas_equalTo(60);
-                    }
+                    
                 }];
                 lastBtn = btn;
             }
             [self.containView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.right.mas_equalTo(lastBtn.mas_right).offset(15);
+                make.right.mas_equalTo(lastBtn.mas_right).offset(self.space);
             }];
             break;
         }
@@ -157,18 +153,18 @@
             UIButton *lastBtn = nil;
             for (UIButton *btn in self.btnArr) {
                 [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.centerY.mas_equalTo(self.containView.mas_centerY).offset(-2);
+                    make.centerY.mas_equalTo(self.containView.mas_centerY);
                     if (lastBtn) {
-                        make.left.mas_equalTo(lastBtn.mas_right).offset(8);
+                        make.left.mas_equalTo(lastBtn.mas_right).offset(self.space);
                         make.width.mas_equalTo(lastBtn.mas_width);
                     }else{
-                        make.left.mas_equalTo(self.containView.mas_left).offset(8);
+                        make.left.mas_equalTo(self.containView.mas_left).offset(self.space);
                     }
                 }];
                 lastBtn = btn;
             }
             [lastBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.right.mas_equalTo(self.containView.mas_right).offset(-8);
+                make.right.mas_equalTo(self.containView.mas_right).offset(-self.space);
             }];
             break;
         }
@@ -235,16 +231,23 @@
 
 - (UIFont *)titleFont{
     if (!_titleFont) {
-        _titleFont = [UIFont systemFontOfSize:14];
+        _titleFont = [UIFont systemFontOfSize:13];
     }
     return _titleFont;
 }
 
 - (CGFloat)space{
     if (!_space) {
-        _space = 10;
+        _space = 20;
     }
     return _space;
+}
+
+- (CGFloat)buttonWidth{
+    if (!_buttonWidth) {
+        _buttonWidth = 60;
+    }
+    return _buttonWidth;
 }
 
 - (UIView *)containView{
