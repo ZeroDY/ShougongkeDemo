@@ -25,7 +25,7 @@
 
 @implementation DYSegmentContainerlView
 
--(instancetype)initWithSeleterConditionTitleArr:(NSArray *)vcArr andBtnBlock:(ScrollPage)page
+- (instancetype)initWithSeleterConditionTitleArr:(NSArray *)vcArr andBtnBlock:(ScrollPage)page
 {
     self = [super init];
     if (self) {

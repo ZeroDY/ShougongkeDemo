@@ -15,7 +15,7 @@
 @interface DYSegmentControlView()
 
 @property (nonatomic, assign) DYSementStyle style;
-@property (nonatomic,copy) BtnClick btnClick;
+@property (nonatomic, copy) BtnClick btnClick;
 
 @property (nonatomic, strong) NSMutableArray *btnArr;
 @property (nonatomic, strong) UIButton * previousBtn;
@@ -217,8 +217,6 @@
     
 }
 
-
-
 #pragma mark - getter setter
 
 - (UIColor *)selectedColor{
@@ -237,7 +235,7 @@
 
 - (UIFont *)titleFont{
     if (!_titleFont) {
-        _titleFont = [UIFont systemFontOfSize:15];
+        _titleFont = [UIFont systemFontOfSize:14];
     }
     return _titleFont;
 }

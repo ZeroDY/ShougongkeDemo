@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 typedef void(^BtnClick)(UIButton *button);
 
-
 typedef enum : NSUInteger {
     DYSementStyleDefault,
     DYSementStyleWidthEqual, //必须设置buttonWidth，默认60
@@ -25,7 +24,7 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, strong) UIColor *selectedColor;/**< 默认 red */
 @property (nonatomic, strong) UIColor *unselectedColor;/**< default black */
-@property (nonatomic, strong) UIFont *titleFont;/**< 15 */
+@property (nonatomic, strong) UIFont *titleFont;/**< 14 */
 
 
 

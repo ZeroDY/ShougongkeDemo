@@ -7,11 +7,20 @@
 //
 
 #import "SGKCourseViewController.h"
+#import "SGKCourseControllerTitleView.h"
+#import "DYSegmentContainerlView.h"
+#import "SGKCoursePicViewController.h"
+#import "SGKCourseVideoViewController.h"
+#import "SGKCourseSubViewController.h"
 
 @interface SGKCourseViewController ()
 
-@property (nonatomic, strong) UIBarButtonItem *rightItem;
+@property (nonatomic, strong) UIBarButtonItem *searchItem;
 @property (nonatomic, strong) UIBarButtonItem *leftItem;
+@property (nonatomic, strong) SGKCourseControllerTitleView *titleView;
+@property (nonatomic, strong) DYSegmentContainerlView *containerView;
+@property (nonatomic, copy) NSArray *controllerArray;
+
 
 @end
 
@@ -21,10 +30,39 @@
     [super viewDidLoad];
     self.title = @"教程";
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    
     self.navigationItem.leftBarButtonItem = self.leftItem;
-    self.navigationItem.rightBarButtonItem = self.rightItem;
+    self.navigationItem.rightBarButtonItem = self.searchItem;
     
+    [self createTitleView];
+    [self createContainerView];
+}
+
+-(void)createTitleView
+{
+    __weak typeof(self) weakSelf = self;
+    self.titleView = [[SGKCourseControllerTitleView alloc] initWithFrame:CGRectMake(0, 0, 200, 40)
+                                                                   block:^(UIButton *button) {
+        [weakSelf.containerView updateVCViewFromIndex:button.tag];
+    }];
+
+    self.navigationItem.titleView = self.titleView;
+}
+
+-(void)createContainerView
+{
+    SGKCoursePicViewController *pictureVC = [[SGKCoursePicViewController alloc]init];
+    pictureVC.view.backgroundColor = [UIColor blueColor];
+    SGKCourseVideoViewController *videoVC = [[SGKCourseVideoViewController alloc]init];
+    videoVC.view.backgroundColor = [UIColor lightGrayColor];
+    SGKCourseSubViewController *subjectVC = [[SGKCourseSubViewController alloc]init];
+    subjectVC.view.backgroundColor = [UIColor orangeColor];
+    self.controllerArray = @[pictureVC,videoVC,subjectVC];
+    
+    __weak typeof(self) weakSelf = self;
+    self.containerView = [[DYSegmentContainerlView alloc]initWithSeleterConditionTitleArr:self.controllerArray andBtnBlock:^(int index) {
+        [weakSelf.titleView updateSelecterToolsIndex:index];
+    }];
+    [self.view addSubview:self.containerView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,14 +72,17 @@
 
 - (void)showleft{
     NSLog(@"left");
-    //    InfoViewController *info = [[InfoViewController alloc]init]
-    
 }
 
 - (void)showright{
     NSLog(@"right");
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.bottom.mas_equalTo(self.view);
+    }];
+}
 
 #pragma mark - getter and setter
 
@@ -56,16 +97,17 @@
     return _leftItem;
 }
 
-- (UIBarButtonItem *)rightItem{
-    if (!_rightItem) {
+- (UIBarButtonItem *)searchItem{
+    if (!_searchItem) {
         UIButton *publisButton = [UIButton buttonWithType:UIButtonTypeCustom];
         publisButton.frame = CGRectMake(0, 0, 20, 20);
         [publisButton setBackgroundImage:[UIImage imageNamed:@"sgk_common_search_normal"] forState:UIControlStateNormal];
         [publisButton addTarget:self action:@selector(showright) forControlEvents:UIControlEventTouchUpInside];
-        _rightItem = [[UIBarButtonItem alloc] initWithCustomView:publisButton];
+        _searchItem = [[UIBarButtonItem alloc] initWithCustomView:publisButton];
     }
-    return _rightItem;
+    return _searchItem;
 }
+
 
 /*
 #pragma mark - Navigation
