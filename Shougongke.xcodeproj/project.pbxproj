@@ -32,12 +32,21 @@
 		1945EDBC1CF1D3D400279CFB /* SGKSlideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1945EDBB1CF1D3D400279CFB /* SGKSlideCell.m */; };
 		1945EDBF1CF2059600279CFB /* SGKPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1945EDBE1CF2059600279CFB /* SGKPublishView.m */; };
 		1945EDC21CF224C600279CFB /* SGKSubjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1945EDC11CF224C600279CFB /* SGKSubjectDetailViewController.m */; };
+		19467DAA1CF756400068BACF /* DYMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 19467DA91CF756400068BACF /* DYMenuItem.m */; };
+		19467DAD1CF76D970068BACF /* DYMenuDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19467DAC1CF76D970068BACF /* DYMenuDataModel.m */; };
 		1949AE871CEDD754005A85AD /* SGKCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE661CEDD754005A85AD /* SGKCourseViewController.m */; };
 		1949AE881CEDD754005A85AD /* SGKHandCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE6D1CEDD754005A85AD /* SGKHandCircleViewController.m */; };
 		1949AE891CEDD754005A85AD /* SGKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE741CEDD754005A85AD /* SGKHomeViewController.m */; };
 		1949AE8A1CEDD754005A85AD /* SGKUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE7B1CEDD754005A85AD /* SGKUserViewController.m */; };
 		1949AE8B1CEDD754005A85AD /* SGKShijiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE831CEDD754005A85AD /* SGKShijiViewController.m */; };
 		1949AE921CEE0A33005A85AD /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE911CEE0A33005A85AD /* TestViewController.m */; };
+		197884C81CF728BC00CBF0E1 /* DYMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 197884C41CF728BC00CBF0E1 /* DYMenuView.m */; };
+		197884C91CF728BC00CBF0E1 /* dymenu_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 197884C51CF728BC00CBF0E1 /* dymenu_normal.png */; };
+		197884CA1CF728BC00CBF0E1 /* dymenu_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 197884C61CF728BC00CBF0E1 /* dymenu_selected.png */; };
+		197884CB1CF728BC00CBF0E1 /* up_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 197884C71CF728BC00CBF0E1 /* up_back.png */; };
+		197884CE1CF72DA300CBF0E1 /* CourseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 197884CD1CF72DA300CBF0E1 /* CourseCategory.m */; };
+		197884D11CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 197884D01CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.m */; };
+		197884DA1CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197884D91CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m */; };
 		19D20A191CE9D7B400614167 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A181CE9D7B400614167 /* main.m */; };
 		19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A1B1CE9D7B400614167 /* AppDelegate.m */; };
 		19D20A1F1CE9D7B400614167 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A1E1CE9D7B400614167 /* ViewController.m */; };
@@ -108,6 +117,10 @@
 		1945EDBE1CF2059600279CFB /* SGKPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKPublishView.m; sourceTree = "<group>"; };
 		1945EDC01CF224C600279CFB /* SGKSubjectDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKSubjectDetailViewController.h; sourceTree = "<group>"; };
 		1945EDC11CF224C600279CFB /* SGKSubjectDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKSubjectDetailViewController.m; sourceTree = "<group>"; };
+		19467DA81CF756400068BACF /* DYMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYMenuItem.h; sourceTree = "<group>"; };
+		19467DA91CF756400068BACF /* DYMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYMenuItem.m; sourceTree = "<group>"; };
+		19467DAB1CF76D970068BACF /* DYMenuDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYMenuDataModel.h; sourceTree = "<group>"; };
+		19467DAC1CF76D970068BACF /* DYMenuDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYMenuDataModel.m; sourceTree = "<group>"; };
 		1949AE651CEDD754005A85AD /* SGKCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCourseViewController.h; sourceTree = "<group>"; };
 		1949AE661CEDD754005A85AD /* SGKCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKCourseViewController.m; sourceTree = "<group>"; };
 		1949AE6C1CEDD754005A85AD /* SGKHandCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKHandCircleViewController.h; sourceTree = "<group>"; };
@@ -121,6 +134,17 @@
 		1949AE8C1CEDD7FA005A85AD /* Public.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Public.h; sourceTree = "<group>"; };
 		1949AE901CEE0A33005A85AD /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		1949AE911CEE0A33005A85AD /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		197884C31CF728BC00CBF0E1 /* DYMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYMenuView.h; sourceTree = "<group>"; };
+		197884C41CF728BC00CBF0E1 /* DYMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYMenuView.m; sourceTree = "<group>"; };
+		197884C51CF728BC00CBF0E1 /* dymenu_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dymenu_normal.png; sourceTree = "<group>"; };
+		197884C61CF728BC00CBF0E1 /* dymenu_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dymenu_selected.png; sourceTree = "<group>"; };
+		197884C71CF728BC00CBF0E1 /* up_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up_back.png; sourceTree = "<group>"; };
+		197884CC1CF72DA300CBF0E1 /* CourseCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseCategory.h; sourceTree = "<group>"; };
+		197884CD1CF72DA300CBF0E1 /* CourseCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCategory.m; sourceTree = "<group>"; };
+		197884CF1CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+CourseCategoryHttpRequest.h"; sourceTree = "<group>"; };
+		197884D01CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DYNetworking+CourseCategoryHttpRequest.m"; sourceTree = "<group>"; };
+		197884D81CF7439F00CBF0E1 /* DYMenuCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYMenuCollectionViewCell.h; sourceTree = "<group>"; };
+		197884D91CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYMenuCollectionViewCell.m; sourceTree = "<group>"; };
 		19D20A141CE9D7B400614167 /* Shougongke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shougongke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D20A181CE9D7B400614167 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19D20A1A1CE9D7B400614167 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -172,6 +196,7 @@
 		191225551CF070B1008FC557 /* DYSource */ = {
 			isa = PBXGroup;
 			children = (
+				197884C21CF728BC00CBF0E1 /* DYMenu */,
 				191317A41CF54AD900F23E84 /* DYSegment */,
 				191225631CF070F8008FC557 /* DYNetworking */,
 				191225561CF070B1008FC557 /* DYBannerView */,
@@ -258,6 +283,10 @@
 		1949AE681CEDD754005A85AD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				197884CC1CF72DA300CBF0E1 /* CourseCategory.h */,
+				197884CD1CF72DA300CBF0E1 /* CourseCategory.m */,
+				197884CF1CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.h */,
+				197884D01CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -485,6 +514,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		197884C21CF728BC00CBF0E1 /* DYMenu */ = {
+			isa = PBXGroup;
+			children = (
+				197884C31CF728BC00CBF0E1 /* DYMenuView.h */,
+				197884C41CF728BC00CBF0E1 /* DYMenuView.m */,
+				197884C51CF728BC00CBF0E1 /* dymenu_normal.png */,
+				197884C61CF728BC00CBF0E1 /* dymenu_selected.png */,
+				197884C71CF728BC00CBF0E1 /* up_back.png */,
+				197884D81CF7439F00CBF0E1 /* DYMenuCollectionViewCell.h */,
+				197884D91CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m */,
+				19467DA81CF756400068BACF /* DYMenuItem.h */,
+				19467DA91CF756400068BACF /* DYMenuItem.m */,
+				19467DAB1CF76D970068BACF /* DYMenuDataModel.h */,
+				19467DAC1CF76D970068BACF /* DYMenuDataModel.m */,
+			);
+			path = DYMenu;
+			sourceTree = "<group>";
+		};
 		19D20A0B1CE9D7B400614167 = {
 			isa = PBXGroup;
 			children = (
@@ -626,7 +673,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				19D20A271CE9D7B400614167 /* LaunchScreen.storyboard in Resources */,
+				197884CB1CF728BC00CBF0E1 /* up_back.png in Resources */,
+				197884CA1CF728BC00CBF0E1 /* dymenu_selected.png in Resources */,
 				19E019881CEAED9100A520C4 /* Assets.xcassets in Resources */,
+				197884C91CF728BC00CBF0E1 /* dymenu_normal.png in Resources */,
 				19D20A221CE9D7B400614167 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -708,11 +758,14 @@
 				1912255D1CF070B1008FC557 /* DYBannerCollectionViewCell.m in Sources */,
 				191225691CF0718C008FC557 /* Slide.m in Sources */,
 				19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */,
+				197884C81CF728BC00CBF0E1 /* DYMenuView.m in Sources */,
 				19EF6E211CF30DB1002E4C2A /* Activity.m in Sources */,
 				191317AA1CF54AD900F23E84 /* DYSegmentControllerView.m in Sources */,
 				191317B61CF5571100F23E84 /* SGKCourseSubViewController.m in Sources */,
 				1912257E1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m in Sources */,
+				197884D11CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.m in Sources */,
 				19FC04C41CF36E05005EAAD7 /* SGKTalentListViewController.m in Sources */,
+				19467DAA1CF756400068BACF /* DYMenuItem.m in Sources */,
 				1949AE8A1CEDD754005A85AD /* SGKUserViewController.m in Sources */,
 				1945EDB41CF1938800279CFB /* HomeViewModel.m in Sources */,
 				1912255E1CF070B1008FC557 /* DYBannerView.m in Sources */,
@@ -723,12 +776,15 @@
 				19D20A191CE9D7B400614167 /* main.m in Sources */,
 				19EF6E301CF35BF8002E4C2A /* SGKTalentListCell.m in Sources */,
 				19EF6E2A1CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.m in Sources */,
+				197884CE1CF72DA300CBF0E1 /* CourseCategory.m in Sources */,
 				191225721CF07599008FC557 /* TopicObject.m in Sources */,
 				1912256F1CF07477008FC557 /* TalentObject.m in Sources */,
 				19EF6E261CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.m in Sources */,
 				1949AE8B1CEDD754005A85AD /* SGKShijiViewController.m in Sources */,
 				191E64CB1CEEFC6800E5FAA5 /* SGKRelationCell.m in Sources */,
 				1945EDB71CF1975800279CFB /* Relation.m in Sources */,
+				19467DAD1CF76D970068BACF /* DYMenuDataModel.m in Sources */,
+				197884DA1CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m in Sources */,
 				1949AE891CEDD754005A85AD /* SGKHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

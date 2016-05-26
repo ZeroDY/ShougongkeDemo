@@ -10,4 +10,6 @@
 
 @interface SGKCoursePicViewController : UIViewController
 
+@property (nonatomic, copy) NSArray *categoryArray;
+
 @end

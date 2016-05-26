@@ -12,6 +12,7 @@
 #import "SGKCoursePicViewController.h"
 #import "SGKCourseVideoViewController.h"
 #import "SGKCourseSubViewController.h"
+#import "DYNetworking+CourseCategoryHttpRequest.h"
 
 @interface SGKCourseViewController ()
 
@@ -19,7 +20,13 @@
 @property (nonatomic, strong) UIBarButtonItem *leftItem;
 @property (nonatomic, strong) SGKCourseControllerTitleView *titleView;
 @property (nonatomic, strong) DYSegmentContainerlView *containerView;
+
+@property (nonatomic, strong) SGKCoursePicViewController *pictureVC;
+@property (nonatomic, strong) SGKCourseVideoViewController *videoVC;
+@property (nonatomic, strong) SGKCourseSubViewController *subjectVC;
+
 @property (nonatomic, copy) NSArray *controllerArray;
+@property (nonatomic, copy) NSArray *categoryArray;
 
 
 @end
@@ -36,6 +43,13 @@
     [self createTitleView];
     [self createContainerView];
     self.automaticallyAdjustsScrollViewInsets = NO;//关键
+    
+    [DYNetworking getCourseCategoryData:^(NSArray *array) {
+        self.categoryArray = [array copy];
+        self.pictureVC.categoryArray = self.categoryArray;
+    } fail:^(NSError *error) {
+        
+    }];
 }
 
 -(void)createTitleView
@@ -51,13 +65,13 @@
 
 -(void)createContainerView
 {
-    SGKCoursePicViewController *pictureVC = [[SGKCoursePicViewController alloc]init];
-    SGKCourseVideoViewController *videoVC = [[SGKCourseVideoViewController alloc]init];
-    SGKCourseSubViewController *subjectVC = [[SGKCourseSubViewController alloc]init];
-    [self addChildViewController:pictureVC];
-    [self addChildViewController:videoVC];
-    [self addChildViewController:subjectVC];
-    self.controllerArray = @[pictureVC,videoVC,subjectVC];
+    self.pictureVC = [[SGKCoursePicViewController alloc]init];
+    self.videoVC = [[SGKCourseVideoViewController alloc]init];
+    self.subjectVC = [[SGKCourseSubViewController alloc]init];
+    [self addChildViewController:self.pictureVC];
+    [self addChildViewController:self.videoVC];
+    [self addChildViewController:self.subjectVC];
+    self.controllerArray = @[self.pictureVC,self.videoVC,self.subjectVC];
     __weak typeof(self) weakSelf = self;
     self.containerView = [[DYSegmentContainerlView alloc]initWithSeleterConditionTitleArr:self.controllerArray andBtnBlock:^(int index) {
         [weakSelf.titleView updateSelecterToolsIndex:index];

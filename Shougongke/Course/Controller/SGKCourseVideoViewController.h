@@ -10,4 +10,6 @@
 
 @interface SGKCourseVideoViewController : UIViewController
 
+@property (nonatomic, copy) NSArray *categoryArray;
+
 @end
