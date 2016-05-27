@@ -24,9 +24,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = CellBgColor;
-        [self addSubview:self.titleImgView];
-        [self addSubview:self.title_lab];
-        [self addSubview:self.line];
+        [self.contentView addSubview:self.titleImgView];
+        [self.contentView addSubview:self.title_lab];
+        [self.contentView addSubview:self.line];
         [self layout];
     }
     return self;
@@ -54,8 +54,8 @@
     }];
     [self.line mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(0.5);
-        make.left.mas_equalTo(self.mas_left).offset(20);
-        make.right.mas_equalTo(self.mas_right).offset(-20);
+        make.left.mas_equalTo(self.contentView.mas_left).offset(20);
+        make.right.mas_equalTo(self.contentView.mas_right).offset(-20);
         make.bottom.mas_equalTo(self.contentView.mas_bottom);
     }];
 }

@@ -7,7 +7,7 @@
 //
 
 #import "SGKActivityViewController.h"
-#import "DYTableViewControllerDataSource.h"
+#import "SGKTableViewControllerDataSource.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "SGKActivityCell.h"
 #import "Activity.h"
@@ -19,7 +19,7 @@ static NSString *cellIdentifier = @"SGKActivityCell";
 @interface SGKActivityViewController ()<UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) DYTableViewControllerDataSource *dyTableViewControllerDataSource;
+@property (nonatomic, strong) SGKTableViewControllerDataSource *dyTableViewControllerDataSource;
 @property (nonatomic, strong) SGKBackToolBar *toolBar;
 @property (nonatomic, copy) NSArray *activityArray;
 
@@ -50,7 +50,7 @@ static NSString *cellIdentifier = @"SGKActivityCell";
         [cell configureCell:activity];
     };
     self.dyTableViewControllerDataSource =
-    [[DYTableViewControllerDataSource alloc]initWithItems:self.activityArray
+    [[SGKTableViewControllerDataSource alloc]initWithItems:self.activityArray
                                            cellIdentifier:cellIdentifier
                                        configureCellBlock:configureCell];
     

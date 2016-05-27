@@ -7,10 +7,18 @@
 //
 
 #import "SGKSubjectListViewController.h"
+#import "UITableView+FDTemplateLayoutCell.h"
+#import "SGKCourseVideoSubCell.h"
+#import "SGKTableViewControllerDataSource.h"
+#import "DYNetworking+CourseSubjectListHttpRequest.h"
 
-@interface SGKSubjectListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic, strong)UITableView *tableView;
+static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
+@interface SGKSubjectListViewController ()<UITableViewDelegate>
+
+@property (nonatomic, copy) NSArray *topicArray;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) SGKTableViewControllerDataSource *dyTableViewControllerDataSource;
 
 @end
 
@@ -26,46 +34,46 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
+    [DYNetworking getCourseSubjectListData:^(NSArray *array) {
+        self.topicArray = array;
+        [self setupTableView];
+        [self.tableView reloadData];
+    } fail:^(NSError *error) {
+        
+    }];
 }
+
+- (void)setupTableView
+{
+    self.dyTableViewControllerDataSource =
+    [[SGKTableViewControllerDataSource alloc]initWithItems:self.topicArray
+                                            cellIdentifier:courseVideoSubCellIdentifier
+                                        configureCellBlock:^(SGKCourseVideoSubCell *cell, TopicObject *topic) {
+                                            [cell configureCellWithTopic:topic];
+                                        }];
+    
+    self.tableView.dataSource = self.dyTableViewControllerDataSource;
+}
+
 
 #pragma mark - tableView
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 20;
-}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-        return 100;
-
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSInteger row = indexPath.row;
-    static NSString *cellIdentifier = @"celllll";
-    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
-        
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    }
-    return cell;
+    return [tableView fd_heightForCellWithIdentifier:courseVideoSubCellIdentifier
+                                    cacheByIndexPath:indexPath
+                                       configuration:^(SGKCourseVideoSubCell *cell) {
+                                           [cell configureCellWithTopic:self.topicArray[indexPath.row]];
+                                       }];
 }
 
 #pragma mark - getter and setter
 - (UITableView *)tableView{
     if (_tableView == nil) {
         _tableView = [[UITableView alloc]init];
-        _tableView.dataSource = self;
+        [_tableView registerClass:[SGKCourseVideoSubCell class] forCellReuseIdentifier:courseVideoSubCellIdentifier];
         _tableView.delegate = self;
         [_tableView setTableFooterView:[[UIView alloc]init]];
-        //[_tableView setSeparatorColor:[UIColor clearColor]];
-        _tableView.rowHeight = UITableViewAutomaticDimension;
-        _tableView.estimatedRowHeight = 50;
+        [_tableView setSeparatorColor:[UIColor clearColor]];
     }
     return _tableView;
 }

@@ -16,7 +16,7 @@
 #define SCREENWIDTH       [UIScreen mainScreen].bounds.size.width
 
 #define ItemBgColor       [UIColor colorWithRed:241/255.0f green:242/255.0f blue:244/255.0f alpha:1]
-#define BgViewColor       [UIColor colorWithWhite:0 alpha:0.3]
+#define BgViewColor       [UIColor colorWithWhite:0 alpha:0.5]
 
 #define LineColor         [UIColor lightGrayColor]
 #define CollectionViewBgColor     [UIColor whiteColor]
@@ -24,7 +24,7 @@
 #define MenuItemTagAdd  1000
 #define MenuCellHeight  40
 
-static NSString *cellIdentifier = @"DYMenuCollectionCell";
+static NSString *dyMenuCollectionCellIdentifier = @"DYMenuCollectionCell";
 
 @interface DYMenuView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -48,6 +48,7 @@ static NSString *cellIdentifier = @"DYMenuCollectionCell";
     self = [super init];
     if (self) {
         self.menuItemArray = [NSMutableArray array];
+        self.backgroundColor = [UIColor clearColor];
         [self addSubview:self.backgroundView];
         [self addSubview:self.collectionView];
         [self addSubview:self.bottomBtn];
@@ -134,11 +135,6 @@ static NSString *cellIdentifier = @"DYMenuCollectionCell";
 
 
 #pragma mark collectionView代理方法
-//返回section个数
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 1;
-}
 
 //每个section的item个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -148,7 +144,7 @@ static NSString *cellIdentifier = @"DYMenuCollectionCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    DYMenuCollectionViewCell *cell = (DYMenuCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    DYMenuCollectionViewCell *cell = (DYMenuCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:dyMenuCollectionCellIdentifier forIndexPath:indexPath];
     DYMenuDataModel *model = self.collectionDataArray[indexPath.row];
     [cell configuraCellWith:model];
     if (self.currentItem.selectedIndex == indexPath.row) {
@@ -158,13 +154,6 @@ static NSString *cellIdentifier = @"DYMenuCollectionCell";
     }
     return cell;
 }
-
-- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
-    [cell setNeedsUpdateConstraints];
-    [cell updateConstraintsIfNeeded];
-    [cell layoutIfNeeded];
-}
-
 //点击item方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -177,18 +166,6 @@ static NSString *cellIdentifier = @"DYMenuCollectionCell";
     
     self.selectBlock(self.currentItem.tag - MenuItemTagAdd,self.currentItem.selectedIndex);
     [self takeBackCollectionView];
-}
-
-//设置每个item水平间距
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 0;
-}
-
-//设置每个item垂直间距
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 0;
 }
 
 #pragma mark - Animation
@@ -219,7 +196,6 @@ static NSString *cellIdentifier = @"DYMenuCollectionCell";
         }else{
             [self expandWithCollectionViewHeight:collectionViewHeight2 cellNumOfRow:2];
         }
-        [self.collectionView reloadData];
     }else {
         [self takeBackCollectionView];
     }
@@ -229,6 +205,7 @@ static NSString *cellIdentifier = @"DYMenuCollectionCell";
 -(void)expandWithCollectionViewHeight:(CGFloat )collectionViewHeight cellNumOfRow:(NSInteger)num
 {
     self.flowLayout.itemSize = CGSizeMake(SCREENWIDTH/num, 40);
+    [self.collectionView reloadData];
     
     [self mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(SCREENHEIGHT);
@@ -255,7 +232,6 @@ static NSString *cellIdentifier = @"DYMenuCollectionCell";
 -(void)takeBackCollectionView
 {
     self.currentItem.selected = NO;
-    
     [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(0);
         make.top.mas_equalTo(self.itemContainerView.mas_top);
@@ -300,6 +276,8 @@ static NSString *cellIdentifier = @"DYMenuCollectionCell";
 - (UICollectionViewFlowLayout *)flowLayout{
     if (!_flowLayout) {
         _flowLayout = [[UICollectionViewFlowLayout alloc]init];
+        _flowLayout.minimumInteritemSpacing = 0;
+        _flowLayout.minimumLineSpacing = 0;
     }
     return _flowLayout;
 }
@@ -307,7 +285,7 @@ static NSString *cellIdentifier = @"DYMenuCollectionCell";
 - (UICollectionView *)collectionView{
     if (!_collectionView) {
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:self.flowLayout];
-        [_collectionView registerClass:[DYMenuCollectionViewCell class] forCellWithReuseIdentifier:cellIdentifier];
+        [_collectionView registerClass:[DYMenuCollectionViewCell class] forCellWithReuseIdentifier:dyMenuCollectionCellIdentifier];
         _collectionView.backgroundColor = CollectionViewBgColor;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;

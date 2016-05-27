@@ -19,7 +19,7 @@
 #import "TopicObject.h"
 #import "DYNetworking+HomeHttpRequest.h"
 #import "HomeViewModel.h"
-#import "DYTableViewControllerDataSource.h"
+#import "SGKTableViewControllerDataSource.h"
 #import "SGKSlideCell.h"
 #import "SGKPublishView.h"
 #import "SGKSubjectDetailViewController.h"

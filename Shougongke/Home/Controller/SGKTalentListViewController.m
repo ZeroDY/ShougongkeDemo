@@ -8,7 +8,7 @@
 
 #import "SGKTalentListViewController.h"
 #import "SGKTalentListCell.h"
-#import "DYTableViewControllerDataSource.h"
+#import "SGKTableViewControllerDataSource.h"
 #import "SGKBackToolBar.h"
 #import "DYNetworking+TalentListHttpRequest.h"
 #import "UITableView+FDTemplateLayoutCell.h"
@@ -19,7 +19,7 @@ static NSString *cellIdentifier = @"SGKTalentListCell";
 
 @property (nonatomic, strong) NSArray *talentArray;
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) DYTableViewControllerDataSource *dyTableViewControllerDataSource;
+@property (nonatomic, strong) SGKTableViewControllerDataSource *dyTableViewControllerDataSource;
 @property (nonatomic, strong) SGKBackToolBar *toolBar;
 
 @end
@@ -47,7 +47,7 @@ static NSString *cellIdentifier = @"SGKTalentListCell";
 - (void)setupTableView
 {
     self.dyTableViewControllerDataSource =
-    [[DYTableViewControllerDataSource alloc]initWithItems:self.talentArray
+    [[SGKTableViewControllerDataSource alloc]initWithItems:self.talentArray
                                            cellIdentifier:cellIdentifier
                                        configureCellBlock:^(SGKTalentListCell *cell, TalentListModel *talent) {
                                            [cell configureCell:talent];
@@ -68,14 +68,15 @@ static NSString *cellIdentifier = @"SGKTalentListCell";
     }];
 }
 
-#pragma mark - tableView
-
+#pragma mark - tableViewdelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 10;
+    return 10.0f;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 0.1;
+    return 0.1f;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [tableView fd_heightForCellWithIdentifier:cellIdentifier cacheByIndexPath:indexPath configuration:^(SGKTalentListCell *cell) {
         [cell configureCell:self.talentArray[indexPath.row]];

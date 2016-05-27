@@ -7,8 +7,23 @@
 //
 
 #import "SGKCourseVideoViewController.h"
+#import "DYMenuView.h"
+#import "CourseCategory.h"
+#import "SGKVideoViewControllerDataModel.h"
+#import "SGKTableViewControllerDataSource.h"
+#import "SGKCourseVideoSubCell.h"
+#import "UITableView+FDTemplateLayoutCell.h"
+#import "DYNetworking+CourseVideoListHttpRequest.h"
 
-@interface SGKCourseVideoViewController ()
+static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
+
+@interface SGKCourseVideoViewController ()<UITableViewDelegate>
+
+@property (nonatomic, copy) NSArray *videoArray;
+@property (nonatomic, copy) NSArray *menuDataArr;
+@property (nonatomic, strong) DYMenuView *menuView;
+@property (nonatomic, strong) SGKTableViewControllerDataSource *dyTableViewControllerDataSource;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -17,21 +32,79 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.view addSubview:self.tableView];
+    [self.view addSubview:self.menuView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated{
+    [DYNetworking getCourseVideoListData:^(NSArray *array) {
+        self.videoArray = array;
+        [self setupTableView];
+        [self.tableView reloadData];
+    } fail:^(NSError *error) {
+        
+    }];
+    
+    [self.menuView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.mas_equalTo(self.view);
+    }];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view.mas_top).offset(40);
+        make.left.right.bottom.mas_equalTo(self.view);
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)creatMenuView{
+    if (self.menuDataArr) {
+        [self.menuView configureViewWith:self.menuDataArr selectIndex:^(NSInteger itemIndex, NSInteger cellIndex) {
+            NSLog(@"----%ld----%ld",itemIndex,cellIndex);
+        }];
+    }
 }
-*/
+- (void)setupTableView
+{
+    self.dyTableViewControllerDataSource =
+    [[SGKTableViewControllerDataSource alloc]initWithItems:self.videoArray
+                                            cellIdentifier:courseVideoSubCellIdentifier
+                                        configureCellBlock:^(SGKCourseVideoSubCell *cell, CourseVideo *video) {
+                                            [cell configureCellWithVideo:video];
+                                        }];
+    
+    self.tableView.dataSource = self.dyTableViewControllerDataSource;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [tableView fd_heightForCellWithIdentifier:courseVideoSubCellIdentifier
+                                    cacheByIndexPath:indexPath
+                                       configuration:^(SGKCourseVideoSubCell *cell) {
+                                           [cell configureCellWithVideo:self.videoArray[indexPath.row]];
+                                       }];
+}
+
+#pragma mark - getter and setter
+- (UITableView *)tableView{
+    if (_tableView == nil) {
+        _tableView = [[UITableView alloc]init];
+        [_tableView registerClass:[SGKCourseVideoSubCell class] forCellReuseIdentifier:courseVideoSubCellIdentifier];
+        _tableView.delegate = self;
+        [_tableView setTableFooterView:[[UIView alloc]init]];
+        [_tableView setSeparatorColor:[UIColor clearColor]];
+    }
+    return _tableView;
+}
+
+- (DYMenuView *)menuView{
+    if (!_menuView) {
+        _menuView = [[DYMenuView alloc]init];
+        _menuView.deselectColor = [UIColor darkGrayColor];
+    }
+    return _menuView;
+}
+
+- (void)setCategoryArray:(NSArray *)categoryArray{
+    _categoryArray = categoryArray;    
+    self.menuDataArr = [SGKVideoViewControllerDataModel getMenuDataArray:categoryArray];
+    [self creatMenuView];
+}
 
 @end

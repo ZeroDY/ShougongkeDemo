@@ -6,9 +6,9 @@
 //  Copyright © 2016年 周德艺. All rights reserved.
 //
 
-#import "DYTableViewControllerDataSource.h"
+#import "SGKTableViewControllerDataSource.h"
 
-@interface DYTableViewControllerDataSource()
+@interface SGKTableViewControllerDataSource()
 
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, copy) NSString *cellIdentifier;
@@ -17,7 +17,7 @@
 @end
 
 
-@implementation DYTableViewControllerDataSource
+@implementation SGKTableViewControllerDataSource
 
 
 - (id)init
@@ -63,6 +63,7 @@
     self.configureCellBlock(cell, item);
     return cell;
 }
+
 
 
 @end

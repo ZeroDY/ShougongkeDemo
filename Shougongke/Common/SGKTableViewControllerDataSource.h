@@ -10,7 +10,7 @@
 
 typedef void (^TableViewCellConfigureBlock)(id cell, id item);
 
-@interface DYTableViewControllerDataSource : NSObject<UITableViewDataSource>
+@interface SGKTableViewControllerDataSource : NSObject<UITableViewDataSource,UITableViewDelegate>
 
 - (id)initWithItems:(NSArray *)anItems
      cellIdentifier:(NSString *)aCellIdentifier

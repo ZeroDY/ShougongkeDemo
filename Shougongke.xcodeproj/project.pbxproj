@@ -14,7 +14,6 @@
 		191225691CF0718C008FC557 /* Slide.m in Sources */ = {isa = PBXBuildFile; fileRef = 191225681CF0718C008FC557 /* Slide.m */; };
 		1912256F1CF07477008FC557 /* TalentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912256E1CF07477008FC557 /* TalentObject.m */; };
 		191225721CF07599008FC557 /* TopicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 191225711CF07599008FC557 /* TopicObject.m */; };
-		191225781CF0ADA4008FC557 /* DYTableViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 191225771CF0ADA4008FC557 /* DYTableViewControllerDataSource.m */; };
 		1912257B1CF0CCC9008FC557 /* SGKHotTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912257A1CF0CCC9008FC557 /* SGKHotTopicCell.m */; };
 		1912257E1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912257D1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m */; };
 		191317A91CF54AD900F23E84 /* DYSegmentContainerlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 191317A61CF54AD900F23E84 /* DYSegmentContainerlView.m */; };
@@ -40,6 +39,18 @@
 		1949AE8A1CEDD754005A85AD /* SGKUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE7B1CEDD754005A85AD /* SGKUserViewController.m */; };
 		1949AE8B1CEDD754005A85AD /* SGKShijiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE831CEDD754005A85AD /* SGKShijiViewController.m */; };
 		1949AE921CEE0A33005A85AD /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE911CEE0A33005A85AD /* TestViewController.m */; };
+		1976401A1CF8107E0076F850 /* SGKPicViewControllerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640191CF8107E0076F850 /* SGKPicViewControllerDataModel.m */; };
+		1976401D1CF814080076F850 /* SGKVideoViewControllerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1976401C1CF814080076F850 /* SGKVideoViewControllerDataModel.m */; };
+		197640201CF8310C0076F850 /* SGKCollectionViewControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1976401F1CF8310C0076F850 /* SGKCollectionViewControllerDelegate.m */; };
+		197640231CF839750076F850 /* SGKCoursePicCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640221CF839750076F850 /* SGKCoursePicCollectionViewCell.m */; };
+		197640261CF83FAB0076F850 /* CoursePicListObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640251CF83FAB0076F850 /* CoursePicListObject.m */; };
+		197640291CF83FF20076F850 /* DYNetworking+CoursePicListHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640281CF83FF20076F850 /* DYNetworking+CoursePicListHttpRequest.m */; };
+		1976402C1CF841D20076F850 /* UIColor+SGKColorCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1976402B1CF841D20076F850 /* UIColor+SGKColorCategory.m */; };
+		1976402F1CF8726A0076F850 /* SGKTableViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1976402E1CF8726A0076F850 /* SGKTableViewControllerDataSource.m */; };
+		197640321CF8B07A0076F850 /* SGKCourseVideoSubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640311CF8B07A0076F850 /* SGKCourseVideoSubCell.m */; };
+		197640351CF8B68E0076F850 /* DYNetworking+CourseSubjectListHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640341CF8B68E0076F850 /* DYNetworking+CourseSubjectListHttpRequest.m */; };
+		197640381CF8BA820076F850 /* CourseVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640371CF8BA820076F850 /* CourseVideo.m */; };
+		1976403B1CF8BAFF0076F850 /* DYNetworking+CourseVideoListHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1976403A1CF8BAFF0076F850 /* DYNetworking+CourseVideoListHttpRequest.m */; };
 		197884C81CF728BC00CBF0E1 /* DYMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 197884C41CF728BC00CBF0E1 /* DYMenuView.m */; };
 		197884C91CF728BC00CBF0E1 /* dymenu_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 197884C51CF728BC00CBF0E1 /* dymenu_normal.png */; };
 		197884CA1CF728BC00CBF0E1 /* dymenu_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 197884C61CF728BC00CBF0E1 /* dymenu_selected.png */; };
@@ -81,8 +92,6 @@
 		1912256E1CF07477008FC557 /* TalentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalentObject.m; sourceTree = "<group>"; };
 		191225701CF07599008FC557 /* TopicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicObject.h; sourceTree = "<group>"; };
 		191225711CF07599008FC557 /* TopicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicObject.m; sourceTree = "<group>"; };
-		191225761CF0ADA4008FC557 /* DYTableViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYTableViewControllerDataSource.h; sourceTree = "<group>"; };
-		191225771CF0ADA4008FC557 /* DYTableViewControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYTableViewControllerDataSource.m; sourceTree = "<group>"; };
 		191225791CF0CCC9008FC557 /* SGKHotTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKHotTopicCell.h; sourceTree = "<group>"; };
 		1912257A1CF0CCC9008FC557 /* SGKHotTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKHotTopicCell.m; sourceTree = "<group>"; };
 		1912257C1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+HomeHttpRequest.h"; sourceTree = "<group>"; };
@@ -134,6 +143,30 @@
 		1949AE8C1CEDD7FA005A85AD /* Public.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Public.h; sourceTree = "<group>"; };
 		1949AE901CEE0A33005A85AD /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		1949AE911CEE0A33005A85AD /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		197640181CF8107E0076F850 /* SGKPicViewControllerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKPicViewControllerDataModel.h; sourceTree = "<group>"; };
+		197640191CF8107E0076F850 /* SGKPicViewControllerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKPicViewControllerDataModel.m; sourceTree = "<group>"; };
+		1976401B1CF814080076F850 /* SGKVideoViewControllerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKVideoViewControllerDataModel.h; sourceTree = "<group>"; };
+		1976401C1CF814080076F850 /* SGKVideoViewControllerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKVideoViewControllerDataModel.m; sourceTree = "<group>"; };
+		1976401E1CF8310C0076F850 /* SGKCollectionViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCollectionViewControllerDelegate.h; sourceTree = "<group>"; };
+		1976401F1CF8310C0076F850 /* SGKCollectionViewControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKCollectionViewControllerDelegate.m; sourceTree = "<group>"; };
+		197640211CF839750076F850 /* SGKCoursePicCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCoursePicCollectionViewCell.h; sourceTree = "<group>"; };
+		197640221CF839750076F850 /* SGKCoursePicCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKCoursePicCollectionViewCell.m; sourceTree = "<group>"; };
+		197640241CF83FAB0076F850 /* CoursePicListObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursePicListObject.h; sourceTree = "<group>"; };
+		197640251CF83FAB0076F850 /* CoursePicListObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursePicListObject.m; sourceTree = "<group>"; };
+		197640271CF83FF20076F850 /* DYNetworking+CoursePicListHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+CoursePicListHttpRequest.h"; sourceTree = "<group>"; };
+		197640281CF83FF20076F850 /* DYNetworking+CoursePicListHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DYNetworking+CoursePicListHttpRequest.m"; sourceTree = "<group>"; };
+		1976402A1CF841D20076F850 /* UIColor+SGKColorCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SGKColorCategory.h"; sourceTree = "<group>"; };
+		1976402B1CF841D20076F850 /* UIColor+SGKColorCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SGKColorCategory.m"; sourceTree = "<group>"; };
+		1976402D1CF8726A0076F850 /* SGKTableViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKTableViewControllerDataSource.h; sourceTree = "<group>"; };
+		1976402E1CF8726A0076F850 /* SGKTableViewControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKTableViewControllerDataSource.m; sourceTree = "<group>"; };
+		197640301CF8B07A0076F850 /* SGKCourseVideoSubCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCourseVideoSubCell.h; sourceTree = "<group>"; };
+		197640311CF8B07A0076F850 /* SGKCourseVideoSubCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKCourseVideoSubCell.m; sourceTree = "<group>"; };
+		197640331CF8B68E0076F850 /* DYNetworking+CourseSubjectListHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+CourseSubjectListHttpRequest.h"; sourceTree = "<group>"; };
+		197640341CF8B68E0076F850 /* DYNetworking+CourseSubjectListHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DYNetworking+CourseSubjectListHttpRequest.m"; sourceTree = "<group>"; };
+		197640361CF8BA820076F850 /* CourseVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseVideo.h; sourceTree = "<group>"; };
+		197640371CF8BA820076F850 /* CourseVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseVideo.m; sourceTree = "<group>"; };
+		197640391CF8BAFF0076F850 /* DYNetworking+CourseVideoListHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+CourseVideoListHttpRequest.h"; sourceTree = "<group>"; };
+		1976403A1CF8BAFF0076F850 /* DYNetworking+CourseVideoListHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DYNetworking+CourseVideoListHttpRequest.m"; sourceTree = "<group>"; };
 		197884C31CF728BC00CBF0E1 /* DYMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYMenuView.h; sourceTree = "<group>"; };
 		197884C41CF728BC00CBF0E1 /* DYMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYMenuView.m; sourceTree = "<group>"; };
 		197884C51CF728BC00CBF0E1 /* dymenu_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dymenu_normal.png; sourceTree = "<group>"; };
@@ -200,8 +233,6 @@
 				191317A41CF54AD900F23E84 /* DYSegment */,
 				191225631CF070F8008FC557 /* DYNetworking */,
 				191225561CF070B1008FC557 /* DYBannerView */,
-				191225761CF0ADA4008FC557 /* DYTableViewControllerDataSource.h */,
-				191225771CF0ADA4008FC557 /* DYTableViewControllerDataSource.m */,
 			);
 			path = DYSource;
 			sourceTree = "<group>";
@@ -240,6 +271,8 @@
 		1949AE621CEDD754005A85AD /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				1976402A1CF841D20076F850 /* UIColor+SGKColorCategory.h */,
+				1976402B1CF841D20076F850 /* UIColor+SGKColorCategory.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -248,7 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				1949AE641CEDD754005A85AD /* Controller */,
-				1949AE671CEDD754005A85AD /* HttpRequest */,
 				1949AE681CEDD754005A85AD /* Model */,
 				1949AE691CEDD754005A85AD /* View */,
 			);
@@ -273,20 +305,27 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		1949AE671CEDD754005A85AD /* HttpRequest */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HttpRequest;
-			sourceTree = "<group>";
-		};
 		1949AE681CEDD754005A85AD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				197640361CF8BA820076F850 /* CourseVideo.h */,
+				197640371CF8BA820076F850 /* CourseVideo.m */,
 				197884CC1CF72DA300CBF0E1 /* CourseCategory.h */,
 				197884CD1CF72DA300CBF0E1 /* CourseCategory.m */,
+				197640181CF8107E0076F850 /* SGKPicViewControllerDataModel.h */,
+				197640191CF8107E0076F850 /* SGKPicViewControllerDataModel.m */,
+				1976401B1CF814080076F850 /* SGKVideoViewControllerDataModel.h */,
+				1976401C1CF814080076F850 /* SGKVideoViewControllerDataModel.m */,
+				197640241CF83FAB0076F850 /* CoursePicListObject.h */,
+				197640251CF83FAB0076F850 /* CoursePicListObject.m */,
 				197884CF1CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.h */,
 				197884D01CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.m */,
+				197640271CF83FF20076F850 /* DYNetworking+CoursePicListHttpRequest.h */,
+				197640281CF83FF20076F850 /* DYNetworking+CoursePicListHttpRequest.m */,
+				197640331CF8B68E0076F850 /* DYNetworking+CourseSubjectListHttpRequest.h */,
+				197640341CF8B68E0076F850 /* DYNetworking+CourseSubjectListHttpRequest.m */,
+				197640391CF8BAFF0076F850 /* DYNetworking+CourseVideoListHttpRequest.h */,
+				1976403A1CF8BAFF0076F850 /* DYNetworking+CourseVideoListHttpRequest.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -294,8 +333,12 @@
 		1949AE691CEDD754005A85AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				197640301CF8B07A0076F850 /* SGKCourseVideoSubCell.h */,
+				197640311CF8B07A0076F850 /* SGKCourseVideoSubCell.m */,
 				191317AB1CF54FE300F23E84 /* SGKCourseControllerTitleView.h */,
 				191317AC1CF54FE300F23E84 /* SGKCourseControllerTitleView.m */,
+				197640211CF839750076F850 /* SGKCoursePicCollectionViewCell.h */,
+				197640221CF839750076F850 /* SGKCoursePicCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -519,15 +562,15 @@
 			children = (
 				197884C31CF728BC00CBF0E1 /* DYMenuView.h */,
 				197884C41CF728BC00CBF0E1 /* DYMenuView.m */,
+				19467DAB1CF76D970068BACF /* DYMenuDataModel.h */,
+				19467DAC1CF76D970068BACF /* DYMenuDataModel.m */,
+				19467DA81CF756400068BACF /* DYMenuItem.h */,
+				19467DA91CF756400068BACF /* DYMenuItem.m */,
+				197884D81CF7439F00CBF0E1 /* DYMenuCollectionViewCell.h */,
+				197884D91CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m */,
 				197884C51CF728BC00CBF0E1 /* dymenu_normal.png */,
 				197884C61CF728BC00CBF0E1 /* dymenu_selected.png */,
 				197884C71CF728BC00CBF0E1 /* up_back.png */,
-				197884D81CF7439F00CBF0E1 /* DYMenuCollectionViewCell.h */,
-				197884D91CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m */,
-				19467DA81CF756400068BACF /* DYMenuItem.h */,
-				19467DA91CF756400068BACF /* DYMenuItem.m */,
-				19467DAB1CF76D970068BACF /* DYMenuDataModel.h */,
-				19467DAC1CF76D970068BACF /* DYMenuDataModel.m */,
 			);
 			path = DYMenu;
 			sourceTree = "<group>";
@@ -553,8 +596,8 @@
 		19D20A161CE9D7B400614167 /* Shougongke */ = {
 			isa = PBXGroup;
 			children = (
-				19EF6E151CF2E1AA002E4C2A /* Common */,
 				191225551CF070B1008FC557 /* DYSource */,
+				19EF6E151CF2E1AA002E4C2A /* Common */,
 				1949AE621CEDD754005A85AD /* Category */,
 				1949AE711CEDD754005A85AD /* Home(首页) */,
 				1949AE631CEDD754005A85AD /* Course(教程) */,
@@ -591,6 +634,10 @@
 			children = (
 				19EF6E161CF2E1AA002E4C2A /* SGKBackToolBar.h */,
 				19EF6E171CF2E1AA002E4C2A /* SGKBackToolBar.m */,
+				1976402D1CF8726A0076F850 /* SGKTableViewControllerDataSource.h */,
+				1976402E1CF8726A0076F850 /* SGKTableViewControllerDataSource.m */,
+				1976401E1CF8310C0076F850 /* SGKCollectionViewControllerDelegate.h */,
+				1976401F1CF8310C0076F850 /* SGKCollectionViewControllerDelegate.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -740,8 +787,13 @@
 				191317B31CF556F800F23E84 /* SGKCourseVideoViewController.m in Sources */,
 				191317B01CF556D900F23E84 /* SGKCoursePicViewController.m in Sources */,
 				1912257B1CF0CCC9008FC557 /* SGKHotTopicCell.m in Sources */,
+				197640291CF83FF20076F850 /* DYNetworking+CoursePicListHttpRequest.m in Sources */,
+				197640321CF8B07A0076F850 /* SGKCourseVideoSubCell.m in Sources */,
 				1949AE871CEDD754005A85AD /* SGKCourseViewController.m in Sources */,
 				19D20A1F1CE9D7B400614167 /* ViewController.m in Sources */,
+				197640381CF8BA820076F850 /* CourseVideo.m in Sources */,
+				1976401D1CF814080076F850 /* SGKVideoViewControllerDataModel.m in Sources */,
+				197640261CF83FAB0076F850 /* CoursePicListObject.m in Sources */,
 				191225661CF070F8008FC557 /* DYNetworking.m in Sources */,
 				191317A91CF54AD900F23E84 /* DYSegmentContainerlView.m in Sources */,
 				1945EDC21CF224C600279CFB /* SGKSubjectDetailViewController.m in Sources */,
@@ -751,14 +803,17 @@
 				19EF6E1E1CF30CBC002E4C2A /* SGKActivityCell.m in Sources */,
 				1949AE881CEDD754005A85AD /* SGKHandCircleViewController.m in Sources */,
 				191225621CF070DD008FC557 /* SystemsDetection.m in Sources */,
+				197640201CF8310C0076F850 /* SGKCollectionViewControllerDelegate.m in Sources */,
 				191E64CE1CF0070100E5FAA5 /* SGKTalentCell.m in Sources */,
 				19E01A241CEC9D0900A520C4 /* SGKMainViewController.m in Sources */,
 				1945EDBC1CF1D3D400279CFB /* SGKSlideCell.m in Sources */,
 				1949AE921CEE0A33005A85AD /* TestViewController.m in Sources */,
+				1976401A1CF8107E0076F850 /* SGKPicViewControllerDataModel.m in Sources */,
 				1912255D1CF070B1008FC557 /* DYBannerCollectionViewCell.m in Sources */,
 				191225691CF0718C008FC557 /* Slide.m in Sources */,
 				19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */,
 				197884C81CF728BC00CBF0E1 /* DYMenuView.m in Sources */,
+				197640351CF8B68E0076F850 /* DYNetworking+CourseSubjectListHttpRequest.m in Sources */,
 				19EF6E211CF30DB1002E4C2A /* Activity.m in Sources */,
 				191317AA1CF54AD900F23E84 /* DYSegmentControllerView.m in Sources */,
 				191317B61CF5571100F23E84 /* SGKCourseSubViewController.m in Sources */,
@@ -772,14 +827,17 @@
 				19EF6E181CF2E1AA002E4C2A /* SGKBackToolBar.m in Sources */,
 				191317B91CF55D8D00F23E84 /* SGKSubjectListViewController.m in Sources */,
 				19EF6E2D1CF35860002E4C2A /* TalentListModel.m in Sources */,
-				191225781CF0ADA4008FC557 /* DYTableViewControllerDataSource.m in Sources */,
 				19D20A191CE9D7B400614167 /* main.m in Sources */,
 				19EF6E301CF35BF8002E4C2A /* SGKTalentListCell.m in Sources */,
 				19EF6E2A1CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.m in Sources */,
 				197884CE1CF72DA300CBF0E1 /* CourseCategory.m in Sources */,
+				1976402C1CF841D20076F850 /* UIColor+SGKColorCategory.m in Sources */,
+				197640231CF839750076F850 /* SGKCoursePicCollectionViewCell.m in Sources */,
 				191225721CF07599008FC557 /* TopicObject.m in Sources */,
 				1912256F1CF07477008FC557 /* TalentObject.m in Sources */,
+				1976403B1CF8BAFF0076F850 /* DYNetworking+CourseVideoListHttpRequest.m in Sources */,
 				19EF6E261CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.m in Sources */,
+				1976402F1CF8726A0076F850 /* SGKTableViewControllerDataSource.m in Sources */,
 				1949AE8B1CEDD754005A85AD /* SGKShijiViewController.m in Sources */,
 				191E64CB1CEEFC6800E5FAA5 /* SGKRelationCell.m in Sources */,
 				1945EDB71CF1975800279CFB /* Relation.m in Sources */,

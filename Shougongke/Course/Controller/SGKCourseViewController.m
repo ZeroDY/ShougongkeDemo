@@ -47,6 +47,7 @@
     [DYNetworking getCourseCategoryData:^(NSArray *array) {
         self.categoryArray = [array copy];
         self.pictureVC.categoryArray = self.categoryArray;
+        self.videoVC.categoryArray = self.categoryArray;
     } fail:^(NSError *error) {
         
     }];
@@ -59,7 +60,6 @@
                                                                    block:^(UIButton *button) {
         [weakSelf.containerView updateVCViewFromIndex:button.tag];
     }];
-
     self.navigationItem.titleView = self.titleView;
 }
 
