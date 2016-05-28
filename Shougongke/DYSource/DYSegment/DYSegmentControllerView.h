@@ -20,7 +20,7 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, assign) CGFloat buttonWidth;/**< 自动 */
 @property (nonatomic, assign) CGFloat lineWidth;/**< 默认等于 button 宽 */
-@property (nonatomic, assign) CGFloat space;/**< 间距，默认20 */
+@property (nonatomic, assign) CGFloat space;/**< 间距，默认25 */
 
 @property (nonatomic, strong) UIColor *selectedColor;/**< 默认 red */
 @property (nonatomic, strong) UIColor *unselectedColor;/**< default black */

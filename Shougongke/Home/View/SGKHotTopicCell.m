@@ -32,9 +32,10 @@
 }
 
 - (void)layout{
+    NSInteger height = SCREENWIDTH*200/320.0f;
     [self.bg_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.contentView).insets(UIEdgeInsetsMake(10, 0, 0, 0));
-        make.height.mas_equalTo(200);
+        make.height.mas_equalTo(height);
     }];
     
     [self.title_view mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -66,7 +67,7 @@
 - (UIView *)title_view{
     if (!_title_view) {
         _title_view = [UIView new];
-        _title_view.backgroundColor = [UIColor colorWithWhite:1 alpha:0.1];
+        _title_view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
     }
     return _title_view;
 }

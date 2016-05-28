@@ -36,5 +36,6 @@
 #import "AFNetworking.h"
 #import "MJExtension.h"
 #import "DYNetworking.h"
+#import "UIButton+WebCache.h"
 
 #endif /* Public_h */

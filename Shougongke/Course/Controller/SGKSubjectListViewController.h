@@ -10,4 +10,6 @@
 
 @interface SGKSubjectListViewController : UIViewController
 
+@property (nonatomic, strong) NSString *tag_id;
+
 @end

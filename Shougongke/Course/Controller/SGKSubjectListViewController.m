@@ -34,7 +34,9 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
-    [DYNetworking getCourseSubjectListData:^(NSArray *array) {
+    
+    [DYNetworking getCourseSubjectListDataTageid:self.tag_id
+                                           block:^(NSArray *array) {
         self.topicArray = array;
         [self setupTableView];
         [self.tableView reloadData];

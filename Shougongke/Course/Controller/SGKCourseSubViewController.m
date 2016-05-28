@@ -13,11 +13,11 @@
 
 @interface SGKCourseSubViewController ()
 
-@property(nonatomic,retain)NSArray *titleArr;
-@property(nonatomic,retain)NSMutableArray *viewControllerArr;
+@property (nonatomic, copy) NSArray *titleArr;
+@property (nonatomic, strong) NSMutableArray *viewControllerArr;
 
-@property(nonatomic,retain)DYSegmentControllerView *segmentView;
-@property(nonatomic,retain)DYSegmentContainerlView *containerView;
+@property (nonatomic, strong) DYSegmentControllerView *segmentView;
+@property (nonatomic, strong) DYSegmentContainerlView *containerView;
 
 
 @end
@@ -26,17 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.view.backgroundColor = [UIColor brownColor];
-    self.titleArr = @[@"精选",@"每日热门",@"入坑指南",@"创意DIY",@"吃货专属",@"萌属性",@"达人推荐",@"一周精选"];
-    self.viewControllerArr = [NSMutableArray array];
-    
-    for (int i = 0; i < 8 ; i++) {
-        SGKSubjectListViewController *vc = [[SGKSubjectListViewController alloc]init];
-        [self addChildViewController:vc];
-        [self.viewControllerArr addObject:vc];
-    }
-    
+
     [self createSegmentView];
     [self createContainerView];
     self.automaticallyAdjustsScrollViewInsets = NO;//关键
@@ -54,7 +45,7 @@
     }];
 }
 
--(void)createSegmentView
+- (void)createSegmentView
 {
     __weak typeof(self) weakSelf = self;
     self.segmentView = [[DYSegmentControllerView alloc] initWithStyle:DYSementStyleDefault];
@@ -66,7 +57,7 @@
     [self.view addSubview:self.segmentView];
 }
 
--(void)createContainerView
+- (void)createContainerView
 {
     __weak typeof(self) weakSelf = self;
     self.containerView = [[DYSegmentContainerlView alloc]initWithSeleterConditionTitleArr:self.viewControllerArr andBtnBlock:^(int index) {
@@ -74,4 +65,27 @@
     }];
     [self.view addSubview:self.containerView];
 }
+#pragma mark -  getter setter
+
+- (NSMutableArray *)viewControllerArr{
+    if (!_viewControllerArr) {
+        NSArray *tagIdArr = @[@"53",@"57",@"52",@"28",@"54",@"1",@"55",@"3",@"45"];
+        _viewControllerArr = [NSMutableArray array];
+        for (int i = 0; i < 9 ; i++) {
+            SGKSubjectListViewController *vc = [[SGKSubjectListViewController alloc]init];
+            vc.tag_id = tagIdArr[i];
+            [self addChildViewController:vc];
+            [_viewControllerArr addObject:vc];
+        }
+    }
+    return _viewControllerArr;
+}
+
+- (NSArray *)titleArr{
+    if (!_titleArr) {
+        _titleArr = @[@"热门教程",@"精选手工圈",@"一周精选",@"入坑指南",@"达人推荐",@"小编推荐",@"创意DIY",@"吃货属性",@"萌属性"];
+    }
+    return _titleArr;
+}
+
 @end

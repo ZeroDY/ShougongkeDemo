@@ -18,8 +18,8 @@
 @property (nonatomic, copy) BtnClick btnClick;
 
 @property (nonatomic, strong) NSMutableArray *btnArr;
-@property (nonatomic, strong) UIButton * previousBtn;
-@property (nonatomic, strong) UIButton * currentBtn;
+@property (nonatomic, strong) UIButton *previousBtn;
+@property (nonatomic, strong) UIButton *currentBtn;
 @property (nonatomic, strong) UIView *containView;
 
 @property(nonatomic,retain)UIView *bottomLine;
@@ -238,7 +238,7 @@
 
 - (CGFloat)space{
     if (!_space) {
-        _space = 20;
+        _space = 25;
     }
     return _space;
 }

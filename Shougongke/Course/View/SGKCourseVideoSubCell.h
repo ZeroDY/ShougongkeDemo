@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "TopicObject.h"
 #import "CourseVideo.h"
+#import "ShijiVCModel.h"
 
 @interface SGKCourseVideoSubCell : UITableViewCell
 
 - (void)configureCellWithTopic:(TopicObject *)topic;
 
 - (void)configureCellWithVideo:(CourseVideo *)video;
+
+- (void)configureCellWithShijiTopic:(ShijiTopic *)shiji;
 @end

@@ -55,9 +55,10 @@
         make.left.right.bottom.mas_equalTo(self.containView);
     }];
     
+    NSInteger height = SCREENWIDTH*115/320.0f;
     [self.title_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(self.containView);
-        make.height.mas_equalTo(self.contentView.mas_width).multipliedBy(0.36);
+        make.height.mas_equalTo(height);
     }];
     
     [self.title_lab mas_makeConstraints:^(MASConstraintMaker *make) {

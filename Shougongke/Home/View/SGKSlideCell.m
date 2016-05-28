@@ -33,10 +33,10 @@
 }
 
 - (void)layout{
+    NSInteger height = SCREENWIDTH*135/320.0f;
     [self.bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.bottom.right.mas_equalTo(self.contentView);
-        make.height.mas_equalTo(self.contentView.mas_width).multipliedBy(0.42);
-//        make.height.mas_equalTo(135);
+        make.height.mas_equalTo(height);
     }];
 }
 

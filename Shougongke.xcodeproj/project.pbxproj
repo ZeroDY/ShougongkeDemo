@@ -51,6 +51,13 @@
 		197640351CF8B68E0076F850 /* DYNetworking+CourseSubjectListHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640341CF8B68E0076F850 /* DYNetworking+CourseSubjectListHttpRequest.m */; };
 		197640381CF8BA820076F850 /* CourseVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640371CF8BA820076F850 /* CourseVideo.m */; };
 		1976403B1CF8BAFF0076F850 /* DYNetworking+CourseVideoListHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1976403A1CF8BAFF0076F850 /* DYNetworking+CourseVideoListHttpRequest.m */; };
+		1976403E1CF977A90076F850 /* SGKShijiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1976403D1CF977A90076F850 /* SGKShijiTableViewController.m */; };
+		197640411CF97CB50076F850 /* SGKShijiTableHotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640401CF97CB50076F850 /* SGKShijiTableHotCell.m */; };
+		197640441CF984460076F850 /* SGKShijiTableBestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640431CF984460076F850 /* SGKShijiTableBestCell.m */; };
+		197640471CF98AEF0076F850 /* SaleCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640461CF98AEF0076F850 /* SaleCellItem.m */; };
+		1976404A1CF98EA50076F850 /* SGKShijiTableTopicBestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640491CF98EA50076F850 /* SGKShijiTableTopicBestCell.m */; };
+		1976404D1CF990E30076F850 /* ShijiVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1976404C1CF990E30076F850 /* ShijiVCModel.m */; };
+		197640501CF992400076F850 /* DYNetworking+ShijiVCHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1976404F1CF992400076F850 /* DYNetworking+ShijiVCHttpRequest.m */; };
 		197884C81CF728BC00CBF0E1 /* DYMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 197884C41CF728BC00CBF0E1 /* DYMenuView.m */; };
 		197884C91CF728BC00CBF0E1 /* dymenu_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 197884C51CF728BC00CBF0E1 /* dymenu_normal.png */; };
 		197884CA1CF728BC00CBF0E1 /* dymenu_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 197884C61CF728BC00CBF0E1 /* dymenu_selected.png */; };
@@ -58,6 +65,7 @@
 		197884CE1CF72DA300CBF0E1 /* CourseCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 197884CD1CF72DA300CBF0E1 /* CourseCategory.m */; };
 		197884D11CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 197884D01CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.m */; };
 		197884DA1CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197884D91CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m */; };
+		19A9F3AF1CF9DFB70054A629 /* SGKShijiHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A9F3AE1CF9DFB70054A629 /* SGKShijiHeaderView.m */; };
 		19D20A191CE9D7B400614167 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A181CE9D7B400614167 /* main.m */; };
 		19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A1B1CE9D7B400614167 /* AppDelegate.m */; };
 		19D20A1F1CE9D7B400614167 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A1E1CE9D7B400614167 /* ViewController.m */; };
@@ -167,6 +175,20 @@
 		197640371CF8BA820076F850 /* CourseVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseVideo.m; sourceTree = "<group>"; };
 		197640391CF8BAFF0076F850 /* DYNetworking+CourseVideoListHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+CourseVideoListHttpRequest.h"; sourceTree = "<group>"; };
 		1976403A1CF8BAFF0076F850 /* DYNetworking+CourseVideoListHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DYNetworking+CourseVideoListHttpRequest.m"; sourceTree = "<group>"; };
+		1976403C1CF977A90076F850 /* SGKShijiTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKShijiTableViewController.h; sourceTree = "<group>"; };
+		1976403D1CF977A90076F850 /* SGKShijiTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKShijiTableViewController.m; sourceTree = "<group>"; };
+		1976403F1CF97CB50076F850 /* SGKShijiTableHotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKShijiTableHotCell.h; sourceTree = "<group>"; };
+		197640401CF97CB50076F850 /* SGKShijiTableHotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKShijiTableHotCell.m; sourceTree = "<group>"; };
+		197640421CF984460076F850 /* SGKShijiTableBestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKShijiTableBestCell.h; sourceTree = "<group>"; };
+		197640431CF984460076F850 /* SGKShijiTableBestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKShijiTableBestCell.m; sourceTree = "<group>"; };
+		197640451CF98AEF0076F850 /* SaleCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaleCellItem.h; sourceTree = "<group>"; };
+		197640461CF98AEF0076F850 /* SaleCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaleCellItem.m; sourceTree = "<group>"; };
+		197640481CF98EA50076F850 /* SGKShijiTableTopicBestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKShijiTableTopicBestCell.h; sourceTree = "<group>"; };
+		197640491CF98EA50076F850 /* SGKShijiTableTopicBestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKShijiTableTopicBestCell.m; sourceTree = "<group>"; };
+		1976404B1CF990E30076F850 /* ShijiVCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShijiVCModel.h; sourceTree = "<group>"; };
+		1976404C1CF990E30076F850 /* ShijiVCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShijiVCModel.m; sourceTree = "<group>"; };
+		1976404E1CF992400076F850 /* DYNetworking+ShijiVCHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+ShijiVCHttpRequest.h"; sourceTree = "<group>"; };
+		1976404F1CF992400076F850 /* DYNetworking+ShijiVCHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DYNetworking+ShijiVCHttpRequest.m"; sourceTree = "<group>"; };
 		197884C31CF728BC00CBF0E1 /* DYMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYMenuView.h; sourceTree = "<group>"; };
 		197884C41CF728BC00CBF0E1 /* DYMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYMenuView.m; sourceTree = "<group>"; };
 		197884C51CF728BC00CBF0E1 /* dymenu_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dymenu_normal.png; sourceTree = "<group>"; };
@@ -178,6 +200,8 @@
 		197884D01CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DYNetworking+CourseCategoryHttpRequest.m"; sourceTree = "<group>"; };
 		197884D81CF7439F00CBF0E1 /* DYMenuCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYMenuCollectionViewCell.h; sourceTree = "<group>"; };
 		197884D91CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYMenuCollectionViewCell.m; sourceTree = "<group>"; };
+		19A9F3AD1CF9DFB70054A629 /* SGKShijiHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKShijiHeaderView.h; sourceTree = "<group>"; };
+		19A9F3AE1CF9DFB70054A629 /* SGKShijiHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKShijiHeaderView.m; sourceTree = "<group>"; };
 		19D20A141CE9D7B400614167 /* Shougongke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shougongke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D20A181CE9D7B400614167 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19D20A1A1CE9D7B400614167 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -519,7 +543,6 @@
 			isa = PBXGroup;
 			children = (
 				1949AE811CEDD754005A85AD /* Controller */,
-				1949AE841CEDD754005A85AD /* HttpRequest */,
 				1949AE851CEDD754005A85AD /* Model */,
 				1949AE861CEDD754005A85AD /* View */,
 			);
@@ -532,20 +555,19 @@
 			children = (
 				1949AE821CEDD754005A85AD /* SGKShijiViewController.h */,
 				1949AE831CEDD754005A85AD /* SGKShijiViewController.m */,
+				1976403C1CF977A90076F850 /* SGKShijiTableViewController.h */,
+				1976403D1CF977A90076F850 /* SGKShijiTableViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		1949AE841CEDD754005A85AD /* HttpRequest */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HttpRequest;
 			sourceTree = "<group>";
 		};
 		1949AE851CEDD754005A85AD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1976404B1CF990E30076F850 /* ShijiVCModel.h */,
+				1976404C1CF990E30076F850 /* ShijiVCModel.m */,
+				1976404E1CF992400076F850 /* DYNetworking+ShijiVCHttpRequest.h */,
+				1976404F1CF992400076F850 /* DYNetworking+ShijiVCHttpRequest.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -553,6 +575,16 @@
 		1949AE861CEDD754005A85AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1976403F1CF97CB50076F850 /* SGKShijiTableHotCell.h */,
+				197640401CF97CB50076F850 /* SGKShijiTableHotCell.m */,
+				197640421CF984460076F850 /* SGKShijiTableBestCell.h */,
+				197640431CF984460076F850 /* SGKShijiTableBestCell.m */,
+				197640481CF98EA50076F850 /* SGKShijiTableTopicBestCell.h */,
+				197640491CF98EA50076F850 /* SGKShijiTableTopicBestCell.m */,
+				197640451CF98AEF0076F850 /* SaleCellItem.h */,
+				197640461CF98AEF0076F850 /* SaleCellItem.m */,
+				19A9F3AD1CF9DFB70054A629 /* SGKShijiHeaderView.h */,
+				19A9F3AE1CF9DFB70054A629 /* SGKShijiHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -786,6 +818,7 @@
 				191317AD1CF54FE300F23E84 /* SGKCourseControllerTitleView.m in Sources */,
 				191317B31CF556F800F23E84 /* SGKCourseVideoViewController.m in Sources */,
 				191317B01CF556D900F23E84 /* SGKCoursePicViewController.m in Sources */,
+				197640411CF97CB50076F850 /* SGKShijiTableHotCell.m in Sources */,
 				1912257B1CF0CCC9008FC557 /* SGKHotTopicCell.m in Sources */,
 				197640291CF83FF20076F850 /* DYNetworking+CoursePicListHttpRequest.m in Sources */,
 				197640321CF8B07A0076F850 /* SGKCourseVideoSubCell.m in Sources */,
@@ -805,6 +838,7 @@
 				191225621CF070DD008FC557 /* SystemsDetection.m in Sources */,
 				197640201CF8310C0076F850 /* SGKCollectionViewControllerDelegate.m in Sources */,
 				191E64CE1CF0070100E5FAA5 /* SGKTalentCell.m in Sources */,
+				197640501CF992400076F850 /* DYNetworking+ShijiVCHttpRequest.m in Sources */,
 				19E01A241CEC9D0900A520C4 /* SGKMainViewController.m in Sources */,
 				1945EDBC1CF1D3D400279CFB /* SGKSlideCell.m in Sources */,
 				1949AE921CEE0A33005A85AD /* TestViewController.m in Sources */,
@@ -812,6 +846,7 @@
 				1912255D1CF070B1008FC557 /* DYBannerCollectionViewCell.m in Sources */,
 				191225691CF0718C008FC557 /* Slide.m in Sources */,
 				19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */,
+				19A9F3AF1CF9DFB70054A629 /* SGKShijiHeaderView.m in Sources */,
 				197884C81CF728BC00CBF0E1 /* DYMenuView.m in Sources */,
 				197640351CF8B68E0076F850 /* DYNetworking+CourseSubjectListHttpRequest.m in Sources */,
 				19EF6E211CF30DB1002E4C2A /* Activity.m in Sources */,
@@ -828,9 +863,11 @@
 				191317B91CF55D8D00F23E84 /* SGKSubjectListViewController.m in Sources */,
 				19EF6E2D1CF35860002E4C2A /* TalentListModel.m in Sources */,
 				19D20A191CE9D7B400614167 /* main.m in Sources */,
+				1976404A1CF98EA50076F850 /* SGKShijiTableTopicBestCell.m in Sources */,
 				19EF6E301CF35BF8002E4C2A /* SGKTalentListCell.m in Sources */,
 				19EF6E2A1CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.m in Sources */,
 				197884CE1CF72DA300CBF0E1 /* CourseCategory.m in Sources */,
+				1976404D1CF990E30076F850 /* ShijiVCModel.m in Sources */,
 				1976402C1CF841D20076F850 /* UIColor+SGKColorCategory.m in Sources */,
 				197640231CF839750076F850 /* SGKCoursePicCollectionViewCell.m in Sources */,
 				191225721CF07599008FC557 /* TopicObject.m in Sources */,
@@ -841,8 +878,11 @@
 				1949AE8B1CEDD754005A85AD /* SGKShijiViewController.m in Sources */,
 				191E64CB1CEEFC6800E5FAA5 /* SGKRelationCell.m in Sources */,
 				1945EDB71CF1975800279CFB /* Relation.m in Sources */,
+				197640441CF984460076F850 /* SGKShijiTableBestCell.m in Sources */,
 				19467DAD1CF76D970068BACF /* DYMenuDataModel.m in Sources */,
+				1976403E1CF977A90076F850 /* SGKShijiTableViewController.m in Sources */,
 				197884DA1CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m in Sources */,
+				197640471CF98AEF0076F850 /* SaleCellItem.m in Sources */,
 				1949AE891CEDD754005A85AD /* SGKHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

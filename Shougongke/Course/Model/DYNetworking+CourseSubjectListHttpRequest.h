@@ -10,7 +10,8 @@
 
 @interface DYNetworking (CourseSubjectListHttpRequest)
 
-+ (void)getCourseSubjectListData:(void (^) (NSArray *array))dataBlock
-                         fail:(DYResponseFail)failBlock;
++ (void)getCourseSubjectListDataTageid:(NSString *)tagid
+                                 block:(void (^) (NSArray *array))dataBlock
+                                  fail:(DYResponseFail)failBlock;
 
 @end

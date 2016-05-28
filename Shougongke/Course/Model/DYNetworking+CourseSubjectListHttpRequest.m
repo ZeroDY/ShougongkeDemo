@@ -11,9 +11,12 @@
 
 @implementation DYNetworking (CourseSubjectListHttpRequest)
 
-+ (void)getCourseSubjectListData:(void (^)(NSArray *))dataBlock
-                        fail:(DYResponseFail)failBlock{
-    [DYNetworking getWithUrl:@"/index.php?c=Course&a=topicList&tag_id=53&vid=16"
+
++(void)getCourseSubjectListDataTageid:(NSString *)tagid
+                                block:(void (^)(NSArray *))dataBlock
+                                 fail:(DYResponseFail)failBlock{
+    NSString *url = [NSString stringWithFormat:@"/index.php?c=Course&a=topicList&tag_id=%@&vid=16",tagid];
+    [DYNetworking getWithUrl:url
                 refreshCache:YES
                      success:^(id response) {
                          NSDictionary *resultDic = (NSDictionary *)response;
