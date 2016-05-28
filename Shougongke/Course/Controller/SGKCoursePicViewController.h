@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SGKPicViewControllerDataModel.h"
 
 @interface SGKCoursePicViewController : UIViewController
 
-@property (nonatomic, copy) NSArray *categoryArray;
+@property (nonatomic, strong) SGKPicViewControllerDataModel *dataModel;
+- (void)configureMenuView;
 
 @end

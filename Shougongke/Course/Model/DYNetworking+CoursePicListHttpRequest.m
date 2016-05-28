@@ -11,11 +11,13 @@
 
 @implementation DYNetworking (CoursePicListHttpRequest)
 
-+ (void)getCoursePicListData:(void (^)(NSArray *))dataBlock
-                        fail:(DYResponseFail)failBlock{
-    [DYNetworking getWithUrl:@"/index.php?c=Course&a=newCourseList&gcate=allcate&order=new&vid=16"
++ (void)getCoursePicListDataWithParam:(NSDictionary *)param
+                                block:(void (^)(NSArray *))dataBlock
+                                 fail:(DYResponseFail)failBlock{
+    [DYNetworking getWithUrl:@"/index.php?c=Course&a=newCourseList&vid=16"
                 refreshCache:YES
-                     success:^(id response) {
+                      params:param
+                     success:^(id response)  {
                          NSDictionary *resultDic = (NSDictionary *)response;
                          if ([resultDic[@"status"] integerValue] == 1) {
                              NSArray *array = [CoursePicListObject mj_objectArrayWithKeyValuesArray:resultDic[@"data"]];
@@ -24,7 +26,6 @@
                      } fail:^(NSError *error) {
                          failBlock(error);
                      }];
-    
 }
 
 @end

@@ -30,18 +30,18 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    [DYNetworking getCourseSubjectListDataTageid:self.tag_id
+                                           block:^(NSArray *array) {
+                                               self.topicArray = array;
+                                               [self setupTableView];
+                                               [self.tableView reloadData];
+                                           } fail:^(NSError *error) {
+                                               
+                                           }];
+    
     [super viewWillAppear:animated];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
-    }];
-    
-    [DYNetworking getCourseSubjectListDataTageid:self.tag_id
-                                           block:^(NSArray *array) {
-        self.topicArray = array;
-        [self setupTableView];
-        [self.tableView reloadData];
-    } fail:^(NSError *error) {
-        
     }];
 }
 

@@ -46,8 +46,10 @@
     
     [DYNetworking getCourseCategoryData:^(NSArray *array) {
         self.categoryArray = [array copy];
-        self.pictureVC.categoryArray = self.categoryArray;
-        self.videoVC.categoryArray = self.categoryArray;
+        self.pictureVC.dataModel.categoryArray = self.categoryArray;
+        [self.pictureVC configureMenuView];
+        self.videoVC.dataModel.categoryArray = self.categoryArray;
+        [self.videoVC configureMenuView];
     } fail:^(NSError *error) {
         
     }];

@@ -8,8 +8,6 @@
 
 #import "SGKCourseVideoViewController.h"
 #import "DYMenuView.h"
-#import "CourseCategory.h"
-#import "SGKVideoViewControllerDataModel.h"
 #import "SGKTableViewControllerDataSource.h"
 #import "SGKCourseVideoSubCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
@@ -19,8 +17,6 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
 
 @interface SGKCourseVideoViewController ()<UITableViewDelegate>
 
-@property (nonatomic, copy) NSArray *videoArray;
-@property (nonatomic, copy) NSArray *menuDataArr;
 @property (nonatomic, strong) DYMenuView *menuView;
 @property (nonatomic, strong) SGKTableViewControllerDataSource *dyTableViewControllerDataSource;
 @property (nonatomic, strong) UITableView *tableView;
@@ -31,19 +27,13 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.menuView];
+    [self setupTableView];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [DYNetworking getCourseVideoListData:^(NSArray *array) {
-        self.videoArray = array;
-        [self setupTableView];
-        [self.tableView reloadData];
-    } fail:^(NSError *error) {
-        
-    }];
+    [self getViewControllerDataModel];
     
     [self.menuView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(self.view);
@@ -54,17 +44,30 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
     }];
 }
 
-- (void)creatMenuView{
-    if (self.menuDataArr) {
-        [self.menuView configureViewWith:self.menuDataArr selectIndex:^(NSInteger itemIndex, NSInteger cellIndex) {
+- (void)getViewControllerDataModel{
+    [DYNetworking getCourseVideoListDataWithParam:self.dataModel.requestParamDic
+                                            block:^(NSArray *array) {
+        self.dataModel.videoArray = array;
+        self.dyTableViewControllerDataSource.items = array;
+        [self.tableView reloadData];
+    } fail:^(NSError *error) {
+        
+    }];
+}
+
+- (void)configureMenuView{
+    if (self.dataModel.menuDataArr) {
+        [self.menuView configureViewWith:self.dataModel.menuDataArr selectIndex:^(NSInteger itemIndex, NSInteger cellIndex) {
             NSLog(@"----%ld----%ld",itemIndex,cellIndex);
+            [self.dataModel changeRequestParamDic:itemIndex value:cellIndex];
+            [self getViewControllerDataModel];
         }];
     }
 }
 - (void)setupTableView
 {
     self.dyTableViewControllerDataSource =
-    [[SGKTableViewControllerDataSource alloc]initWithItems:self.videoArray
+    [[SGKTableViewControllerDataSource alloc]initWithItems:self.dataModel.videoArray
                                             cellIdentifier:courseVideoSubCellIdentifier
                                         configureCellBlock:^(SGKCourseVideoSubCell *cell, CourseVideo *video) {
                                             [cell configureCellWithVideo:video];
@@ -77,7 +80,7 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
     return [tableView fd_heightForCellWithIdentifier:courseVideoSubCellIdentifier
                                     cacheByIndexPath:indexPath
                                        configuration:^(SGKCourseVideoSubCell *cell) {
-                                           [cell configureCellWithVideo:self.videoArray[indexPath.row]];
+                                           [cell configureCellWithVideo:self.dataModel.videoArray[indexPath.row]];
                                        }];
 }
 
@@ -101,10 +104,12 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
     return _menuView;
 }
 
-- (void)setCategoryArray:(NSArray *)categoryArray{
-    _categoryArray = categoryArray;    
-    self.menuDataArr = [SGKVideoViewControllerDataModel getMenuDataArray:categoryArray];
-    [self creatMenuView];
+- (SGKVideoViewControllerDataModel *)dataModel{
+    if (!_dataModel) {
+        _dataModel = [[SGKVideoViewControllerDataModel alloc]init];
+    }
+    return _dataModel;
 }
+
 
 @end

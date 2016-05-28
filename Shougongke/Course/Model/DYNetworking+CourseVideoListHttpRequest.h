@@ -10,7 +10,8 @@
 
 @interface DYNetworking (CourseVideoListHttpRequest)
 
-+ (void)getCourseVideoListData:(void (^) (NSArray *array))dataBlock
-                            fail:(DYResponseFail)failBlock;
++ (void)getCourseVideoListDataWithParam:(NSDictionary *)param
+                                  block:(void (^) (NSArray *array))dataBlock
+                                   fail:(DYResponseFail)failBlock;
 
 @end

@@ -10,7 +10,8 @@
 
 @interface DYNetworking (CoursePicListHttpRequest)
 
-+ (void)getCoursePicListData:(void (^) (NSArray *array))dataBlock
-                         fail:(DYResponseFail)failBlock;
++ (void)getCoursePicListDataWithParam:(NSDictionary *)param
+                                block:(void (^) (NSArray *array))dataBlock
+                                 fail:(DYResponseFail)failBlock;
 
 @end

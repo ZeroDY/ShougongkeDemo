@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SGKVideoViewControllerDataModel.h"
 
 @interface SGKCourseVideoViewController : UIViewController
 
-@property (nonatomic, copy) NSArray *categoryArray;
+@property (nonatomic, strong) SGKVideoViewControllerDataModel *dataModel;
+- (void)configureMenuView;
 
 @end

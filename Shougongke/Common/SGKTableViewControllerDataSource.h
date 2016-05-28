@@ -12,6 +12,8 @@ typedef void (^TableViewCellConfigureBlock)(id cell, id item);
 
 @interface SGKTableViewControllerDataSource : NSObject<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic, strong) NSArray *items;
+
 - (id)initWithItems:(NSArray *)anItems
      cellIdentifier:(NSString *)aCellIdentifier
  configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock;

@@ -8,9 +8,6 @@
 
 #import "SGKCoursePicViewController.h"
 #import "DYMenuView.h"
-#import "DYMenuCollectionViewCell.h"
-#import "CourseCategory.h"
-#import "SGKPicViewControllerDataModel.h"
 #import "SGKCollectionViewControllerDelegate.h"
 #import "DYNetworking+CoursePicListHttpRequest.h"
 #import "SGKCoursePicCollectionViewCell.h"
@@ -20,11 +17,9 @@ static NSString *picViewControllerCellIdentifier = @"SGKCoursePicCollectionViewC
 
 @interface SGKCoursePicViewController ()
 
-@property (nonatomic, copy) NSArray *menuDataArr;
 @property (nonatomic, strong) DYMenuView *menuView;
 @property (nonatomic, strong) SGKCollectionViewControllerDelegate *collectionDelegate;
 @property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, copy) NSArray *courseObjectArray;
 
 @end
 
@@ -32,19 +27,15 @@ static NSString *picViewControllerCellIdentifier = @"SGKCoursePicCollectionViewC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self creatCollectionView];
     [self.view addSubview:self.menuView];
 }
 - (void)viewWillAppear:(BOOL)animated{
-    [DYNetworking getCoursePicListData:^(NSArray *array) {
-        self.courseObjectArray = array;
-        self.collectionDelegate.dataArray = array;
-        [self.collectionView reloadData];
-    } fail:^(NSError *error) {
-        
-    }];
+    /**
+     *	请求数据
+     */
+    [self getViewControllerDataModel];
     
     [self.menuView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(self.view);
@@ -53,6 +44,30 @@ static NSString *picViewControllerCellIdentifier = @"SGKCoursePicCollectionViewC
         make.top.mas_equalTo(self.view.mas_top).offset(40);
         make.left.right.bottom.mas_equalTo(self.view);
     }];
+}
+
+- (void)getViewControllerDataModel{
+    [DYNetworking getCoursePicListDataWithParam:self.dataModel.requestParamDic
+                                          block:^(NSArray *array) {
+                                              self.collectionDelegate.dataArray = array;
+                                              [self.collectionView reloadData];
+                                          } fail:^(NSError *error) {
+                                              
+                                          }];
+}
+
+
+- (void)configureMenuView{
+    if (self.dataModel.menuDataArr) {
+        [self.menuView configureViewWith:self.dataModel.menuDataArr selectIndex:^(NSInteger itemIndex, NSInteger cellIndex) {
+            NSLog(@"----%ld----%ld",itemIndex,cellIndex);
+//            if (cellIndex != ((NSArray *)self.dataModel.menuDataArr[0]).count-1) {
+//                NSLog(@"跳转其他分类");
+//            }
+            [self.dataModel changeRequestParamDic:itemIndex value:cellIndex];
+            [self getViewControllerDataModel];
+        }];
+    }
 }
 
 - (void)creatCollectionView{
@@ -79,27 +94,11 @@ static NSString *picViewControllerCellIdentifier = @"SGKCoursePicCollectionViewC
     [self.view addSubview:self.collectionView];
 }
 
-- (void)creatMenuView{
-    if (self.menuDataArr) {
-        [self.menuView configureViewWith:self.menuDataArr selectIndex:^(NSInteger itemIndex, NSInteger cellIndex) {
-            NSLog(@"----%ld----%ld",itemIndex,cellIndex);
-        }];
-    }
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
 
 #pragma mark - getter setter
-
-- (void)setCategoryArray:(NSArray *)categoryArray{
-    _categoryArray = categoryArray;
-    self.menuDataArr = [SGKPicViewControllerDataModel getMenuDataArray:categoryArray];
-    [self creatMenuView];
-}
 
 - (DYMenuView *)menuView{
     if (!_menuView) {
@@ -107,6 +106,13 @@ static NSString *picViewControllerCellIdentifier = @"SGKCoursePicCollectionViewC
         _menuView.deselectColor = [UIColor darkGrayColor];
     }
     return _menuView;
+}
+
+- (SGKPicViewControllerDataModel *)dataModel{
+    if (!_dataModel) {
+        _dataModel = [[SGKPicViewControllerDataModel alloc]init];
+    }
+    return _dataModel;
 }
 
 @end

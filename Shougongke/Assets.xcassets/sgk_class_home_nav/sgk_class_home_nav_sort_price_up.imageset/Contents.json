@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "sgk_class_home_nav_sort_price_up.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "sgk_class_home_nav_sort_price_up.png",
       "scale" : "2x"
     },
     {

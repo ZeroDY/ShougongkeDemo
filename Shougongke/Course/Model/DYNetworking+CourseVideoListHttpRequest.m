@@ -11,11 +11,13 @@
 
 @implementation DYNetworking (CourseVideoListHttpRequest)
 
-+ (void)getCourseVideoListData:(void (^)(NSArray *))dataBlock
-                          fail:(DYResponseFail)failBlock{
-    [DYNetworking getWithUrl:@"/index.php?c=Handclass&a=videoList&cate=0&page=1&price=0&sort=1&vid=16"
++ (void)getCourseVideoListDataWithParam:(NSDictionary *)param
+                                  block:(void (^)(NSArray *))dataBlock
+                                   fail:(DYResponseFail)failBlock{
+    [DYNetworking getWithUrl:@"/index.php?c=Handclass&a=videoList&vid=16"
                 refreshCache:YES
-                     success:^(id response) {
+                      params:param
+                     success:^(id response)  {
                          NSDictionary *resultDic = (NSDictionary *)response;
                          if ([resultDic[@"status"] integerValue] == 1) {
                              NSArray *array = [CourseVideo mj_objectArrayWithKeyValuesArray:resultDic[@"data"]];
