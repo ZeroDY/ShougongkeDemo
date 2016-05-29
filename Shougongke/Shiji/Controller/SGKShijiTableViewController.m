@@ -15,6 +15,7 @@
 #import "SGKShijiTableTopicBestCell.h"
 #import "SGKCourseVideoSubCell.h"
 #import "SGKShijiHeaderView.h"
+#import "SGKSubjectDetailViewController.h"
 
 static NSString *hotCellIdentifier = @"SGKShijiTableHotCell";
 static NSString *bestCellIdentifier = @"SGKShijiTableBestCell";
@@ -142,9 +143,19 @@ static NSString *topicCellIdentifier = @"SGKCourseVideoSubCell";
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 3) {
+        ShijiTopic *topic = self.shijiModel.topic[indexPath.row];
+        SGKSubjectDetailViewController *viewController = [SGKSubjectDetailViewController new];
+        viewController.url = topic.mob_h5_url;
+        viewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+}
+
 #pragma mark - getter and setter
 - (UITableView *)tableView{
-    if (_tableView == nil) {
+    if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         [_tableView registerClass:[SGKShijiTableHotCell class] forCellReuseIdentifier:hotCellIdentifier];
         [_tableView registerClass:[SGKShijiTableBestCell class] forCellReuseIdentifier:bestCellIdentifier];

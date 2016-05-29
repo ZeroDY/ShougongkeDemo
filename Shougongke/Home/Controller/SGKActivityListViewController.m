@@ -6,17 +6,18 @@
 //  Copyright © 2016年 周德艺. All rights reserved.
 //
 
-#import "SGKActivityViewController.h"
+#import "SGKActivityListViewController.h"
 #import "SGKTableViewControllerDataSource.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "SGKActivityCell.h"
 #import "Activity.h"
 #import "DYNetworking+ActivityHttpRequest.h"
 #import "SGKBackToolBar.h"
+#import "SGKActivityDetailViewController.h"
 
 static NSString *cellIdentifier = @"SGKActivityCell";
 
-@interface SGKActivityViewController ()<UITableViewDelegate>
+@interface SGKActivityListViewController ()<UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) SGKTableViewControllerDataSource *dyTableViewControllerDataSource;
@@ -25,7 +26,7 @@ static NSString *cellIdentifier = @"SGKActivityCell";
 
 @end
 
-@implementation SGKActivityViewController
+@implementation SGKActivityListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -81,6 +82,11 @@ static NSString *cellIdentifier = @"SGKActivityCell";
     return [tableView fd_heightForCellWithIdentifier:cellIdentifier cacheByIndexPath:indexPath configuration:^(SGKActivityCell *cell) {
         [cell configureCell:self.activityArray[indexPath.row]];
     }];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    SGKActivityDetailViewController *viewController = [SGKActivityDetailViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {

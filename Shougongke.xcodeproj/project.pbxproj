@@ -66,6 +66,10 @@
 		197884D11CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 197884D01CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.m */; };
 		197884DA1CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197884D91CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m */; };
 		19A9F3AF1CF9DFB70054A629 /* SGKShijiHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A9F3AE1CF9DFB70054A629 /* SGKShijiHeaderView.m */; };
+		19BCFC9D1CFB4C9800ED7B39 /* SGKActivityCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BCFC9C1CFB4C9800ED7B39 /* SGKActivityCollectionViewCell.m */; };
+		19CA69AE1CFB40B4006CBD27 /* SGKActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CA69AD1CFB40B4006CBD27 /* SGKActivityDetailViewController.m */; };
+		19CA69B11CFB4121006CBD27 /* SGKActivityIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CA69B01CFB4121006CBD27 /* SGKActivityIntroduceViewController.m */; };
+		19CA69B41CFB43AB006CBD27 /* SGKActivityNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CA69B31CFB43AB006CBD27 /* SGKActivityNewViewController.m */; };
 		19D20A191CE9D7B400614167 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A181CE9D7B400614167 /* main.m */; };
 		19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A1B1CE9D7B400614167 /* AppDelegate.m */; };
 		19D20A1F1CE9D7B400614167 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A1E1CE9D7B400614167 /* ViewController.m */; };
@@ -74,7 +78,7 @@
 		19E019881CEAED9100A520C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19E019871CEAED9100A520C4 /* Assets.xcassets */; };
 		19E01A241CEC9D0900A520C4 /* SGKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E01A231CEC9D0900A520C4 /* SGKMainViewController.m */; };
 		19EF6E181CF2E1AA002E4C2A /* SGKBackToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E171CF2E1AA002E4C2A /* SGKBackToolBar.m */; };
-		19EF6E1B1CF30B72002E4C2A /* SGKActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E1A1CF30B72002E4C2A /* SGKActivityViewController.m */; };
+		19EF6E1B1CF30B72002E4C2A /* SGKActivityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E1A1CF30B72002E4C2A /* SGKActivityListViewController.m */; };
 		19EF6E1E1CF30CBC002E4C2A /* SGKActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E1D1CF30CBC002E4C2A /* SGKActivityCell.m */; };
 		19EF6E211CF30DB1002E4C2A /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E201CF30DB1002E4C2A /* Activity.m */; };
 		19EF6E261CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E251CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.m */; };
@@ -202,6 +206,14 @@
 		197884D91CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYMenuCollectionViewCell.m; sourceTree = "<group>"; };
 		19A9F3AD1CF9DFB70054A629 /* SGKShijiHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKShijiHeaderView.h; sourceTree = "<group>"; };
 		19A9F3AE1CF9DFB70054A629 /* SGKShijiHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKShijiHeaderView.m; sourceTree = "<group>"; };
+		19BCFC9B1CFB4C9800ED7B39 /* SGKActivityCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKActivityCollectionViewCell.h; sourceTree = "<group>"; };
+		19BCFC9C1CFB4C9800ED7B39 /* SGKActivityCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKActivityCollectionViewCell.m; sourceTree = "<group>"; };
+		19CA69AC1CFB40B4006CBD27 /* SGKActivityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKActivityDetailViewController.h; sourceTree = "<group>"; };
+		19CA69AD1CFB40B4006CBD27 /* SGKActivityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKActivityDetailViewController.m; sourceTree = "<group>"; };
+		19CA69AF1CFB4121006CBD27 /* SGKActivityIntroduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKActivityIntroduceViewController.h; sourceTree = "<group>"; };
+		19CA69B01CFB4121006CBD27 /* SGKActivityIntroduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKActivityIntroduceViewController.m; sourceTree = "<group>"; };
+		19CA69B21CFB43AB006CBD27 /* SGKActivityNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKActivityNewViewController.h; sourceTree = "<group>"; };
+		19CA69B31CFB43AB006CBD27 /* SGKActivityNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKActivityNewViewController.m; sourceTree = "<group>"; };
 		19D20A141CE9D7B400614167 /* Shougongke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shougongke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D20A181CE9D7B400614167 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19D20A1A1CE9D7B400614167 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -217,8 +229,8 @@
 		19E01A351CECACDA00A520C4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		19EF6E161CF2E1AA002E4C2A /* SGKBackToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKBackToolBar.h; sourceTree = "<group>"; };
 		19EF6E171CF2E1AA002E4C2A /* SGKBackToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKBackToolBar.m; sourceTree = "<group>"; };
-		19EF6E191CF30B72002E4C2A /* SGKActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGKActivityViewController.h; path = Shougongke/Home/Controller/SGKActivityViewController.h; sourceTree = SOURCE_ROOT; };
-		19EF6E1A1CF30B72002E4C2A /* SGKActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGKActivityViewController.m; path = Shougongke/Home/Controller/SGKActivityViewController.m; sourceTree = SOURCE_ROOT; };
+		19EF6E191CF30B72002E4C2A /* SGKActivityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGKActivityListViewController.h; path = Shougongke/Home/Controller/SGKActivityListViewController.h; sourceTree = SOURCE_ROOT; };
+		19EF6E1A1CF30B72002E4C2A /* SGKActivityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGKActivityListViewController.m; path = Shougongke/Home/Controller/SGKActivityListViewController.m; sourceTree = SOURCE_ROOT; };
 		19EF6E1C1CF30CBC002E4C2A /* SGKActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKActivityCell.h; sourceTree = "<group>"; };
 		19EF6E1D1CF30CBC002E4C2A /* SGKActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKActivityCell.m; sourceTree = "<group>"; };
 		19EF6E1F1CF30DB1002E4C2A /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
@@ -425,14 +437,20 @@
 			children = (
 				1949AE731CEDD754005A85AD /* SGKHomeViewController.h */,
 				1949AE741CEDD754005A85AD /* SGKHomeViewController.m */,
-				19EF6E191CF30B72002E4C2A /* SGKActivityViewController.h */,
-				19EF6E1A1CF30B72002E4C2A /* SGKActivityViewController.m */,
+				19EF6E191CF30B72002E4C2A /* SGKActivityListViewController.h */,
+				19EF6E1A1CF30B72002E4C2A /* SGKActivityListViewController.m */,
 				1949AE901CEE0A33005A85AD /* TestViewController.h */,
 				1949AE911CEE0A33005A85AD /* TestViewController.m */,
 				1945EDC01CF224C600279CFB /* SGKSubjectDetailViewController.h */,
 				1945EDC11CF224C600279CFB /* SGKSubjectDetailViewController.m */,
 				19FC04C21CF36E05005EAAD7 /* SGKTalentListViewController.h */,
 				19FC04C31CF36E05005EAAD7 /* SGKTalentListViewController.m */,
+				19CA69AC1CFB40B4006CBD27 /* SGKActivityDetailViewController.h */,
+				19CA69AD1CFB40B4006CBD27 /* SGKActivityDetailViewController.m */,
+				19CA69AF1CFB4121006CBD27 /* SGKActivityIntroduceViewController.h */,
+				19CA69B01CFB4121006CBD27 /* SGKActivityIntroduceViewController.m */,
+				19CA69B21CFB43AB006CBD27 /* SGKActivityNewViewController.h */,
+				19CA69B31CFB43AB006CBD27 /* SGKActivityNewViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -483,6 +501,8 @@
 				19EF6E1D1CF30CBC002E4C2A /* SGKActivityCell.m */,
 				19EF6E2E1CF35BF8002E4C2A /* SGKTalentListCell.h */,
 				19EF6E2F1CF35BF8002E4C2A /* SGKTalentListCell.m */,
+				19BCFC9B1CFB4C9800ED7B39 /* SGKActivityCollectionViewCell.h */,
+				19BCFC9C1CFB4C9800ED7B39 /* SGKActivityCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -825,15 +845,17 @@
 				1949AE871CEDD754005A85AD /* SGKCourseViewController.m in Sources */,
 				19D20A1F1CE9D7B400614167 /* ViewController.m in Sources */,
 				197640381CF8BA820076F850 /* CourseVideo.m in Sources */,
+				19CA69B11CFB4121006CBD27 /* SGKActivityIntroduceViewController.m in Sources */,
 				1976401D1CF814080076F850 /* SGKVideoViewControllerDataModel.m in Sources */,
 				197640261CF83FAB0076F850 /* CoursePicListObject.m in Sources */,
 				191225661CF070F8008FC557 /* DYNetworking.m in Sources */,
 				191317A91CF54AD900F23E84 /* DYSegmentContainerlView.m in Sources */,
 				1945EDC21CF224C600279CFB /* SGKSubjectDetailViewController.m in Sources */,
-				19EF6E1B1CF30B72002E4C2A /* SGKActivityViewController.m in Sources */,
+				19EF6E1B1CF30B72002E4C2A /* SGKActivityListViewController.m in Sources */,
 				1945EDBF1CF2059600279CFB /* SGKPublishView.m in Sources */,
 				191E64C81CEECFF600E5FAA5 /* SGKHomeTableHeaderView.m in Sources */,
 				19EF6E1E1CF30CBC002E4C2A /* SGKActivityCell.m in Sources */,
+				19CA69B41CFB43AB006CBD27 /* SGKActivityNewViewController.m in Sources */,
 				1949AE881CEDD754005A85AD /* SGKHandCircleViewController.m in Sources */,
 				191225621CF070DD008FC557 /* SystemsDetection.m in Sources */,
 				197640201CF8310C0076F850 /* SGKCollectionViewControllerDelegate.m in Sources */,
@@ -850,6 +872,7 @@
 				197884C81CF728BC00CBF0E1 /* DYMenuView.m in Sources */,
 				197640351CF8B68E0076F850 /* DYNetworking+CourseSubjectListHttpRequest.m in Sources */,
 				19EF6E211CF30DB1002E4C2A /* Activity.m in Sources */,
+				19BCFC9D1CFB4C9800ED7B39 /* SGKActivityCollectionViewCell.m in Sources */,
 				191317AA1CF54AD900F23E84 /* DYSegmentControllerView.m in Sources */,
 				191317B61CF5571100F23E84 /* SGKCourseSubViewController.m in Sources */,
 				1912257E1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m in Sources */,
@@ -859,6 +882,7 @@
 				1949AE8A1CEDD754005A85AD /* SGKUserViewController.m in Sources */,
 				1945EDB41CF1938800279CFB /* HomeViewModel.m in Sources */,
 				1912255E1CF070B1008FC557 /* DYBannerView.m in Sources */,
+				19CA69AE1CFB40B4006CBD27 /* SGKActivityDetailViewController.m in Sources */,
 				19EF6E181CF2E1AA002E4C2A /* SGKBackToolBar.m in Sources */,
 				191317B91CF55D8D00F23E84 /* SGKSubjectListViewController.m in Sources */,
 				19EF6E2D1CF35860002E4C2A /* TalentListModel.m in Sources */,

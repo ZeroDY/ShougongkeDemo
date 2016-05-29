@@ -11,6 +11,7 @@
 #import "SGKCourseVideoSubCell.h"
 #import "SGKTableViewControllerDataSource.h"
 #import "DYNetworking+CourseSubjectListHttpRequest.h"
+#import "SGKSubjectDetailViewController.h"
 
 
 static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
@@ -58,7 +59,7 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
 }
 
 
-#pragma mark - tableView
+#pragma mark - tableView delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [tableView fd_heightForCellWithIdentifier:courseVideoSubCellIdentifier
@@ -67,6 +68,15 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
                                            [cell configureCellWithTopic:self.topicArray[indexPath.row]];
                                        }];
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    TopicObject *topic = self.topicArray[indexPath.row];
+    SGKSubjectDetailViewController *viewController = [SGKSubjectDetailViewController new];
+    viewController.url = topic.mob_h5_url;
+    viewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
 
 #pragma mark - getter and setter
 - (UITableView *)tableView{

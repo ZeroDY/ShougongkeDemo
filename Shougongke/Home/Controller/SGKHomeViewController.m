@@ -23,7 +23,7 @@
 #import "SGKSlideCell.h"
 #import "SGKPublishView.h"
 #import "SGKSubjectDetailViewController.h"
-#import "SGKActivityViewController.h"
+#import "SGKActivityListViewController.h"
 #import "SGKTalentListViewController.h"
 
 static NSString *slideCellIdentifier = @"SGKSlideCell";
@@ -167,7 +167,7 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UIViewController *newViewController;
     if (indexPath.section == 1 && indexPath.row == 2) {
-        newViewController = [SGKActivityViewController new];
+        newViewController = [SGKActivityListViewController new];
     }
     else if (indexPath.section == 2) {
         newViewController = [SGKTalentListViewController new];
@@ -182,7 +182,6 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
     }
     newViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:newViewController animated:YES];
-
 }
 
 
@@ -273,7 +272,7 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 }
 
 - (UITableView *)tableView{
-    if (_tableView == nil) {
+    if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         [_tableView registerClass:[SGKSlideCell class] forCellReuseIdentifier:slideCellIdentifier];
         [_tableView registerClass:[SGKRelationCell class] forCellReuseIdentifier:relationCellIdentifier];

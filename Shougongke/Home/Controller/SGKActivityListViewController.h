@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SGKActivityViewController : UIViewController
+@interface SGKActivityListViewController : UIViewController
 
 @end
