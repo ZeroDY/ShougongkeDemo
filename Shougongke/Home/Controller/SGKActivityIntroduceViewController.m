@@ -7,8 +7,9 @@
 //
 
 #import "SGKActivityIntroduceViewController.h"
+#import "SGKActivityDetailViewController.h"
 
-@interface SGKActivityIntroduceViewController ()<UIWebViewDelegate>
+@interface SGKActivityIntroduceViewController ()<UIWebViewDelegate,UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIWebView *webView;
 
@@ -29,20 +30,16 @@
     }];
 }
 
+
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGFloat offsetY = scrollView.contentOffset.y;//注意
     CGFloat panTranslationY = [scrollView.panGestureRecognizer translationInView:self.webView].y;
-    if (offsetY > 80) {
-        if (panTranslationY > 50) { //下滑趋势，显示
-            [self.navigationController setNavigationBarHidden:NO animated:YES];
-        }
-        else if(panTranslationY < -50) {  //上滑趋势，隐藏
-            [self.navigationController setNavigationBarHidden:YES animated:YES];
-        }
+    if (panTranslationY > 0) { //下滑趋势，显示
+        self.block(JionButtonLayoutUp);
     }
-    else if(offsetY < 20 ) {
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    else if(panTranslationY < 0) {  //上滑趋势，隐藏
+        self.block(JionButtonLayoutDown);
     }
 }
 
@@ -56,6 +53,7 @@
         _webView = [UIWebView new];
         _webView.backgroundColor = [UIColor whiteColor];
         _webView.delegate = self;
+        _webView.scrollView.delegate = self;
     }
     return _webView;
 }

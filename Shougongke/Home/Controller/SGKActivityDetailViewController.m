@@ -36,6 +36,10 @@
     [self.view addSubview:self.joinBtn];
     [self.view addSubview:self.toolBar];
     self.automaticallyAdjustsScrollViewInsets = NO;//关键
+//    __weak typeof(self) weakSelf = self;
+//    self.block = ^(NSInteger upOrDown){
+//        [weakSelf changeLayout:upOrDown];
+//    };
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -57,6 +61,23 @@
         make.width.height.mas_equalTo(50);
         make.centerX.mas_equalTo(self.view.mas_centerX);
         make.bottom.mas_equalTo(self.view.mas_bottom).offset(-48);
+    }];
+}
+
+- (void)changeLayout:(JionButtonLayout) upOrDown{
+    if (upOrDown == JionButtonLayoutUp) {
+        [self.joinBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(self.view.mas_bottom).offset(-48);
+        }];
+    }else{
+        [self.joinBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(self.view.mas_bottom).offset(50);
+        }];
+    }
+    [self.joinBtn setNeedsUpdateConstraints];
+    [self.joinBtn updateConstraintsIfNeeded];
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.joinBtn layoutIfNeeded];
     }];
 }
 
@@ -98,18 +119,27 @@
         _viewControllerArr = [NSMutableArray array];
         SGKActivityIntroduceViewController *introduceVC = [SGKActivityIntroduceViewController new];
         introduceVC.cid = self.activity.c_id;
+        introduceVC.block = ^(NSInteger upOrDown){
+            [self changeLayout:upOrDown];
+        };
         [self addChildViewController:introduceVC];
         [_viewControllerArr addObject:introduceVC];
         
         SGKActivityNewViewController *newVC = [SGKActivityNewViewController new];
         newVC.cid = self.activity.c_id;
         newVC.order = @"new";
+        newVC.block = ^(NSInteger upOrDown){
+            [self changeLayout:upOrDown];
+        };
         [self addChildViewController:newVC];
         [_viewControllerArr addObject:newVC];
         
         SGKActivityNewViewController *votesVC = [SGKActivityNewViewController new];
         votesVC.cid = self.activity.c_id;
         votesVC.order = @"votes";
+        votesVC.block = ^(NSInteger upOrDown){
+            [self changeLayout:upOrDown];
+        };
         [self addChildViewController:votesVC];
         [_viewControllerArr addObject:votesVC];
     }

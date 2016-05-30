@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SGKActivityDetailViewController.h"
 
 @interface SGKActivityNewViewController : UIViewController
 
 @property (nonatomic, copy) NSString *cid;
 @property (nonatomic, copy) NSString *order;
+@property (nonatomic, copy) JionBtnChangeLayoutBlock block;
 
 @end

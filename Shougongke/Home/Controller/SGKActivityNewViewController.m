@@ -14,12 +14,11 @@
 
 static NSString *activityCollectViewCellIdentifier = @"SGKActivityCollectionViewCell";
 
-@interface SGKActivityNewViewController ()
+@interface SGKActivityNewViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) SGKCollectionViewControllerDelegate *collectionDelegate;
 @property (nonatomic, strong) UICollectionView *collectionView;
-
-
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 @end
 
@@ -74,7 +73,23 @@ static NSString *activityCollectViewCellIdentifier = @"SGKActivityCollectionView
             forCellWithReuseIdentifier:activityCollectViewCellIdentifier];
     self.collectionView.dataSource = self.collectionDelegate;
     self.collectionView.delegate = self.collectionDelegate;
+    self.scrollView = self.collectionView;
+    self.scrollView.delegate = self;
+    
     [self.view addSubview:self.collectionView];
+}
+
+#pragma mark -- scroll delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat panTranslationY = [scrollView.panGestureRecognizer translationInView:self.collectionView].y;
+    if (panTranslationY > 0) { //下滑趋势，显示
+        self.block(JionButtonLayoutUp);
+    }
+    else if(panTranslationY < 0) {  //上滑趋势，隐藏
+        self.block(JionButtonLayoutDown);
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,8 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "Activity.h"
 
+typedef void(^JionBtnChangeLayoutBlock)(NSInteger upOrDown);
+
+typedef enum : NSUInteger {
+    JionButtonLayoutUp,
+    JionButtonLayoutDown,
+} JionButtonLayout;
+
 @interface SGKActivityDetailViewController : UIViewController
 
 @property (nonatomic, strong) Activity *activity;
+- (void)changeLayout:(JionButtonLayout) upOrDown;
 
 @end
