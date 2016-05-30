@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Activity.h"
 
 @interface SGKActivityDetailViewController : UIViewController
 
-
+@property (nonatomic, strong) Activity *activity;
 
 @end

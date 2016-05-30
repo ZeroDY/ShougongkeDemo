@@ -10,4 +10,7 @@
 
 @interface SGKActivityNewViewController : UIViewController
 
+@property (nonatomic, copy) NSString *cid;
+@property (nonatomic, copy) NSString *order;
+
 @end

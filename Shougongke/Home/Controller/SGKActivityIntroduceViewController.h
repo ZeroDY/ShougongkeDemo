@@ -10,6 +10,6 @@
 
 @interface SGKActivityIntroduceViewController : UIViewController
 
-@property (nonatomic, strong) NSString *url;
+@property (nonatomic, strong) NSString *cid;
 
 @end

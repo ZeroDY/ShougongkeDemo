@@ -86,6 +86,7 @@ static NSString *cellIdentifier = @"SGKActivityCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     SGKActivityDetailViewController *viewController = [SGKActivityDetailViewController new];
+    viewController.activity = self.activityArray[indexPath.row];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

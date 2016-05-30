@@ -29,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"活动作品";
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self createSegmentView];
     [self createContainerView];
@@ -69,8 +70,9 @@
     __weak typeof(self) weakSelf = self;
     self.segmentView = [[DYSegmentControllerView alloc] initWithStyle:DYSementStyleWidthEqualFull];
     self.segmentView.buttonWidth = SCREENWIDTH/3;
-    self.segmentView.lineWidth = SCREENWIDTH/3-40;
+    self.segmentView.lineWidth = SCREENWIDTH/3-20;
     self.segmentView.selectedColor = mainColor;
+    self.segmentView.titleFont = [UIFont systemFontOfSize:15];
     self.segmentView.unselectedColor = [UIColor darkGrayColor];
     [self.segmentView setTitleArr:@[@"活动介绍",@"最新作品",@"投票最多"]
                       andBtnBlock:^(UIButton *button) {
@@ -95,16 +97,21 @@
     if (!_viewControllerArr) {
         _viewControllerArr = [NSMutableArray array];
         SGKActivityIntroduceViewController *introduceVC = [SGKActivityIntroduceViewController new];
+        introduceVC.cid = self.activity.c_id;
         [self addChildViewController:introduceVC];
         [_viewControllerArr addObject:introduceVC];
         
         SGKActivityNewViewController *newVC = [SGKActivityNewViewController new];
+        newVC.cid = self.activity.c_id;
+        newVC.order = @"new";
         [self addChildViewController:newVC];
         [_viewControllerArr addObject:newVC];
         
-        SGKActivityNewViewController *more = [SGKActivityNewViewController new];
-        [self addChildViewController:more];
-        [_viewControllerArr addObject:more];
+        SGKActivityNewViewController *votesVC = [SGKActivityNewViewController new];
+        votesVC.cid = self.activity.c_id;
+        votesVC.order = @"votes";
+        [self addChildViewController:votesVC];
+        [_viewControllerArr addObject:votesVC];
     }
     return _viewControllerArr;
 }

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ActivityOpus.h"
 
 @interface SGKActivityCollectionViewCell : UICollectionViewCell
 
-- (void)configuraCellWith:(id)model;
+- (void)configuraCellWith:(ActivityOpus *)model;
 
 @end

@@ -26,7 +26,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = tableviewBgColor;
         [self.contentView addSubview:self.containerView];
         [self.containerView addSubview:self.titleImgView];
         [self.containerView addSubview:self.infoContainerView];
@@ -39,15 +39,14 @@
     return self;
 }
 
-- (void)configuraCellWith:(id)model{
-//    if (model) {
-//        self.containerView.backgroundColor = [UIColor colorWithHexString:model.bg_color];
-//        self.infoContainerView.backgroundColor = [UIColor colorWithHexString:model.bg_color];
-//        [self.titleImgView sd_setImageWithURL:[NSURL URLWithString:model.host_pic]];
-//        self.title_lab.text = model.subject;
-//        self.author_lab.text = [NSString stringWithFormat:@"by %@",model.user_name];
-//        self.info_lab.text = [NSString stringWithFormat:@"%@人气 / %@收藏",model.view,model.collect];
-//    }
+- (void)configuraCellWith:(ActivityOpus *)model{
+    if (model) {
+        [self.titleImgView sd_setImageWithURL:[NSURL URLWithString:model.host_pic]];
+        [self.headImgView sd_setImageWithURL:[NSURL URLWithString:model.avatar]];
+        self.title_lab.text = model.subject;
+        self.author_lab.text = model.uname;
+        self.info_lab.text = [NSString stringWithFormat:@"%@投票",model.votes];
+    }
 }
 
 - (void)layout{
@@ -66,20 +65,20 @@
     }];
     
     [self.title_lab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.infoContainerView.mas_top).offset(6);
+        make.top.mas_equalTo(self.infoContainerView.mas_top).offset(4);
         make.left.mas_equalTo(self.infoContainerView.mas_left).offset(5);
         make.right.mas_equalTo(self.infoContainerView.mas_right).offset(-5);
     }];
     
     [self.info_lab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(self.title_lab);
-        make.top.mas_equalTo(self.title_lab.mas_bottom).offset(6);
+        make.top.mas_equalTo(self.title_lab.mas_bottom).offset(4);
     }];
     
     [self.headImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.info_lab.mas_bottom).offset(6);
-        make.right.mas_equalTo(self.infoContainerView.mas_right).offset(-5);
-        make.bottom.mas_equalTo(self.infoContainerView.mas_bottom).offset(-6);
+        make.top.mas_equalTo(self.info_lab.mas_bottom).offset(4);
+        make.right.mas_equalTo(self.infoContainerView.mas_right).offset(-4);
+        make.bottom.mas_equalTo(self.infoContainerView.mas_bottom).offset(-4);
         make.width.height.mas_equalTo(20);
     }];
     
@@ -103,7 +102,7 @@
     if (!_title_lab) {
         _title_lab = [UILabel new];
         _title_lab.font = [UIFont systemFontOfSize:12];
-        _title_lab.textColor = [UIColor whiteColor];
+        _title_lab.textColor = [UIColor blackColor];
     }
     return _title_lab;
 }
@@ -112,7 +111,7 @@
     if (!_author_lab) {
         _author_lab = [UILabel new];
         _author_lab.font = [UIFont systemFontOfSize:12];
-        _author_lab.textColor = [UIColor colorWithWhite:1 alpha:0.5];
+        _author_lab.textColor = [UIColor blackColor];
         _author_lab.textAlignment = NSTextAlignmentRight;
     }
     return _author_lab;
@@ -121,8 +120,8 @@
 - (UILabel *)info_lab{
     if (!_info_lab) {
         _info_lab = [UILabel new];
-        _info_lab.font = [UIFont systemFontOfSize:10];
-        _info_lab.textColor = [UIColor colorWithWhite:1 alpha:0.5];
+        _info_lab.font = [UIFont systemFontOfSize:12];
+        _info_lab.textColor = [UIColor blackColor];
     }
     return _info_lab;
 }
@@ -136,7 +135,7 @@
         _containerView.layer.rasterizationScale = [UIScreen mainScreen].scale;
         _containerView.layer.shouldRasterize = YES;
         _containerView.layer.cornerRadius = 2;
-        _containerView.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
+        _containerView.layer.borderColor = [UIColor lightGrayColor].CGColor;
         _containerView.layer.borderWidth = 0.5;
     }
     return _containerView;
@@ -145,6 +144,7 @@
 - (UIView *)infoContainerView{
     if (!_infoContainerView) {
         _infoContainerView = [UIView new];
+        _infoContainerView.backgroundColor = [UIColor whiteColor];
     }
     return _infoContainerView;
 }
@@ -152,6 +152,10 @@
 - (UIImageView *)headImgView{
     if (!_headImgView) {
         _headImgView = [UIImageView new];
+        _headImgView.layer.masksToBounds = YES;
+        _headImgView.layer.rasterizationScale = [UIScreen mainScreen].scale;
+        _headImgView.layer.shouldRasterize = YES;
+        _headImgView.layer.cornerRadius = 10;
     }
     return _headImgView;
 }

@@ -39,6 +39,8 @@
 		1949AE8A1CEDD754005A85AD /* SGKUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE7B1CEDD754005A85AD /* SGKUserViewController.m */; };
 		1949AE8B1CEDD754005A85AD /* SGKShijiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE831CEDD754005A85AD /* SGKShijiViewController.m */; };
 		1949AE921CEE0A33005A85AD /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE911CEE0A33005A85AD /* TestViewController.m */; };
+		1968C36B1CFBDB2F00B38952 /* ActivityOpus.m in Sources */ = {isa = PBXBuildFile; fileRef = 1968C36A1CFBDB2F00B38952 /* ActivityOpus.m */; };
+		1968C36E1CFBDB7B00B38952 /* DYNetworking+ActivityOpusHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1968C36D1CFBDB7B00B38952 /* DYNetworking+ActivityOpusHttpRequest.m */; };
 		1976401A1CF8107E0076F850 /* SGKPicViewControllerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640191CF8107E0076F850 /* SGKPicViewControllerDataModel.m */; };
 		1976401D1CF814080076F850 /* SGKVideoViewControllerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1976401C1CF814080076F850 /* SGKVideoViewControllerDataModel.m */; };
 		197640201CF8310C0076F850 /* SGKCollectionViewControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1976401F1CF8310C0076F850 /* SGKCollectionViewControllerDelegate.m */; };
@@ -155,6 +157,10 @@
 		1949AE8C1CEDD7FA005A85AD /* Public.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Public.h; sourceTree = "<group>"; };
 		1949AE901CEE0A33005A85AD /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		1949AE911CEE0A33005A85AD /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		1968C3691CFBDB2F00B38952 /* ActivityOpus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityOpus.h; sourceTree = "<group>"; };
+		1968C36A1CFBDB2F00B38952 /* ActivityOpus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityOpus.m; sourceTree = "<group>"; };
+		1968C36C1CFBDB7B00B38952 /* DYNetworking+ActivityOpusHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+ActivityOpusHttpRequest.h"; sourceTree = "<group>"; };
+		1968C36D1CFBDB7B00B38952 /* DYNetworking+ActivityOpusHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DYNetworking+ActivityOpusHttpRequest.m"; sourceTree = "<group>"; };
 		197640181CF8107E0076F850 /* SGKPicViewControllerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKPicViewControllerDataModel.h; sourceTree = "<group>"; };
 		197640191CF8107E0076F850 /* SGKPicViewControllerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKPicViewControllerDataModel.m; sourceTree = "<group>"; };
 		1976401B1CF814080076F850 /* SGKVideoViewControllerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKVideoViewControllerDataModel.h; sourceTree = "<group>"; };
@@ -437,14 +443,14 @@
 			children = (
 				1949AE731CEDD754005A85AD /* SGKHomeViewController.h */,
 				1949AE741CEDD754005A85AD /* SGKHomeViewController.m */,
-				19EF6E191CF30B72002E4C2A /* SGKActivityListViewController.h */,
-				19EF6E1A1CF30B72002E4C2A /* SGKActivityListViewController.m */,
 				1949AE901CEE0A33005A85AD /* TestViewController.h */,
 				1949AE911CEE0A33005A85AD /* TestViewController.m */,
 				1945EDC01CF224C600279CFB /* SGKSubjectDetailViewController.h */,
 				1945EDC11CF224C600279CFB /* SGKSubjectDetailViewController.m */,
 				19FC04C21CF36E05005EAAD7 /* SGKTalentListViewController.h */,
 				19FC04C31CF36E05005EAAD7 /* SGKTalentListViewController.m */,
+				19EF6E191CF30B72002E4C2A /* SGKActivityListViewController.h */,
+				19EF6E1A1CF30B72002E4C2A /* SGKActivityListViewController.m */,
 				19CA69AC1CFB40B4006CBD27 /* SGKActivityDetailViewController.h */,
 				19CA69AD1CFB40B4006CBD27 /* SGKActivityDetailViewController.m */,
 				19CA69AF1CFB4121006CBD27 /* SGKActivityIntroduceViewController.h */,
@@ -472,12 +478,16 @@
 				1945EDB61CF1975800279CFB /* Relation.m */,
 				19EF6E1F1CF30DB1002E4C2A /* Activity.h */,
 				19EF6E201CF30DB1002E4C2A /* Activity.m */,
+				1968C3691CFBDB2F00B38952 /* ActivityOpus.h */,
+				1968C36A1CFBDB2F00B38952 /* ActivityOpus.m */,
 				1912257C1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.h */,
 				1912257D1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m */,
 				19EF6E241CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.h */,
 				19EF6E251CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.m */,
 				19EF6E281CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.h */,
 				19EF6E291CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.m */,
+				1968C36C1CFBDB7B00B38952 /* DYNetworking+ActivityOpusHttpRequest.h */,
+				1968C36D1CFBDB7B00B38952 /* DYNetworking+ActivityOpusHttpRequest.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -864,6 +874,7 @@
 				19E01A241CEC9D0900A520C4 /* SGKMainViewController.m in Sources */,
 				1945EDBC1CF1D3D400279CFB /* SGKSlideCell.m in Sources */,
 				1949AE921CEE0A33005A85AD /* TestViewController.m in Sources */,
+				1968C36E1CFBDB7B00B38952 /* DYNetworking+ActivityOpusHttpRequest.m in Sources */,
 				1976401A1CF8107E0076F850 /* SGKPicViewControllerDataModel.m in Sources */,
 				1912255D1CF070B1008FC557 /* DYBannerCollectionViewCell.m in Sources */,
 				191225691CF0718C008FC557 /* Slide.m in Sources */,
@@ -880,6 +891,7 @@
 				19FC04C41CF36E05005EAAD7 /* SGKTalentListViewController.m in Sources */,
 				19467DAA1CF756400068BACF /* DYMenuItem.m in Sources */,
 				1949AE8A1CEDD754005A85AD /* SGKUserViewController.m in Sources */,
+				1968C36B1CFBDB2F00B38952 /* ActivityOpus.m in Sources */,
 				1945EDB41CF1938800279CFB /* HomeViewModel.m in Sources */,
 				1912255E1CF070B1008FC557 /* DYBannerView.m in Sources */,
 				19CA69AE1CFB40B4006CBD27 /* SGKActivityDetailViewController.m in Sources */,

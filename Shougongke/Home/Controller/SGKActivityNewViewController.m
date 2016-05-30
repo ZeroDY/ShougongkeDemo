@@ -10,6 +10,7 @@
 #import "SGKCollectionViewControllerDelegate.h"
 #import "SGKPicViewControllerDataModel.h"
 #import "SGKActivityCollectionViewCell.h"
+#import "DYNetworking+ActivityOpusHttpRequest.h"
 
 static NSString *activityCollectViewCellIdentifier = @"SGKActivityCollectionViewCell";
 
@@ -19,13 +20,14 @@ static NSString *activityCollectViewCellIdentifier = @"SGKActivityCollectionView
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 
+
 @end
 
 @implementation SGKActivityNewViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    self.view.backgroundColor = tableviewBgColor;
     [self creatCollectionView];
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -40,13 +42,14 @@ static NSString *activityCollectViewCellIdentifier = @"SGKActivityCollectionView
 }
 
 - (void)getViewControllerDataModel{
-//    [DYNetworking getCoursePicListDataWithParam:self.dataModel.requestParamDic
-//                                          block:^(NSArray *array) {
-//                                              self.collectionDelegate.dataArray = array;
-//                                              [self.collectionView reloadData];
-//                                          } fail:^(NSError *error) {
-//                                              
-//                                          }];
+    [DYNetworking getActivityOpusDataWithParam:@{@"cid":self.cid,@"order":self.order}
+                                       success:^(NSArray *array) {
+                                           self.collectionDelegate.dataArray = array;
+                                           [self.collectionView reloadData];
+                                       } fail:^(NSError *error) {
+                                           
+                                       }];
+
 }
 
 
@@ -56,17 +59,17 @@ static NSString *activityCollectViewCellIdentifier = @"SGKActivityCollectionView
                                                cellIdentifier:activityCollectViewCellIdentifier
                                            configureCellBlock:^(SGKActivityCollectionViewCell *cell, id data) {
                                                [cell configuraCellWith:data];
-                                           } selectCellBlock:^(NSIndexPath *index, id data) {
-//                                               NSLog(@"----%@",data.subject);
+                                           } selectCellBlock:^(NSIndexPath *index, ActivityOpus *data) {
+                                               NSLog(@"----%@",data.subject);
                                            }];
-    CGSize cellSize = CGSizeMake((SCREENWIDTH-30)/2.0f, (SCREENWIDTH-30)/2.0f+80);
+    CGSize cellSize = CGSizeMake((SCREENWIDTH-30)/2.0f, (SCREENWIDTH-30)/2.0f+70);
     self.collectionDelegate.flowLayout.itemSize = cellSize;
     self.collectionDelegate.flowLayout.minimumLineSpacing = 10.0f;
     self.collectionDelegate.flowLayout.minimumInteritemSpacing = 10.0f;
     self.collectionDelegate.flowLayout.sectionInset = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
     
     self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:self.collectionDelegate.flowLayout];
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = tableviewBgColor;
     [self.collectionView registerClass:[SGKActivityCollectionViewCell class]
             forCellWithReuseIdentifier:activityCollectViewCellIdentifier];
     self.collectionView.dataSource = self.collectionDelegate;
@@ -80,11 +83,5 @@ static NSString *activityCollectViewCellIdentifier = @"SGKActivityCollectionView
 
 #pragma mark - getter setter
 
-//- (SGKPicViewControllerDataModel *)dataModel{
-//    if (!_dataModel) {
-//        _dataModel = [[SGKPicViewControllerDataModel alloc]init];
-//    }
-//    return _dataModel;
-//}
 
 @end

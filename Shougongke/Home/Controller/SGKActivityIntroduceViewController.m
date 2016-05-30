@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.webView];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://m.shougongke.com/index.php?c=Competition&cid=%@",self.cid]];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
