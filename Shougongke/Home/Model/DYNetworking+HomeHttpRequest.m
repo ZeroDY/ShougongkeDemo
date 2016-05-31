@@ -17,7 +17,7 @@
 
 + (void)getHomeViewControllerData:(void (^)(HomeViewModel *))homeViewModelBlock
                              fail:(DYResponseFail)failBlock{
-    [DYNetworking getWithUrl:@"/index.php?c=index&a=indexnew&vid=16"
+    [DYNetworking getWithUrl:SGKApiKeyHomeVCData
                 refreshCache:YES
                      success:^(id response) {
                          NSDictionary *resultDic = (NSDictionary *)response;

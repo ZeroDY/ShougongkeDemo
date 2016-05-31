@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19063A891CFD67F70013BB28 /* SGKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19063A881CFD67F70013BB28 /* SGKLoginViewController.m */; };
+		19063AE91CFD6A640013BB28 /* Public.m in Sources */ = {isa = PBXBuildFile; fileRef = 19063AE81CFD6A640013BB28 /* Public.m */; };
+		19063AED1CFD71720013BB28 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19063AEB1CFD71720013BB28 /* AppDelegate.m */; };
+		19063AF31CFD71800013BB28 /* SGKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19063AF01CFD71800013BB28 /* SGKMainViewController.m */; };
+		19063AF41CFD71800013BB28 /* SGKWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19063AF21CFD71800013BB28 /* SGKWelcomeViewController.m */; };
+		19063AF81CFD762B0013BB28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19063AF71CFD762B0013BB28 /* main.m */; };
 		1912255D1CF070B1008FC557 /* DYBannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 191225581CF070B1008FC557 /* DYBannerCollectionViewCell.m */; };
 		1912255E1CF070B1008FC557 /* DYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912255A1CF070B1008FC557 /* DYBannerView.m */; };
 		191225621CF070DD008FC557 /* SystemsDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 191225611CF070DD008FC557 /* SystemsDetection.m */; };
@@ -40,7 +46,6 @@
 		1949AE891CEDD754005A85AD /* SGKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE741CEDD754005A85AD /* SGKHomeViewController.m */; };
 		1949AE8A1CEDD754005A85AD /* SGKUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE7B1CEDD754005A85AD /* SGKUserViewController.m */; };
 		1949AE8B1CEDD754005A85AD /* SGKShijiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE831CEDD754005A85AD /* SGKShijiViewController.m */; };
-		1949AE921CEE0A33005A85AD /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE911CEE0A33005A85AD /* TestViewController.m */; };
 		1968C36B1CFBDB2F00B38952 /* ActivityOpus.m in Sources */ = {isa = PBXBuildFile; fileRef = 1968C36A1CFBDB2F00B38952 /* ActivityOpus.m */; };
 		1968C36E1CFBDB7B00B38952 /* DYNetworking+ActivityOpusHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1968C36D1CFBDB7B00B38952 /* DYNetworking+ActivityOpusHttpRequest.m */; };
 		1976401A1CF8107E0076F850 /* SGKPicViewControllerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640191CF8107E0076F850 /* SGKPicViewControllerDataModel.m */; };
@@ -70,22 +75,25 @@
 		197884D11CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 197884D01CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.m */; };
 		197884DA1CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197884D91CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m */; };
 		19A9F3AF1CF9DFB70054A629 /* SGKShijiHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A9F3AE1CF9DFB70054A629 /* SGKShijiHeaderView.m */; };
+		19B7C35B1CFD8568000944E2 /* SGKCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B7C35A1CFD8568000944E2 /* SGKCourseDetailViewController.m */; };
+		19B7C35E1CFD884D000944E2 /* SGKCourseDetailIntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B7C35D1CFD884D000944E2 /* SGKCourseDetailIntroductionViewController.m */; };
+		19B7C3631CFD9795000944E2 /* CourseDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B7C3621CFD9795000944E2 /* CourseDetail.m */; };
+		19B7C3661CFD9BA6000944E2 /* DYNetworking+CourseDetailHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B7C3651CFD9BA6000944E2 /* DYNetworking+CourseDetailHttpRequest.m */; };
+		19B7C3691CFDBEA6000944E2 /* UIViewController+SGKViewControllerCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B7C3681CFDBEA6000944E2 /* UIViewController+SGKViewControllerCategory.m */; };
+		19B7C36F1CFDD1D0000944E2 /* SGKCourseDetailToolViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B7C36E1CFDD1D0000944E2 /* SGKCourseDetailToolViewCell.m */; };
 		19BCFC9D1CFB4C9800ED7B39 /* SGKActivityCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BCFC9C1CFB4C9800ED7B39 /* SGKActivityCollectionViewCell.m */; };
 		19CA69AE1CFB40B4006CBD27 /* SGKActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CA69AD1CFB40B4006CBD27 /* SGKActivityDetailViewController.m */; };
 		19CA69B11CFB4121006CBD27 /* SGKActivityIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CA69B01CFB4121006CBD27 /* SGKActivityIntroduceViewController.m */; };
 		19CA69B41CFB43AB006CBD27 /* SGKActivityNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CA69B31CFB43AB006CBD27 /* SGKActivityNewViewController.m */; };
-		19D20A191CE9D7B400614167 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A181CE9D7B400614167 /* main.m */; };
-		19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A1B1CE9D7B400614167 /* AppDelegate.m */; };
-		19D20A1F1CE9D7B400614167 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D20A1E1CE9D7B400614167 /* ViewController.m */; };
-		19D20A221CE9D7B400614167 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D20A201CE9D7B400614167 /* Main.storyboard */; };
 		19D20A271CE9D7B400614167 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D20A251CE9D7B400614167 /* LaunchScreen.storyboard */; };
+		19D5D6E51CFDDD640022359F /* SGKToolTableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D5D6E41CFDDD640022359F /* SGKToolTableViewHeaderView.m */; };
+		19D5D6E81CFDEB370022359F /* SGKCourseDetailMTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D5D6E71CFDEB370022359F /* SGKCourseDetailMTViewController.m */; };
 		19E019881CEAED9100A520C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19E019871CEAED9100A520C4 /* Assets.xcassets */; };
-		19E01A241CEC9D0900A520C4 /* SGKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E01A231CEC9D0900A520C4 /* SGKMainViewController.m */; };
 		19EF6E181CF2E1AA002E4C2A /* SGKBackToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E171CF2E1AA002E4C2A /* SGKBackToolBar.m */; };
 		19EF6E1B1CF30B72002E4C2A /* SGKActivityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E1A1CF30B72002E4C2A /* SGKActivityListViewController.m */; };
 		19EF6E1E1CF30CBC002E4C2A /* SGKActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E1D1CF30CBC002E4C2A /* SGKActivityCell.m */; };
 		19EF6E211CF30DB1002E4C2A /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E201CF30DB1002E4C2A /* Activity.m */; };
-		19EF6E261CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E251CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.m */; };
+		19EF6E261CF31EA1002E4C2A /* DYNetworking+ActivityListHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E251CF31EA1002E4C2A /* DYNetworking+ActivityListHttpRequest.m */; };
 		19EF6E2A1CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E291CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.m */; };
 		19EF6E2D1CF35860002E4C2A /* TalentListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E2C1CF35860002E4C2A /* TalentListModel.m */; };
 		19EF6E301CF35BF8002E4C2A /* SGKTalentListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19EF6E2F1CF35BF8002E4C2A /* SGKTalentListCell.m */; };
@@ -94,6 +102,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19063A871CFD67F70013BB28 /* SGKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKLoginViewController.h; sourceTree = "<group>"; };
+		19063A881CFD67F70013BB28 /* SGKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKLoginViewController.m; sourceTree = "<group>"; };
+		19063AE81CFD6A640013BB28 /* Public.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Public.m; sourceTree = "<group>"; };
+		19063AEA1CFD71720013BB28 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		19063AEB1CFD71720013BB28 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		19063AEF1CFD71800013BB28 /* SGKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKMainViewController.h; sourceTree = "<group>"; };
+		19063AF01CFD71800013BB28 /* SGKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKMainViewController.m; sourceTree = "<group>"; };
+		19063AF11CFD71800013BB28 /* SGKWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKWelcomeViewController.h; sourceTree = "<group>"; };
+		19063AF21CFD71800013BB28 /* SGKWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKWelcomeViewController.m; sourceTree = "<group>"; };
+		19063AF71CFD762B0013BB28 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		191225571CF070B1008FC557 /* DYBannerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYBannerCollectionViewCell.h; sourceTree = "<group>"; };
 		191225581CF070B1008FC557 /* DYBannerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYBannerCollectionViewCell.m; sourceTree = "<group>"; };
 		191225591CF070B1008FC557 /* DYBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYBannerView.h; sourceTree = "<group>"; };
@@ -161,8 +179,6 @@
 		1949AE821CEDD754005A85AD /* SGKShijiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKShijiViewController.h; sourceTree = "<group>"; };
 		1949AE831CEDD754005A85AD /* SGKShijiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKShijiViewController.m; sourceTree = "<group>"; };
 		1949AE8C1CEDD7FA005A85AD /* Public.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Public.h; sourceTree = "<group>"; };
-		1949AE901CEE0A33005A85AD /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		1949AE911CEE0A33005A85AD /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		1968C3691CFBDB2F00B38952 /* ActivityOpus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityOpus.h; sourceTree = "<group>"; };
 		1968C36A1CFBDB2F00B38952 /* ActivityOpus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityOpus.m; sourceTree = "<group>"; };
 		1968C36C1CFBDB7B00B38952 /* DYNetworking+ActivityOpusHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+ActivityOpusHttpRequest.h"; sourceTree = "<group>"; };
@@ -218,6 +234,18 @@
 		197884D91CF7439F00CBF0E1 /* DYMenuCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYMenuCollectionViewCell.m; sourceTree = "<group>"; };
 		19A9F3AD1CF9DFB70054A629 /* SGKShijiHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKShijiHeaderView.h; sourceTree = "<group>"; };
 		19A9F3AE1CF9DFB70054A629 /* SGKShijiHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKShijiHeaderView.m; sourceTree = "<group>"; };
+		19B7C3591CFD8568000944E2 /* SGKCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCourseDetailViewController.h; sourceTree = "<group>"; };
+		19B7C35A1CFD8568000944E2 /* SGKCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKCourseDetailViewController.m; sourceTree = "<group>"; };
+		19B7C35C1CFD884D000944E2 /* SGKCourseDetailIntroductionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCourseDetailIntroductionViewController.h; sourceTree = "<group>"; };
+		19B7C35D1CFD884D000944E2 /* SGKCourseDetailIntroductionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKCourseDetailIntroductionViewController.m; sourceTree = "<group>"; };
+		19B7C3611CFD9795000944E2 /* CourseDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDetail.h; sourceTree = "<group>"; };
+		19B7C3621CFD9795000944E2 /* CourseDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDetail.m; sourceTree = "<group>"; };
+		19B7C3641CFD9BA6000944E2 /* DYNetworking+CourseDetailHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+CourseDetailHttpRequest.h"; sourceTree = "<group>"; };
+		19B7C3651CFD9BA6000944E2 /* DYNetworking+CourseDetailHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DYNetworking+CourseDetailHttpRequest.m"; sourceTree = "<group>"; };
+		19B7C3671CFDBEA6000944E2 /* UIViewController+SGKViewControllerCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SGKViewControllerCategory.h"; sourceTree = "<group>"; };
+		19B7C3681CFDBEA6000944E2 /* UIViewController+SGKViewControllerCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SGKViewControllerCategory.m"; sourceTree = "<group>"; };
+		19B7C36D1CFDD1D0000944E2 /* SGKCourseDetailToolViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCourseDetailToolViewCell.h; sourceTree = "<group>"; };
+		19B7C36E1CFDD1D0000944E2 /* SGKCourseDetailToolViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKCourseDetailToolViewCell.m; sourceTree = "<group>"; };
 		19BCFC9B1CFB4C9800ED7B39 /* SGKActivityCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKActivityCollectionViewCell.h; sourceTree = "<group>"; };
 		19BCFC9C1CFB4C9800ED7B39 /* SGKActivityCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKActivityCollectionViewCell.m; sourceTree = "<group>"; };
 		19CA69AC1CFB40B4006CBD27 /* SGKActivityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKActivityDetailViewController.h; sourceTree = "<group>"; };
@@ -228,16 +256,13 @@
 		19CA69B31CFB43AB006CBD27 /* SGKActivityNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKActivityNewViewController.m; sourceTree = "<group>"; };
 		19D20A141CE9D7B400614167 /* Shougongke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shougongke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D20A181CE9D7B400614167 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		19D20A1A1CE9D7B400614167 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		19D20A1B1CE9D7B400614167 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		19D20A1D1CE9D7B400614167 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		19D20A1E1CE9D7B400614167 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		19D20A211CE9D7B400614167 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19D20A261CE9D7B400614167 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19D20A281CE9D7B400614167 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19D5D6E31CFDDD640022359F /* SGKToolTableViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKToolTableViewHeaderView.h; sourceTree = "<group>"; };
+		19D5D6E41CFDDD640022359F /* SGKToolTableViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKToolTableViewHeaderView.m; sourceTree = "<group>"; };
+		19D5D6E61CFDEB370022359F /* SGKCourseDetailMTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKCourseDetailMTViewController.h; sourceTree = "<group>"; };
+		19D5D6E71CFDEB370022359F /* SGKCourseDetailMTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKCourseDetailMTViewController.m; sourceTree = "<group>"; };
 		19E019871CEAED9100A520C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		19E01A221CEC9D0900A520C4 /* SGKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKMainViewController.h; sourceTree = "<group>"; };
-		19E01A231CEC9D0900A520C4 /* SGKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKMainViewController.m; sourceTree = "<group>"; };
 		19E01A351CECACDA00A520C4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		19EF6E161CF2E1AA002E4C2A /* SGKBackToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKBackToolBar.h; sourceTree = "<group>"; };
 		19EF6E171CF2E1AA002E4C2A /* SGKBackToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKBackToolBar.m; sourceTree = "<group>"; };
@@ -247,8 +272,8 @@
 		19EF6E1D1CF30CBC002E4C2A /* SGKActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKActivityCell.m; sourceTree = "<group>"; };
 		19EF6E1F1CF30DB1002E4C2A /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		19EF6E201CF30DB1002E4C2A /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
-		19EF6E241CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+ActivityHttpRequest.h"; sourceTree = "<group>"; };
-		19EF6E251CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DYNetworking+ActivityHttpRequest.m"; sourceTree = "<group>"; };
+		19EF6E241CF31EA1002E4C2A /* DYNetworking+ActivityListHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+ActivityListHttpRequest.h"; sourceTree = "<group>"; };
+		19EF6E251CF31EA1002E4C2A /* DYNetworking+ActivityListHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DYNetworking+ActivityListHttpRequest.m"; sourceTree = "<group>"; };
 		19EF6E281CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+TalentListHttpRequest.h"; sourceTree = "<group>"; };
 		19EF6E291CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DYNetworking+TalentListHttpRequest.m"; sourceTree = "<group>"; };
 		19EF6E2B1CF35860002E4C2A /* TalentListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalentListModel.h; sourceTree = "<group>"; };
@@ -274,6 +299,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19063A861CFD67F70013BB28 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				19063AEF1CFD71800013BB28 /* SGKMainViewController.h */,
+				19063AF01CFD71800013BB28 /* SGKMainViewController.m */,
+				19063AF11CFD71800013BB28 /* SGKWelcomeViewController.h */,
+				19063AF21CFD71800013BB28 /* SGKWelcomeViewController.m */,
+				19063A871CFD67F70013BB28 /* SGKLoginViewController.h */,
+				19063A881CFD67F70013BB28 /* SGKLoginViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		191225551CF070B1008FC557 /* DYSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +359,8 @@
 			children = (
 				1976402A1CF841D20076F850 /* UIColor+SGKColorCategory.h */,
 				1976402B1CF841D20076F850 /* UIColor+SGKColorCategory.m */,
+				19B7C3671CFDBEA6000944E2 /* UIViewController+SGKViewControllerCategory.h */,
+				19B7C3681CFDBEA6000944E2 /* UIViewController+SGKViewControllerCategory.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -349,6 +389,12 @@
 				191317B51CF5571100F23E84 /* SGKCourseSubViewController.m */,
 				191317B71CF55D8D00F23E84 /* SGKSubjectListViewController.h */,
 				191317B81CF55D8D00F23E84 /* SGKSubjectListViewController.m */,
+				19B7C3591CFD8568000944E2 /* SGKCourseDetailViewController.h */,
+				19B7C35A1CFD8568000944E2 /* SGKCourseDetailViewController.m */,
+				19B7C35C1CFD884D000944E2 /* SGKCourseDetailIntroductionViewController.h */,
+				19B7C35D1CFD884D000944E2 /* SGKCourseDetailIntroductionViewController.m */,
+				19D5D6E61CFDEB370022359F /* SGKCourseDetailMTViewController.h */,
+				19D5D6E71CFDEB370022359F /* SGKCourseDetailMTViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -374,6 +420,12 @@
 				197640341CF8B68E0076F850 /* DYNetworking+CourseSubjectListHttpRequest.m */,
 				197640391CF8BAFF0076F850 /* DYNetworking+CourseVideoListHttpRequest.h */,
 				1976403A1CF8BAFF0076F850 /* DYNetworking+CourseVideoListHttpRequest.m */,
+				19B7C3641CFD9BA6000944E2 /* DYNetworking+CourseDetailHttpRequest.h */,
+				19B7C3651CFD9BA6000944E2 /* DYNetworking+CourseDetailHttpRequest.m */,
+				19B7C3611CFD9795000944E2 /* CourseDetail.h */,
+				19B7C3621CFD9795000944E2 /* CourseDetail.m */,
+				19B7C36D1CFDD1D0000944E2 /* SGKCourseDetailToolViewCell.h */,
+				19B7C36E1CFDD1D0000944E2 /* SGKCourseDetailToolViewCell.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -387,6 +439,8 @@
 				191317AC1CF54FE300F23E84 /* SGKCourseControllerTitleView.m */,
 				197640211CF839750076F850 /* SGKCoursePicCollectionViewCell.h */,
 				197640221CF839750076F850 /* SGKCoursePicCollectionViewCell.m */,
+				19D5D6E31CFDDD640022359F /* SGKToolTableViewHeaderView.h */,
+				19D5D6E41CFDDD640022359F /* SGKToolTableViewHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -449,8 +503,6 @@
 			children = (
 				1949AE731CEDD754005A85AD /* SGKHomeViewController.h */,
 				1949AE741CEDD754005A85AD /* SGKHomeViewController.m */,
-				1949AE901CEE0A33005A85AD /* TestViewController.h */,
-				1949AE911CEE0A33005A85AD /* TestViewController.m */,
 				1945EDC01CF224C600279CFB /* SGKSubjectDetailViewController.h */,
 				1945EDC11CF224C600279CFB /* SGKSubjectDetailViewController.m */,
 				19FC04C21CF36E05005EAAD7 /* SGKTalentListViewController.h */,
@@ -488,8 +540,8 @@
 				1968C36A1CFBDB2F00B38952 /* ActivityOpus.m */,
 				1912257C1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.h */,
 				1912257D1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m */,
-				19EF6E241CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.h */,
-				19EF6E251CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.m */,
+				19EF6E241CF31EA1002E4C2A /* DYNetworking+ActivityListHttpRequest.h */,
+				19EF6E251CF31EA1002E4C2A /* DYNetworking+ActivityListHttpRequest.m */,
 				19EF6E281CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.h */,
 				19EF6E291CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.m */,
 				1968C36C1CFBDB7B00B38952 /* DYNetworking+ActivityOpusHttpRequest.h */,
@@ -570,9 +622,13 @@
 		1949AE7F1CEDD754005A85AD /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				19063A861CFD67F70013BB28 /* Controller */,
+				19063AEA1CFD71720013BB28 /* AppDelegate.h */,
+				19063AEB1CFD71720013BB28 /* AppDelegate.m */,
 				191225601CF070DD008FC557 /* SystemsDetection.h */,
 				191225611CF070DD008FC557 /* SystemsDetection.m */,
 				1949AE8C1CEDD7FA005A85AD /* Public.h */,
+				19063AE81CFD6A640013BB28 /* Public.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -675,17 +731,11 @@
 				1949AE801CEDD754005A85AD /* Shiji(市集) */,
 				1949AE781CEDD754005A85AD /* Me(我的) */,
 				1949AE7F1CEDD754005A85AD /* Other */,
-				19E01A221CEC9D0900A520C4 /* SGKMainViewController.h */,
-				19E01A231CEC9D0900A520C4 /* SGKMainViewController.m */,
-				19D20A1D1CE9D7B400614167 /* ViewController.h */,
-				19D20A1E1CE9D7B400614167 /* ViewController.m */,
-				19D20A1A1CE9D7B400614167 /* AppDelegate.h */,
-				19D20A1B1CE9D7B400614167 /* AppDelegate.m */,
 				19E019871CEAED9100A520C4 /* Assets.xcassets */,
-				19D20A201CE9D7B400614167 /* Main.storyboard */,
 				19D20A251CE9D7B400614167 /* LaunchScreen.storyboard */,
 				19E01A351CECACDA00A520C4 /* PrefixHeader.pch */,
 				19D20A281CE9D7B400614167 /* Info.plist */,
+				19063AF71CFD762B0013BB28 /* main.m */,
 				19D20A171CE9D7B400614167 /* Supporting Files */,
 			);
 			path = Shougongke;
@@ -796,7 +846,6 @@
 				197884CA1CF728BC00CBF0E1 /* dymenu_selected.png in Resources */,
 				19E019881CEAED9100A520C4 /* Assets.xcassets in Resources */,
 				197884C91CF728BC00CBF0E1 /* dymenu_normal.png in Resources */,
-				19D20A221CE9D7B400614167 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -855,6 +904,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19063AED1CFD71720013BB28 /* AppDelegate.m in Sources */,
+				19B7C35B1CFD8568000944E2 /* SGKCourseDetailViewController.m in Sources */,
 				191317AD1CF54FE300F23E84 /* SGKCourseControllerTitleView.m in Sources */,
 				191317B31CF556F800F23E84 /* SGKCourseVideoViewController.m in Sources */,
 				191317B01CF556D900F23E84 /* SGKCoursePicViewController.m in Sources */,
@@ -863,12 +914,12 @@
 				197640291CF83FF20076F850 /* DYNetworking+CoursePicListHttpRequest.m in Sources */,
 				197640321CF8B07A0076F850 /* SGKCourseVideoSubCell.m in Sources */,
 				1949AE871CEDD754005A85AD /* SGKCourseViewController.m in Sources */,
-				19D20A1F1CE9D7B400614167 /* ViewController.m in Sources */,
 				197640381CF8BA820076F850 /* CourseVideo.m in Sources */,
 				19CA69B11CFB4121006CBD27 /* SGKActivityIntroduceViewController.m in Sources */,
 				1976401D1CF814080076F850 /* SGKVideoViewControllerDataModel.m in Sources */,
 				197640261CF83FAB0076F850 /* CoursePicListObject.m in Sources */,
 				191225661CF070F8008FC557 /* DYNetworking.m in Sources */,
+				19B7C3691CFDBEA6000944E2 /* UIViewController+SGKViewControllerCategory.m in Sources */,
 				191317A91CF54AD900F23E84 /* DYSegmentContainerlView.m in Sources */,
 				1945EDC21CF224C600279CFB /* SGKSubjectDetailViewController.m in Sources */,
 				19EF6E1B1CF30B72002E4C2A /* SGKActivityListViewController.m in Sources */,
@@ -876,28 +927,30 @@
 				191E64C81CEECFF600E5FAA5 /* SGKHomeTableHeaderView.m in Sources */,
 				19EF6E1E1CF30CBC002E4C2A /* SGKActivityCell.m in Sources */,
 				19CA69B41CFB43AB006CBD27 /* SGKActivityNewViewController.m in Sources */,
+				19B7C3661CFD9BA6000944E2 /* DYNetworking+CourseDetailHttpRequest.m in Sources */,
 				1949AE881CEDD754005A85AD /* SGKHandCircleViewController.m in Sources */,
 				191225621CF070DD008FC557 /* SystemsDetection.m in Sources */,
 				197640201CF8310C0076F850 /* SGKCollectionViewControllerDelegate.m in Sources */,
 				191E64CE1CF0070100E5FAA5 /* SGKTalentCell.m in Sources */,
 				197640501CF992400076F850 /* DYNetworking+ShijiVCHttpRequest.m in Sources */,
-				19E01A241CEC9D0900A520C4 /* SGKMainViewController.m in Sources */,
 				1945EDBC1CF1D3D400279CFB /* SGKSlideCell.m in Sources */,
-				1949AE921CEE0A33005A85AD /* TestViewController.m in Sources */,
 				1968C36E1CFBDB7B00B38952 /* DYNetworking+ActivityOpusHttpRequest.m in Sources */,
 				1976401A1CF8107E0076F850 /* SGKPicViewControllerDataModel.m in Sources */,
 				1912255D1CF070B1008FC557 /* DYBannerCollectionViewCell.m in Sources */,
 				191225691CF0718C008FC557 /* Slide.m in Sources */,
-				19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */,
+				19D5D6E81CFDEB370022359F /* SGKCourseDetailMTViewController.m in Sources */,
 				1943A5F41CFC490000490953 /* SGKRefreshHeader.m in Sources */,
 				19A9F3AF1CF9DFB70054A629 /* SGKShijiHeaderView.m in Sources */,
 				197884C81CF728BC00CBF0E1 /* DYMenuView.m in Sources */,
 				197640351CF8B68E0076F850 /* DYNetworking+CourseSubjectListHttpRequest.m in Sources */,
 				19EF6E211CF30DB1002E4C2A /* Activity.m in Sources */,
 				19BCFC9D1CFB4C9800ED7B39 /* SGKActivityCollectionViewCell.m in Sources */,
+				19D5D6E51CFDDD640022359F /* SGKToolTableViewHeaderView.m in Sources */,
 				1943A5F71CFC905600490953 /* SGKUserTableViewFirstCell.m in Sources */,
 				191317AA1CF54AD900F23E84 /* DYSegmentControllerView.m in Sources */,
 				191317B61CF5571100F23E84 /* SGKCourseSubViewController.m in Sources */,
+				19B7C36F1CFDD1D0000944E2 /* SGKCourseDetailToolViewCell.m in Sources */,
+				19063AF41CFD71800013BB28 /* SGKWelcomeViewController.m in Sources */,
 				1912257E1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m in Sources */,
 				197884D11CF72E4B00CBF0E1 /* DYNetworking+CourseCategoryHttpRequest.m in Sources */,
 				19FC04C41CF36E05005EAAD7 /* SGKTalentListViewController.m in Sources */,
@@ -907,10 +960,12 @@
 				1945EDB41CF1938800279CFB /* HomeViewModel.m in Sources */,
 				1912255E1CF070B1008FC557 /* DYBannerView.m in Sources */,
 				19CA69AE1CFB40B4006CBD27 /* SGKActivityDetailViewController.m in Sources */,
+				19063A891CFD67F70013BB28 /* SGKLoginViewController.m in Sources */,
 				19EF6E181CF2E1AA002E4C2A /* SGKBackToolBar.m in Sources */,
+				19063AF81CFD762B0013BB28 /* main.m in Sources */,
 				191317B91CF55D8D00F23E84 /* SGKSubjectListViewController.m in Sources */,
 				19EF6E2D1CF35860002E4C2A /* TalentListModel.m in Sources */,
-				19D20A191CE9D7B400614167 /* main.m in Sources */,
+				19063AE91CFD6A640013BB28 /* Public.m in Sources */,
 				1976404A1CF98EA50076F850 /* SGKShijiTableTopicBestCell.m in Sources */,
 				19EF6E301CF35BF8002E4C2A /* SGKTalentListCell.m in Sources */,
 				19EF6E2A1CF3568F002E4C2A /* DYNetworking+TalentListHttpRequest.m in Sources */,
@@ -918,10 +973,13 @@
 				1976404D1CF990E30076F850 /* ShijiVCModel.m in Sources */,
 				1976402C1CF841D20076F850 /* UIColor+SGKColorCategory.m in Sources */,
 				197640231CF839750076F850 /* SGKCoursePicCollectionViewCell.m in Sources */,
+				19B7C35E1CFD884D000944E2 /* SGKCourseDetailIntroductionViewController.m in Sources */,
 				191225721CF07599008FC557 /* TopicObject.m in Sources */,
+				19B7C3631CFD9795000944E2 /* CourseDetail.m in Sources */,
+				19063AF31CFD71800013BB28 /* SGKMainViewController.m in Sources */,
 				1912256F1CF07477008FC557 /* TalentObject.m in Sources */,
 				1976403B1CF8BAFF0076F850 /* DYNetworking+CourseVideoListHttpRequest.m in Sources */,
-				19EF6E261CF31EA1002E4C2A /* DYNetworking+ActivityHttpRequest.m in Sources */,
+				19EF6E261CF31EA1002E4C2A /* DYNetworking+ActivityListHttpRequest.m in Sources */,
 				1976402F1CF8726A0076F850 /* SGKTableViewControllerDataSource.m in Sources */,
 				1949AE8B1CEDD754005A85AD /* SGKShijiViewController.m in Sources */,
 				191E64CB1CEEFC6800E5FAA5 /* SGKRelationCell.m in Sources */,
@@ -938,14 +996,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		19D20A201CE9D7B400614167 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				19D20A211CE9D7B400614167 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		19D20A251CE9D7B400614167 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

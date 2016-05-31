@@ -7,16 +7,13 @@
 //
 
 #import "SGKHomeViewController.h"
-#import "TestViewController.h"
+#import "SGKLoginViewController.h"
 #import "DYBannerView.h"
 #import "SGKHomeTableHeaderView.h"
 #import "SGKRelationCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "SGKHotTopicCell.h"
 #import "SGKTalentCell.h"
-#import "TalentObject.h"
-#import "Slide.h"
-#import "TopicObject.h"
 #import "DYNetworking+HomeHttpRequest.h"
 #import "HomeViewModel.h"
 #import "SGKTableViewControllerDataSource.h"
@@ -26,6 +23,7 @@
 #import "SGKActivityListViewController.h"
 #import "SGKTalentListViewController.h"
 #import "SGKRefreshHeader.h"
+#import "UIViewController+SGKViewControllerCategory.h"
 
 static NSString *slideCellIdentifier = @"SGKSlideCell";
 static NSString *relationCellIdentifier = @"SGKRelationCell";
@@ -85,14 +83,6 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
         [self loadNewData];
     }];
 }
-
-- (void)setStatusBarBackgroundColor:(UIColor *)color {
-    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-        statusBar.backgroundColor = color;
-    }
-}
-
 /**
  *	签到
  */
@@ -178,7 +168,7 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
         viewController.url = topic.mob_h5_url;
         newViewController = viewController;
     }else{
-        newViewController = [TestViewController new];
+        newViewController = [SGKLoginViewController new];
     }
     newViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:newViewController animated:YES];

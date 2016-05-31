@@ -13,6 +13,7 @@
 #import "SGKCoursePicCollectionViewCell.h"
 #import "CoursePicListObject.h"
 #import "SGKRefreshHeader.h"
+#import "SGKCourseDetailViewController.h"
 
 static NSString *picViewControllerCellIdentifier = @"SGKCoursePicCollectionViewCell";
 
@@ -79,6 +80,10 @@ static NSString *picViewControllerCellIdentifier = @"SGKCoursePicCollectionViewC
                                                [cell configuraCellWith:data];
                                            } selectCellBlock:^(NSIndexPath *index,CoursePicListObject *data) {
                                                NSLog(@"----%@",data.subject);
+                                               SGKCourseDetailViewController *courseDetailVC = [SGKCourseDetailViewController new];
+                                               courseDetailVC.cid = data.hand_id;
+                                               courseDetailVC.hidesBottomBarWhenPushed = YES;
+                                               [self.navigationController pushViewController:courseDetailVC animated:YES];
                                            }];
     CGSize cellSize = CGSizeMake((SCREENWIDTH-30)/2.0f, (SCREENWIDTH-30)/2.0f+80);
     self.collectionDelegate.flowLayout.itemSize = cellSize;

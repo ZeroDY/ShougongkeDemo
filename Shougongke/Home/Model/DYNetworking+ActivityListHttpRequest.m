@@ -6,14 +6,14 @@
 //  Copyright © 2016年 周德艺. All rights reserved.
 //
 
-#import "DYNetworking+ActivityHttpRequest.h"
+#import "DYNetworking+ActivityListHttpRequest.h"
 #import "Activity.h"
 
-@implementation DYNetworking (ActivityHttpRequest)
+@implementation DYNetworking (ActivityListHttpRequest)
 
 + (void)getActivityControllerData:(void (^)(NSArray *))activityArrBlock
                              fail:(DYResponseFail)failBlock{
-    [DYNetworking getWithUrl:@"index.php?c=Course&a=activityList&vid=16"
+    [DYNetworking getWithUrl:SGKApiKeyActivityList
                 refreshCache:YES
                      success:^(id response) {
                          NSDictionary *resultDic = (NSDictionary *)response;

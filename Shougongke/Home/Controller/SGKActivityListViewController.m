@@ -11,7 +11,7 @@
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "SGKActivityCell.h"
 #import "Activity.h"
-#import "DYNetworking+ActivityHttpRequest.h"
+#import "DYNetworking+ActivityListHttpRequest.h"
 #import "SGKBackToolBar.h"
 #import "SGKActivityDetailViewController.h"
 #import "SGKRefreshHeader.h"

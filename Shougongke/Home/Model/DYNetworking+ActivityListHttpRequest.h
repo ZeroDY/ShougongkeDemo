@@ -8,7 +8,7 @@
 
 #import "DYNetworking.h"
 
-@interface DYNetworking (ActivityHttpRequest)
+@interface DYNetworking (ActivityListHttpRequest)
 
 + (void)getActivityControllerData:(void (^) (NSArray *activityArr))activityArrBlock
                              fail:(DYResponseFail)failBlock;

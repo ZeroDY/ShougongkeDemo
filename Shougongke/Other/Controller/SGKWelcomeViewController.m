@@ -6,23 +6,23 @@
 //  Copyright © 2016年 周德艺. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SGKWelcomeViewController.h"
 #import "SystemsDetection.h"
 #import "DYBannerView.h"
 #import "Masonry.h"
 #import "SGKMainViewController.h"
 
-@interface ViewController ()<DYBannerViewDelegate>
+@interface SGKWelcomeViewController ()<DYBannerViewDelegate>
 
 @property (nonatomic, strong)DYBannerView *bannerView;
 
 @end
 
-@implementation ViewController
+@implementation SGKWelcomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     NSString *platform = [SystemsDetection getDeviceVersCoding];
     NSArray *array = @[
                        [NSString stringWithFormat:@"newfeature_01_%@",platform],
@@ -52,13 +52,6 @@
     }];
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    SGKMainViewController *mainVC = [[SGKMainViewController alloc]init];
-    [self presentViewController:mainVC animated:YES completion:^{
-        
-    }];
-}
-
 - (void)bannerImageView:(UIImageView *)imageView loadImage:(NSString *)nameOrUrl{
     imageView.image = [UIImage imageNamed:nameOrUrl];
 }
@@ -68,6 +61,7 @@
         NSLog(@"选中-- bannerView1 - %@",@(index));
 //        if (index == 4) {
             SGKMainViewController *mainVC = [[SGKMainViewController alloc]init];
+            mainVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
             [self presentViewController:mainVC animated:YES completion:^{
                 
             }];

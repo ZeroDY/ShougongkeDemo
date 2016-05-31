@@ -13,6 +13,7 @@
 #import "SGKCourseVideoViewController.h"
 #import "SGKCourseSubViewController.h"
 #import "DYNetworking+CourseCategoryHttpRequest.h"
+#import "SGKPublishView.h"
 
 @interface SGKCourseViewController ()
 
@@ -87,6 +88,7 @@
 
 - (void)showleft{
     NSLog(@"left");
+    [SGKPublishView showPublishViewAddedTo:self];
 }
 
 - (void)showright{

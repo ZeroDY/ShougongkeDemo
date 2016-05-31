@@ -19,12 +19,6 @@
 #define tableviewBgColor           RGB(247, 239, 239);
 //#define IMAGENAME(name)           [UIImage imageNamed:@"name"]
 
-////字体
-//#define kFONT16                  [UIFont systemFontOfSize:16.0f]
-//#define kFONT15                  [UIFont systemFontOfSize:15.0f]
-//#define kFONT12                  [UIFont systemFontOfSize:12.0f]
-//#define kFONT10                  [UIFont systemFontOfSize:10.0f]
-
 //系统版本
 #define IOS_VERSION_8 [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0
 
@@ -39,3 +33,17 @@
 #import "UIButton+WebCache.h"
 
 #endif /* Public_h */
+
+//接口地址
+UIKIT_EXTERN NSString *const SGKApiKeyBaseUrl;
+UIKIT_EXTERN NSString *const SGKApiKeyHomeVCData;
+UIKIT_EXTERN NSString *const SGKApiKeyActivityList;
+UIKIT_EXTERN NSString *const SGKApiKeyActivityOpus;
+UIKIT_EXTERN NSString *const SGKApiKeyTalentList;
+UIKIT_EXTERN NSString *const SGKApiKeyCourseCategory;
+UIKIT_EXTERN NSString *const SGKApiKeyCoursePictureList;
+UIKIT_EXTERN NSString *const SGKApiKeyCourseSubjectList;
+UIKIT_EXTERN NSString *const SGKApiKeyCourseVideoList;
+UIKIT_EXTERN NSString *const SGKApiKeyCourseDetail;
+UIKIT_EXTERN NSString *const SGKApiKeyShijiProduct;
+UIKIT_EXTERN NSString *const SGKApiKeyShijiCailiao;

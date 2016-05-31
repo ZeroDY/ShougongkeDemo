@@ -13,7 +13,7 @@
 
 + (void)getCourseCategoryData:(void (^)(NSArray *))dataBlock
                          fail:(DYResponseFail)failBlock{
-    [DYNetworking getWithUrl:@"/index.php?c=Course&a=getBaseData&vid=16"
+    [DYNetworking getWithUrl:SGKApiKeyCourseCategory
                 refreshCache:YES
                      success:^(id response) {
                          NSDictionary *resultDic = (NSDictionary *)response;

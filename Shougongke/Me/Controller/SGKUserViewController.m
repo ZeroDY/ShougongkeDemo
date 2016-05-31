@@ -72,7 +72,7 @@ static NSString *cellReuseIdentifier = @"SGKUserTableViewFirstCell";
         [attrStr addAttribute:NSForegroundColorAttributeName
                         value:[UIColor redColor]
                         range:NSMakeRange(4, 2)];
-        cell.imageView.image = [UIImage imageNamed:@"head"];
+        cell.imageView.image = [UIImage imageNamed:@"sgk_avater_normal"];
         cell.textLabel.attributedText = attrStr;
         return cell;
     }

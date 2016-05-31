@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SGKWelcomeViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,9 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-
-    [DYNetworking updateBaseUrl:@"http://m.shougongke.com"];
+    [DYNetworking updateBaseUrl:SGKApiKeyBaseUrl];
     [DYNetworking enableInterfaceDebug:NO];
     [DYNetworking cacheGetRequest:YES shoulCachePost:YES];
     /**
@@ -45,6 +44,12 @@
     [[UITabBarItem appearance]setTitlePositionAdjustment:UIOffsetMake(0, -4)];
     [[UITabBarItem appearance]setTitleTextAttributes:normalBarTitleTextAttributes forState:UIControlStateNormal];
     [[UITabBarItem appearance]setTitleTextAttributes:selectedBarTitleTextAttributes forState:UIControlStateSelected];
+    
+    SGKWelcomeViewController *viewController = [SGKWelcomeViewController new];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

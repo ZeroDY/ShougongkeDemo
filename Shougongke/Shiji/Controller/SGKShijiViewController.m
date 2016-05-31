@@ -81,12 +81,12 @@
     if (!_viewControllerArr) {
         _viewControllerArr = [NSMutableArray array];
         SGKShijiTableViewController *shouzuoVC = [[SGKShijiTableViewController alloc]init];
-        shouzuoVC.apiUrl = @"/index.php?c=Shiji&a=product&vid=16";
+        shouzuoVC.apiUrl = SGKApiKeyShijiProduct;
         [self addChildViewController:shouzuoVC];
         [_viewControllerArr addObject:shouzuoVC];
         
         SGKShijiTableViewController *cailiaoVC = [[SGKShijiTableViewController alloc]init];
-        cailiaoVC.apiUrl = @"/index.php?c=Shiji&vid=16";
+        cailiaoVC.apiUrl = SGKApiKeyShijiCailiao;
         [self addChildViewController:cailiaoVC];
         [_viewControllerArr addObject:cailiaoVC];
     }

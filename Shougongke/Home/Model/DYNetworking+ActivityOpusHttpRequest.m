@@ -14,7 +14,7 @@
 + (void)getActivityOpusDataWithParam:(NSDictionary *)param
                              success:(void (^) (NSArray *array))successBlock
                                 fail:(DYResponseFail)failBlock{
-    [DYNetworking getWithUrl:@"/index.php?c=Competition&a=getOpus&vid=16"
+    [DYNetworking getWithUrl:SGKApiKeyActivityOpus
                 refreshCache:YES
                       params:param
                      success:^(id response) {

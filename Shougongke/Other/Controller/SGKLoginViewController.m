@@ -6,16 +6,16 @@
 //  Copyright © 2016年 周德艺. All rights reserved.
 //
 
-#import "TestViewController.h"
+#import "SGKLoginViewController.h"
 #import "SGKBackToolBar.h"
 
-@interface TestViewController()
+@interface SGKLoginViewController()
 
 @property (nonatomic, strong) UIImageView *bgImgView;
 
 @end
 
-@implementation TestViewController
+@implementation SGKLoginViewController
 
 - (void)viewDidLoad{
     [super viewDidLoad];

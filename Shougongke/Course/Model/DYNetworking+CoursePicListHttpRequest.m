@@ -14,7 +14,7 @@
 + (void)getCoursePicListDataWithParam:(NSDictionary *)param
                                 block:(void (^)(NSArray *))dataBlock
                                  fail:(DYResponseFail)failBlock{
-    [DYNetworking getWithUrl:@"/index.php?c=Course&a=newCourseList&vid=16"
+    [DYNetworking getWithUrl:SGKApiKeyCoursePictureList
                 refreshCache:YES
                       params:param
                      success:^(id response)  {

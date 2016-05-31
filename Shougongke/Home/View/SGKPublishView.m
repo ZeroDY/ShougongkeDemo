@@ -7,7 +7,7 @@
 //
 
 #import "SGKPublishView.h"
-#import "TestViewController.h"
+#import "SGKLoginViewController.h"
 
 @interface SGKPublishView ()
 
@@ -46,9 +46,11 @@
 }
 
 - (instancetype)initWithView:(UIViewController *)viewController {
-    self = [super initWithFrame:viewController.view.bounds];
+    CGRect frame = CGRectMake(viewController.view.bounds.origin.x, viewController.view.bounds.origin.y, SCREENWIDTH, SCREENHEIGHT);
+    self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:self.containView];
+        [self setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.1]];
         self.viewController = viewController;
         [self.containView addSubview:self.courseBtn];
         [self.containView addSubview:self.handcirleBtn];
@@ -63,18 +65,18 @@
 
 - (void)publishCourse{
     [SGKPublishView hidePublishViewForView:self.viewController.view.window];
-    TestViewController *publish = [TestViewController new];
-    [self.viewController presentViewController:publish animated:YES completion:^{
-        NSLog(@"发教程");
-    }];
+//    SGKLoginViewController *publish = [SGKLoginViewController new];
+//    [self.viewController presentViewController:publish animated:YES completion:^{
+//        NSLog(@"发教程");
+//    }];
 }
 
 - (void)publishHandCircle{
     [SGKPublishView hidePublishViewForView:self.viewController.view.window];
-    TestViewController *publish = [TestViewController new];
-    [self.viewController presentViewController:publish animated:YES completion:^{
-        NSLog(@"发手工圈");
-    }];
+//    SGKLoginViewController *publish = [SGKLoginViewController new];
+//    [self.viewController presentViewController:publish animated:YES completion:^{
+//        NSLog(@"发手工圈");
+//    }];
 }
 
 - (UIView *)containView{

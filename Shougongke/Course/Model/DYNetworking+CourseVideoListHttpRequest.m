@@ -14,7 +14,7 @@
 + (void)getCourseVideoListDataWithParam:(NSDictionary *)param
                                   block:(void (^)(NSArray *))dataBlock
                                    fail:(DYResponseFail)failBlock{
-    [DYNetworking getWithUrl:@"/index.php?c=Handclass&a=videoList&vid=16"
+    [DYNetworking getWithUrl:SGKApiKeyCourseVideoList
                 refreshCache:YES
                       params:param
                      success:^(id response)  {

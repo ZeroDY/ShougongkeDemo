@@ -7,9 +7,9 @@
 //
 
 #import "SGKMainViewController.h"
-#import "TestViewController.h"
+#import "SGKLoginViewController.h"
 
-@interface SGKMainViewController ()
+@interface SGKMainViewController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -34,7 +34,19 @@
         item.imageInsets = UIEdgeInsetsMake(-4, 0, 4, 0);
     }
     tabBar.tintColor = mainColor;
-    
+    self.delegate = self;
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+    if (viewController == tabBarController.viewControllers[2]) {
+        
+        SGKLoginViewController *loginViewController = [SGKLoginViewController new];
+        loginViewController.hidesBottomBarWhenPushed = YES;
+        [(UINavigationController *)tabBarController.selectedViewController pushViewController:loginViewController animated:YES];
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +60,7 @@
     if (!_homeNavigationController) {
         SGKHomeViewController *homeViewController = [[SGKHomeViewController alloc]init];
         _homeNavigationController = [[UINavigationController alloc]initWithRootViewController:homeViewController];
+        _homeNavigationController.tabBarItem.tag = 0;
         _homeNavigationController.tabBarItem.title = @"首页";
         _homeNavigationController.tabBarItem.image = [[UIImage imageNamed:@"sgk_tab_home_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         _homeNavigationController.tabBarItem.selectedImage = [[UIImage imageNamed:@"sgk_tab_home_selected"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -60,6 +73,7 @@
     if (!_courseNavigationController) {
         SGKCourseViewController *courseViewController = [[SGKCourseViewController alloc]init];
         _courseNavigationController = [[UINavigationController alloc]initWithRootViewController:courseViewController];
+        _courseNavigationController.tabBarItem.tag = 1;
         _courseNavigationController.tabBarItem.title = @"教程";
         _courseNavigationController.tabBarItem.image = [[UIImage imageNamed:@"sgk_tab_course_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         _courseNavigationController.tabBarItem.selectedImage = [[UIImage imageNamed:@"sgk_tab_course_selected"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -71,6 +85,7 @@
     if (!_handCircleNavigationController) {
         SGKHandCircleViewController *handCircleViewController = [[SGKHandCircleViewController alloc]init];
         _handCircleNavigationController = [[UINavigationController alloc]initWithRootViewController:handCircleViewController];
+        _handCircleNavigationController.tabBarItem.tag = 2;
         _handCircleNavigationController.tabBarItem.title = @"手工圈";
         _handCircleNavigationController.tabBarItem.image = [[UIImage imageNamed:@"sgk_tab_zone_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         _handCircleNavigationController.tabBarItem.selectedImage = [[UIImage imageNamed:@"sgk_tab_zone_selected"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

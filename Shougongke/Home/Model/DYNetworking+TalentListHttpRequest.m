@@ -13,7 +13,7 @@
 
 + (void)getTalentListControllerData:(void (^)(NSArray *))dataBlock
                                fail:(DYResponseFail)failBlock{
-    [DYNetworking getWithUrl:@"index.php?c=Index&a=daren"
+    [DYNetworking getWithUrl:SGKApiKeyTalentList
                 refreshCache:YES
                      success:^(id response) {
                          NSDictionary *resultDic = (NSDictionary *)response;
