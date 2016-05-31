@@ -25,6 +25,7 @@
 #import "SGKSubjectDetailViewController.h"
 #import "SGKActivityListViewController.h"
 #import "SGKTalentListViewController.h"
+#import "SGKRefreshHeader.h"
 
 static NSString *slideCellIdentifier = @"SGKSlideCell";
 static NSString *relationCellIdentifier = @"SGKRelationCell";
@@ -48,34 +49,17 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitle:@"首页"];
+    [self setStatusBarBackgroundColor:mainColor];
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    
     [self.view addSubview:self.tableView];
-    
     self.navigationItem.leftBarButtonItem = self.leftItem;
     self.navigationItem.rightBarButtonItem = self.rightItem;
-
-    [self setStatusBarBackgroundColor:mainColor];
-    
-    [DYNetworking getHomeViewControllerData:^(HomeViewModel *homeViewModel) {
-        self.homeViewModel = homeViewModel;
-        [self.tableView reloadData];
-    } fail:^(NSError *error) {
-        
-    }];
+    [self addRefresh];
 }
-
-- (void)setStatusBarBackgroundColor:(UIColor *)color {
-    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-        statusBar.backgroundColor = color;
-    }
-}
-
 
 - (void)viewWillAppear:(BOOL)animated{
-    self.navigationController.hidesBarsOnSwipe = YES;//滑动隐藏 navigation
     [super viewWillAppear:animated];
+    self.navigationController.hidesBarsOnSwipe = YES;//滑动隐藏 navigation
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
@@ -86,6 +70,29 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
     [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
+- (void)loadNewData{
+    [DYNetworking getHomeViewControllerData:^(HomeViewModel *homeViewModel) {
+        self.homeViewModel = homeViewModel;
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView reloadData];
+    } fail:^(NSError *error) {
+        [self.tableView.mj_header endRefreshing];
+    }];
+}
+
+- (void)addRefresh{
+    self.tableView.mj_header = [SGKRefreshHeader addRefreshHeaderWithRrefreshingBlock:^{
+        [self loadNewData];
+    }];
+}
+
+- (void)setStatusBarBackgroundColor:(UIColor *)color {
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+        statusBar.backgroundColor = color;
+    }
+}
+
 /**
  *	签到
  */
@@ -94,18 +101,11 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 }
 
 #pragma mark - tableView delegate
-
 -(CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 0.1f;
-    }
-    if (section == 1) {
-        return 62.0f;
-    }
-    if (section == 2) {
-        return 50.0f;
-    }
+    if (section == 0) return 0.1f;
+    if (section == 1) return 62.0f;
+    if (section == 2) return 50.0f;
     return 40.0f;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -184,7 +184,6 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
     [self.navigationController pushViewController:newViewController animated:YES];
 }
 
-
 #pragma mark - tableViewDatasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 4;
@@ -238,7 +237,6 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 }
 
 - (void)showleft{
-    NSLog(@"left");
     [SGKPublishView showPublishViewAddedTo:self];
 }
 
@@ -246,9 +244,7 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
     NSLog(@"right");
 }
 
-
 #pragma mark - getter and setter
-
 - (UIBarButtonItem *)leftItem{
     if (!_leftItem) {
         UIButton *publisButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -313,13 +309,5 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
     }
     return _hotTopicHeaderView;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
 
 @end

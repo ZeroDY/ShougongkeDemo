@@ -15,7 +15,6 @@
 
 @property (nonatomic, copy) NSArray *titleArr;
 @property (nonatomic, strong) NSMutableArray *viewControllerArr;
-
 @property (nonatomic, strong) DYSegmentControllerView *segmentView;
 @property (nonatomic, strong) DYSegmentContainerlView *containerView;
 
@@ -27,7 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor brownColor];
-
     [self createSegmentView];
     [self createContainerView];
     self.automaticallyAdjustsScrollViewInsets = NO;//关键

@@ -12,6 +12,7 @@
 #import "SGKTableViewControllerDataSource.h"
 #import "DYNetworking+CourseSubjectListHttpRequest.h"
 #import "SGKSubjectDetailViewController.h"
+#import "SGKRefreshHeader.h"
 
 
 static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
@@ -28,21 +29,32 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
+    [self setupTableView];
+    [self addRefresh];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [DYNetworking getCourseSubjectListDataTageid:self.tag_id
-                                           block:^(NSArray *array) {
-                                               self.topicArray = array;
-                                               [self setupTableView];
-                                               [self.tableView reloadData];
-                                           } fail:^(NSError *error) {
-                                               
-                                           }];
-    
     [super viewWillAppear:animated];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
+    }];
+}
+
+- (void)loadNewData{
+    [DYNetworking getCourseSubjectListDataTageid:self.tag_id
+                                           block:^(NSArray *array) {
+                                               self.topicArray = array;
+                                               self.dyTableViewControllerDataSource.items = array;
+                                               [self.tableView.mj_header endRefreshing];
+                                               [self.tableView reloadData];
+                                           } fail:^(NSError *error) {
+                                               [self.tableView.mj_header endRefreshing];
+                                           }];
+}
+
+- (void)addRefresh{
+    self.tableView.mj_header = [SGKRefreshHeader addRefreshHeaderWithRrefreshingBlock:^{
+        [self loadNewData];
     }];
 }
 
@@ -58,9 +70,7 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
     self.tableView.dataSource = self.dyTableViewControllerDataSource;
 }
 
-
 #pragma mark - tableView delegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [tableView fd_heightForCellWithIdentifier:courseVideoSubCellIdentifier
                                     cacheByIndexPath:indexPath
@@ -89,15 +99,5 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
     }
     return _tableView;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

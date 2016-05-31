@@ -85,8 +85,8 @@
     [self.guan_btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.head_btn.mas_top).offset(8);
         make.right.mas_equalTo(self.containView.mas_right).offset(-10);
-        make.height.mas_equalTo(30);
-        make.width.mas_equalTo(70);
+//        make.height.mas_equalTo(30);
+//        make.width.mas_equalTo(70);
     }];
     
     [self.btn0 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -162,15 +162,16 @@
 - (UIButton *)guan_btn{
     if (!_guan_btn) {
         _guan_btn = [UIButton new];
-        _guan_btn.backgroundColor = [UIColor whiteColor];
-        _guan_btn.layer.shouldRasterize = YES;
-        _guan_btn.layer.cornerRadius = 4.0f;
-        _guan_btn.layer.rasterizationScale = [UIScreen mainScreen].scale;
-        _guan_btn.layer.borderColor = mainColor.CGColor;
-        _guan_btn.layer.borderWidth = 1.0f;
-        _guan_btn.tag = -2;
-        [_guan_btn setTitle:@"关注" forState:UIControlStateNormal];
-        [_guan_btn setTitleColor:mainColor forState:UIControlStateNormal];
+//        _guan_btn.backgroundColor = [UIColor whiteColor];
+//        _guan_btn.layer.shouldRasterize = YES;
+//        _guan_btn.layer.cornerRadius = 4.0f;
+//        _guan_btn.layer.rasterizationScale = [UIScreen mainScreen].scale;
+//        _guan_btn.layer.borderColor = mainColor.CGColor;
+//        _guan_btn.layer.borderWidth = 1.0f;
+//        _guan_btn.tag = -2;
+        [_guan_btn setImage:[UIImage imageNamed:@"sgk_icon_attention_no_list"] forState:UIControlStateNormal];
+//        [_guan_btn setTitle:@"关注" forState:UIControlStateNormal];
+//        [_guan_btn setTitleColor:mainColor forState:UIControlStateNormal];
     }
     return _guan_btn;
 }
@@ -179,6 +180,7 @@
     if (!_btn0) {
         _btn0 = [UIButton new];
         _btn0.backgroundColor = [UIColor whiteColor];
+        _btn0.imageView.contentMode = UIViewContentModeScaleAspectFill;
         _btn0.tag = 0;
     }
     return _btn0;
@@ -188,6 +190,7 @@
     if (!_btn1) {
         _btn1 = [UIButton new];
         _btn1.backgroundColor = [UIColor whiteColor];
+        _btn1.imageView.contentMode = UIViewContentModeScaleAspectFill;
         _btn1.tag = 1;
     }
     return _btn1;
@@ -197,6 +200,7 @@
     if (!_btn2) {
         _btn2 = [UIButton new];
         _btn2.backgroundColor = [UIColor whiteColor];
+        _btn2.imageView.contentMode = UIViewContentModeScaleAspectFill;
         _btn2.tag = 2;
     }
     return _btn2;

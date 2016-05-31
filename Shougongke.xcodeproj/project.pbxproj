@@ -26,6 +26,8 @@
 		191E64C81CEECFF600E5FAA5 /* SGKHomeTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 191E64C71CEECFF600E5FAA5 /* SGKHomeTableHeaderView.m */; };
 		191E64CB1CEEFC6800E5FAA5 /* SGKRelationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 191E64CA1CEEFC6800E5FAA5 /* SGKRelationCell.m */; };
 		191E64CE1CF0070100E5FAA5 /* SGKTalentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 191E64CD1CF0070100E5FAA5 /* SGKTalentCell.m */; };
+		1943A5F41CFC490000490953 /* SGKRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1943A5F31CFC490000490953 /* SGKRefreshHeader.m */; };
+		1943A5F71CFC905600490953 /* SGKUserTableViewFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1943A5F61CFC905600490953 /* SGKUserTableViewFirstCell.m */; };
 		1945EDB41CF1938800279CFB /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1945EDB31CF1938800279CFB /* HomeViewModel.m */; };
 		1945EDB71CF1975800279CFB /* Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1945EDB61CF1975800279CFB /* Relation.m */; };
 		1945EDBC1CF1D3D400279CFB /* SGKSlideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1945EDBB1CF1D3D400279CFB /* SGKSlideCell.m */; };
@@ -130,6 +132,10 @@
 		191E64CA1CEEFC6800E5FAA5 /* SGKRelationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKRelationCell.m; sourceTree = "<group>"; };
 		191E64CC1CF0070100E5FAA5 /* SGKTalentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKTalentCell.h; sourceTree = "<group>"; };
 		191E64CD1CF0070100E5FAA5 /* SGKTalentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKTalentCell.m; sourceTree = "<group>"; };
+		1943A5F21CFC490000490953 /* SGKRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKRefreshHeader.h; sourceTree = "<group>"; };
+		1943A5F31CFC490000490953 /* SGKRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKRefreshHeader.m; sourceTree = "<group>"; };
+		1943A5F51CFC905600490953 /* SGKUserTableViewFirstCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKUserTableViewFirstCell.h; sourceTree = "<group>"; };
+		1943A5F61CFC905600490953 /* SGKUserTableViewFirstCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKUserTableViewFirstCell.m; sourceTree = "<group>"; };
 		1945EDB21CF1938800279CFB /* HomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
 		1945EDB31CF1938800279CFB /* HomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
 		1945EDB51CF1975800279CFB /* Relation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Relation.h; sourceTree = "<group>"; };
@@ -555,6 +561,8 @@
 		1949AE7E1CEDD754005A85AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1943A5F51CFC905600490953 /* SGKUserTableViewFirstCell.h */,
+				1943A5F61CFC905600490953 /* SGKUserTableViewFirstCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -700,6 +708,8 @@
 				1976402E1CF8726A0076F850 /* SGKTableViewControllerDataSource.m */,
 				1976401E1CF8310C0076F850 /* SGKCollectionViewControllerDelegate.h */,
 				1976401F1CF8310C0076F850 /* SGKCollectionViewControllerDelegate.m */,
+				1943A5F21CFC490000490953 /* SGKRefreshHeader.h */,
+				1943A5F31CFC490000490953 /* SGKRefreshHeader.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -879,11 +889,13 @@
 				1912255D1CF070B1008FC557 /* DYBannerCollectionViewCell.m in Sources */,
 				191225691CF0718C008FC557 /* Slide.m in Sources */,
 				19D20A1C1CE9D7B400614167 /* AppDelegate.m in Sources */,
+				1943A5F41CFC490000490953 /* SGKRefreshHeader.m in Sources */,
 				19A9F3AF1CF9DFB70054A629 /* SGKShijiHeaderView.m in Sources */,
 				197884C81CF728BC00CBF0E1 /* DYMenuView.m in Sources */,
 				197640351CF8B68E0076F850 /* DYNetworking+CourseSubjectListHttpRequest.m in Sources */,
 				19EF6E211CF30DB1002E4C2A /* Activity.m in Sources */,
 				19BCFC9D1CFB4C9800ED7B39 /* SGKActivityCollectionViewCell.m in Sources */,
+				1943A5F71CFC905600490953 /* SGKUserTableViewFirstCell.m in Sources */,
 				191317AA1CF54AD900F23E84 /* DYSegmentControllerView.m in Sources */,
 				191317B61CF5571100F23E84 /* SGKCourseSubViewController.m in Sources */,
 				1912257E1CF0D48B008FC557 /* DYNetworking+HomeHttpRequest.m in Sources */,

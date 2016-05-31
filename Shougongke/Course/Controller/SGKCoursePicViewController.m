@@ -12,6 +12,7 @@
 #import "DYNetworking+CoursePicListHttpRequest.h"
 #import "SGKCoursePicCollectionViewCell.h"
 #import "CoursePicListObject.h"
+#import "SGKRefreshHeader.h"
 
 static NSString *picViewControllerCellIdentifier = @"SGKCoursePicCollectionViewCell";
 
@@ -30,13 +31,10 @@ static NSString *picViewControllerCellIdentifier = @"SGKCoursePicCollectionViewC
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self creatCollectionView];
     [self.view addSubview:self.menuView];
+    [self addRefresh];
 }
+
 - (void)viewWillAppear:(BOOL)animated{
-    /**
-     *	请求数据
-     */
-    [self getViewControllerDataModel];
-    
     [self.menuView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(self.view);
     }];
@@ -46,24 +44,27 @@ static NSString *picViewControllerCellIdentifier = @"SGKCoursePicCollectionViewC
     }];
 }
 
+- (void)addRefresh{
+    self.collectionView.mj_header = [SGKRefreshHeader addRefreshHeaderWithRrefreshingBlock:^{
+        [self getViewControllerDataModel];
+    }];
+}
+
 - (void)getViewControllerDataModel{
     [DYNetworking getCoursePicListDataWithParam:self.dataModel.requestParamDic
                                           block:^(NSArray *array) {
+                                              [self.collectionView.mj_header endRefreshing];
                                               self.collectionDelegate.dataArray = array;
                                               [self.collectionView reloadData];
                                           } fail:^(NSError *error) {
-                                              
+                                              [self.collectionView.mj_header endRefreshing];
                                           }];
 }
-
 
 - (void)configureMenuView{
     if (self.dataModel.menuDataArr) {
         [self.menuView configureViewWith:self.dataModel.menuDataArr selectIndex:^(NSInteger itemIndex, NSInteger cellIndex) {
             NSLog(@"----%ld----%ld",itemIndex,cellIndex);
-//            if (cellIndex != ((NSArray *)self.dataModel.menuDataArr[0]).count-1) {
-//                NSLog(@"跳转其他分类");
-//            }
             [self.dataModel changeRequestParamDic:itemIndex value:cellIndex];
             [self getViewControllerDataModel];
         }];

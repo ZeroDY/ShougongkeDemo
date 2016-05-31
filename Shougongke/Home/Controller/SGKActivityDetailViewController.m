@@ -36,10 +36,6 @@
     [self.view addSubview:self.joinBtn];
     [self.view addSubview:self.toolBar];
     self.automaticallyAdjustsScrollViewInsets = NO;//关键
-//    __weak typeof(self) weakSelf = self;
-//    self.block = ^(NSInteger upOrDown){
-//        [weakSelf changeLayout:upOrDown];
-//    };
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -81,11 +77,6 @@
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 -(void)createSegmentView
 {
     __weak typeof(self) weakSelf = self;
@@ -110,7 +101,6 @@
     }];
     [self.view addSubview:self.containerView];
 }
-
 
 #pragma mark - getter and setter
 
@@ -158,9 +148,15 @@
 - (UIButton *)joinBtn{
     if (!_joinBtn) {
         _joinBtn = [UIButton new];
-        _joinBtn.backgroundColor = [UIColor orangeColor];
+        _joinBtn.backgroundColor = [UIColor clearColor];
+        [_joinBtn setImage:[UIImage imageNamed:@"sgk_event_join_bt"] forState:UIControlStateNormal];
     }
     return _joinBtn;
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 

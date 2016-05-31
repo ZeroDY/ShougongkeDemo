@@ -11,6 +11,7 @@
 #import "SGKPicViewControllerDataModel.h"
 #import "SGKActivityCollectionViewCell.h"
 #import "DYNetworking+ActivityOpusHttpRequest.h"
+#import "SGKRefreshHeader.h"
 
 static NSString *activityCollectViewCellIdentifier = @"SGKActivityCollectionViewCell";
 
@@ -28,13 +29,9 @@ static NSString *activityCollectViewCellIdentifier = @"SGKActivityCollectionView
     [super viewDidLoad];
     self.view.backgroundColor = tableviewBgColor;
     [self creatCollectionView];
+    [self addRefresh];
 }
 - (void)viewWillAppear:(BOOL)animated{
-    /**
-     *	请求数据
-     */
-    [self getViewControllerDataModel];
-    
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.bottom.mas_equalTo(self.view);
     }];
@@ -44,13 +41,18 @@ static NSString *activityCollectViewCellIdentifier = @"SGKActivityCollectionView
     [DYNetworking getActivityOpusDataWithParam:@{@"cid":self.cid,@"order":self.order}
                                        success:^(NSArray *array) {
                                            self.collectionDelegate.dataArray = array;
+                                           [self.collectionView.mj_header endRefreshing];
                                            [self.collectionView reloadData];
                                        } fail:^(NSError *error) {
-                                           
+                                           [self.collectionView.mj_header endRefreshing];
                                        }];
-
 }
 
+- (void)addRefresh{
+    self.collectionView.mj_header = [SGKRefreshHeader addRefreshHeaderWithRrefreshingBlock:^{
+        [self getViewControllerDataModel];
+    }];
+}
 
 - (void)creatCollectionView{
     self.collectionDelegate =
@@ -95,8 +97,6 @@ static NSString *activityCollectViewCellIdentifier = @"SGKActivityCollectionView
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-#pragma mark - getter setter
 
 
 @end

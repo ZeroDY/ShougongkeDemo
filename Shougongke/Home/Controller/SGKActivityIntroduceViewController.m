@@ -30,8 +30,6 @@
     }];
 }
 
-
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat panTranslationY = [scrollView.panGestureRecognizer translationInView:self.webView].y;

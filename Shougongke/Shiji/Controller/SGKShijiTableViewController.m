@@ -16,6 +16,7 @@
 #import "SGKCourseVideoSubCell.h"
 #import "SGKShijiHeaderView.h"
 #import "SGKSubjectDetailViewController.h"
+#import "SGKRefreshHeader.h"
 
 static NSString *hotCellIdentifier = @"SGKShijiTableHotCell";
 static NSString *bestCellIdentifier = @"SGKShijiTableBestCell";
@@ -36,21 +37,30 @@ static NSString *topicCellIdentifier = @"SGKCourseVideoSubCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
+    [self addRefresh];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
+}
+
+- (void)loadNewData{
     [DYNetworking getShijiViewControllerData:self.apiUrl
                                        block:^(ShijiVCModel *model) {
                                            self.shijiModel = model;
+                                           [self.tableView.mj_header endRefreshing];
                                            [self.tableView reloadData];
                                        } fail:^(NSError *error) {
-                                           
+                                           [self.tableView.mj_header endRefreshing];
                                        }];
-    
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(0);
+}
+
+- (void)addRefresh{
+    self.tableView.mj_header = [SGKRefreshHeader addRefreshHeaderWithRrefreshingBlock:^{
+        [self loadNewData];
     }];
 }
 

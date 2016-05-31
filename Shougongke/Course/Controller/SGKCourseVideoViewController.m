@@ -12,6 +12,7 @@
 #import "SGKCourseVideoSubCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "DYNetworking+CourseVideoListHttpRequest.h"
+#import "SGKRefreshHeader.h"
 
 static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
 
@@ -30,11 +31,10 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.menuView];
     [self setupTableView];
+    [self addRefresh];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [self getViewControllerDataModel];
-    
     [self.menuView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(self.view);
     }];
@@ -44,14 +44,21 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
     }];
 }
 
+- (void)addRefresh{
+    self.tableView.mj_header = [SGKRefreshHeader addRefreshHeaderWithRrefreshingBlock:^{
+        [self getViewControllerDataModel];
+    }];
+}
+
 - (void)getViewControllerDataModel{
     [DYNetworking getCourseVideoListDataWithParam:self.dataModel.requestParamDic
                                             block:^(NSArray *array) {
         self.dataModel.videoArray = array;
+        [self.tableView.mj_header endRefreshing];
         self.dyTableViewControllerDataSource.items = array;
         [self.tableView reloadData];
     } fail:^(NSError *error) {
-        
+        [self.tableView.mj_header endRefreshing];
     }];
 }
 

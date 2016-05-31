@@ -14,6 +14,7 @@
 #import "DYNetworking+ActivityHttpRequest.h"
 #import "SGKBackToolBar.h"
 #import "SGKActivityDetailViewController.h"
+#import "SGKRefreshHeader.h"
 
 static NSString *cellIdentifier = @"SGKActivityCell";
 
@@ -22,7 +23,6 @@ static NSString *cellIdentifier = @"SGKActivityCell";
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) SGKTableViewControllerDataSource *dyTableViewControllerDataSource;
 @property (nonatomic, strong) SGKBackToolBar *toolBar;
-@property (nonatomic, copy) NSArray *activityArray;
 
 @end
 
@@ -35,13 +35,24 @@ static NSString *cellIdentifier = @"SGKActivityCell";
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.toolBar];
     [self.navigationItem setHidesBackButton:YES];
+    [self setupTableView];
+    [self addRefresh];
+}
 
+- (void)loadNewData{
     [DYNetworking getActivityControllerData:^(NSArray *activityArr) {
-        self.activityArray = activityArr;
-        [self setupTableView];
+        self.dyTableViewControllerDataSource.items = activityArr;
+        [self.tableView.mj_header endRefreshing];
         [self.tableView reloadData];
     } fail:^(NSError *error) {
         NSLog(@"%@",error);
+        [self.tableView.mj_header endRefreshing];
+    }];
+}
+
+- (void)addRefresh{
+    self.tableView.mj_header = [SGKRefreshHeader addRefreshHeaderWithRrefreshingBlock:^{
+        [self loadNewData];
     }];
 }
 
@@ -51,13 +62,12 @@ static NSString *cellIdentifier = @"SGKActivityCell";
         [cell configureCell:activity];
     };
     self.dyTableViewControllerDataSource =
-    [[SGKTableViewControllerDataSource alloc]initWithItems:self.activityArray
+    [[SGKTableViewControllerDataSource alloc]initWithItems:nil
                                            cellIdentifier:cellIdentifier
                                        configureCellBlock:configureCell];
     
     self.tableView.dataSource = self.dyTableViewControllerDataSource;
 }
-
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -80,13 +90,13 @@ static NSString *cellIdentifier = @"SGKActivityCell";
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [tableView fd_heightForCellWithIdentifier:cellIdentifier cacheByIndexPath:indexPath configuration:^(SGKActivityCell *cell) {
-        [cell configureCell:self.activityArray[indexPath.row]];
+        [cell configureCell:self.dyTableViewControllerDataSource.items[indexPath.row]];
     }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     SGKActivityDetailViewController *viewController = [SGKActivityDetailViewController new];
-    viewController.activity = self.activityArray[indexPath.row];
+    viewController.activity = self.dyTableViewControllerDataSource.items[indexPath.row];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

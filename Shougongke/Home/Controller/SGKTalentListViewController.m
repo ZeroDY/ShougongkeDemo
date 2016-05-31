@@ -12,12 +12,12 @@
 #import "SGKBackToolBar.h"
 #import "DYNetworking+TalentListHttpRequest.h"
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "SGKRefreshHeader.h"
 
 static NSString *cellIdentifier = @"SGKTalentListCell";
 
 @interface SGKTalentListViewController()<UITableViewDelegate>
 
-@property (nonatomic, strong) NSArray *talentArray;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) SGKTableViewControllerDataSource *dyTableViewControllerDataSource;
 @property (nonatomic, strong) SGKBackToolBar *toolBar;
@@ -30,32 +30,14 @@ static NSString *cellIdentifier = @"SGKTalentListCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"手工达人";
+    
+    [self.navigationItem setHidesBackButton:YES];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.toolBar];
-    [self.navigationItem setHidesBackButton:YES];
-    
-    [DYNetworking getTalentListControllerData:^(NSArray *array) {
-        self.talentArray = array;
-        [self setupTableView];
-        [self.tableView reloadData];
-    } fail:^(NSError *error) {
-        NSLog(@"%@",error);
-    }];
+    [self setupTableView];
+    [self addRefresh];
 }
-
-- (void)setupTableView
-{
-    self.dyTableViewControllerDataSource =
-    [[SGKTableViewControllerDataSource alloc]initWithItems:self.talentArray
-                                           cellIdentifier:cellIdentifier
-                                       configureCellBlock:^(SGKTalentListCell *cell, TalentListModel *talent) {
-                                           [cell configureCell:talent];
-                                       }];
-    
-    self.tableView.dataSource = self.dyTableViewControllerDataSource;
-}
-
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -66,6 +48,35 @@ static NSString *cellIdentifier = @"SGKTalentListCell";
     [self.toolBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.right.left.mas_equalTo(self.view);
     }];
+}
+
+- (void)loadNewData{
+    [DYNetworking getTalentListControllerData:^(NSArray *array) {
+        self.dyTableViewControllerDataSource.items = array;
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView reloadData];
+    } fail:^(NSError *error) {
+        NSLog(@"%@",error);
+        [self.tableView.mj_header endRefreshing];
+    }];
+}
+
+- (void)addRefresh{
+    self.tableView.mj_header = [SGKRefreshHeader addRefreshHeaderWithRrefreshingBlock:^{
+        [self loadNewData];
+    }];
+}
+
+- (void)setupTableView
+{
+    self.dyTableViewControllerDataSource =
+    [[SGKTableViewControllerDataSource alloc]initWithItems:nil
+                                           cellIdentifier:cellIdentifier
+                                       configureCellBlock:^(SGKTalentListCell *cell, TalentListModel *talent) {
+                                           [cell configureCell:talent];
+                                       }];
+    
+    self.tableView.dataSource = self.dyTableViewControllerDataSource;
 }
 
 #pragma mark - tableViewdelegate
@@ -79,7 +90,7 @@ static NSString *cellIdentifier = @"SGKTalentListCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [tableView fd_heightForCellWithIdentifier:cellIdentifier cacheByIndexPath:indexPath configuration:^(SGKTalentListCell *cell) {
-        [cell configureCell:self.talentArray[indexPath.row]];
+        [cell configureCell:self.dyTableViewControllerDataSource.items[indexPath.row]];
     }];
 }
 

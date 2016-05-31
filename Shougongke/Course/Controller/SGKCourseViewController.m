@@ -28,7 +28,6 @@
 @property (nonatomic, copy) NSArray *controllerArray;
 @property (nonatomic, copy) NSArray *categoryArray;
 
-
 @end
 
 @implementation SGKCourseViewController
