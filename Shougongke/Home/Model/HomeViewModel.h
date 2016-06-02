@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TalentObject.h"
+#import "Talent.h"
 #import "Slide.h"
-#import "TopicObject.h"
+#import "HomeTopic.h"
 #import "Relation.h"
 
 @interface HomeViewModel : NSObject
@@ -17,7 +17,7 @@
 @property (nonatomic, copy) NSArray<Slide *> *slideArray;
 @property (nonatomic, copy) NSArray<NSString *> *bannerImageArray;
 @property (nonatomic, copy) NSArray<Relation *> *relationArray;
-@property (nonatomic, strong) TalentObject *talent;
-@property (nonatomic, copy) NSArray<TopicObject *> *topicArray;
+@property (nonatomic, strong) Talent *talent;
+@property (nonatomic, copy) NSArray<HomeTopic *> *topicArray;
 
 @end

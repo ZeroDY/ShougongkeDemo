@@ -16,6 +16,7 @@
 #import "SGKUserViewController.h"
 #import "SGKCourseDetailMTViewController.h"
 #import "SGKShijiViewController.h"
+#import "SGKCourseDetailStepViewController.h"
 
 @interface SGKCourseDetailViewController ()
 
@@ -25,7 +26,6 @@
 @property (nonatomic, strong) CourseDetail *courseDetail;
 @property (nonatomic, strong) UIButton *pageBtn;
 
-
 @end
 
 @implementation SGKCourseDetailViewController
@@ -34,32 +34,37 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.toolBar];
-    [self getCourseDetailData];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    
     [self setStatusBarBackgroundColor:[UIColor clearColor]];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];//隐藏
     
-}
-- (void)viewWillDisappear:(BOOL)animated{
-    [self setStatusBarBackgroundColor:mainColor];
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
-}
-
-- (void)layout{
-    
-    [self.view addSubview:self.pageBtn];
-    
-    [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.mas_equalTo(self.view);
-        make.bottom.mas_equalTo(self.toolBar.mas_top);
-    }];
     [self.toolBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.right.mas_equalTo(self.view);
         make.height.mas_equalTo(44);
     }];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [self getCourseDetailData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [self setStatusBarBackgroundColor:mainColor];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];//显示
+}
+/**
+ *	更新布局
+ */
+- (void)updatelLayout{
+    [self.view addSubview:self.containerView];
+    [self.view addSubview:self.pageBtn];
+    [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.toolBar.mas_top);
+    }];
+   
     [self.pageBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view.mas_centerX);
         make.top.mas_equalTo(self.view.mas_top).offset(20);
@@ -68,7 +73,9 @@
     }];
 }
 
-
+/**
+ *	获取数据
+ */
 - (void)getCourseDetailData{
     [DYNetworking getCourseDetailWithCourseId:self.cid
                                         block:^(CourseDetail *model) {
@@ -78,30 +85,29 @@
                                             
                                         }];
 }
-
+/**
+ *	创建配置滑动容器视图
+ */
 -(void)createContainerView
 {
-    
     __weak typeof(self) weakSelf = self;
     self.containerView = [[DYSegmentContainerlView alloc]initWithSeleterConditionTitleArr:self.viewControllerArr andBtnBlock:^(int index) {
         if (index > 1) {
             weakSelf.pageBtn.hidden = NO;
-            [weakSelf.pageBtn setTitle:[NSString stringWithFormat:@"步骤%d/20",index] forState:UIControlStateNormal];
+            [weakSelf.pageBtn setTitle:[NSString stringWithFormat:@"步骤%d/%zd",index-1,weakSelf.courseDetail.step.count] forState:UIControlStateNormal];
         }else{
             weakSelf.pageBtn.hidden = YES;
         }
     }];
-    [self.view addSubview:self.containerView];
-    
-    [self layout];
-}
 
+    [self updatelLayout];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - getter setter
 - (SGKBackToolBar *)toolBar{
     if (!_toolBar) {
         _toolBar = [[SGKBackToolBar alloc]initWithClick:^{
@@ -133,7 +139,7 @@
     if (!_viewControllerArr) {
         _viewControllerArr = [NSMutableArray array];
         
-        SGKCourseDetailIntroductionViewController *introductionVC = [SGKCourseDetailIntroductionViewController new];
+        SGKCourseDetailIntroductionViewController *introductionVC = [[SGKCourseDetailIntroductionViewController alloc]init];
         introductionVC.courseDetail = self.courseDetail;
         [self addChildViewController:introductionVC];
         [_viewControllerArr addObject:introductionVC];
@@ -142,6 +148,13 @@
         mtVC.dataArray = @[self.courseDetail.material,self.courseDetail.tools];
         [self addChildViewController:mtVC];
         [_viewControllerArr addObject:mtVC];
+        
+        for (CourseDetailStep *stepModel in self.courseDetail.step) {
+            SGKCourseDetailStepViewController *stepVC = [SGKCourseDetailStepViewController new];
+            stepVC.step = stepModel;
+            [self addChildViewController:stepVC];
+            [_viewControllerArr addObject:stepVC];
+        }
     }
     return _viewControllerArr;
 }

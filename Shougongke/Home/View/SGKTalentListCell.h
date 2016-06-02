@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "TalentListModel.h"
 
+typedef void(^ClickCourseBlock)(NSInteger index);
+
 @interface SGKTalentListCell : UITableViewCell
 
-- (void)configureCell:(TalentListModel *)talent;
+- (void)configureCell:(TalentListModel *)talent clickBlock:(ClickCourseBlock) click;
 
 @end

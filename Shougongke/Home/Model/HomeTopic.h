@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TopicObject : NSObject
+@interface HomeTopic : NSObject
 
 @property (nonatomic, copy) NSString *topic_type;
 

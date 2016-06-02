@@ -18,7 +18,8 @@ typedef enum : NSUInteger {
 
 @interface SGKActivityDetailViewController : UIViewController
 
-@property (nonatomic, strong) Activity *activity;
+@property (nonatomic, copy) NSString *activityC_id;
+
 - (void)changeLayout:(JionButtonLayout) upOrDown;
 
 @end

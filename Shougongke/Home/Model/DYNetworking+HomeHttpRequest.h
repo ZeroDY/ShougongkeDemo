@@ -7,7 +7,7 @@
 //
 
 #import "DYNetworking.h"
-#import "TalentObject.h"
+#import "Talent.h"
 #import "HomeViewModel.h"
 
 @interface DYNetworking (HomeHttpRequest)

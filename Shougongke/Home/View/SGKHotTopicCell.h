@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TopicObject.h"
+#import "HomeTopic.h"
 
 @interface SGKHotTopicCell : UITableViewCell
 
-@property (nonatomic, strong) TopicObject *topic;
+@property (nonatomic, strong) HomeTopic *topic;
 
 @end

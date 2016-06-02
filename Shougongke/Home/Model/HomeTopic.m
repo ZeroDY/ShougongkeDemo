@@ -6,8 +6,8 @@
 //  Copyright © 2016年 周德艺. All rights reserved.
 //
 
-#import "TopicObject.h"
+#import "HomeTopic.h"
 
-@implementation TopicObject
+@implementation HomeTopic
 
 @end

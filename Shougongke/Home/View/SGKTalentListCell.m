@@ -21,6 +21,7 @@
 @property (nonatomic, strong) UIButton *btn0;
 @property (nonatomic, strong) UIButton *btn1;
 @property (nonatomic, strong) UIButton *btn2;
+@property (nonatomic, copy) ClickCourseBlock clickBlock;
 
 @end
 
@@ -45,13 +46,18 @@
     return self;
 }
 
-- (void)configureCell:(TalentListModel *)talent{
+- (void)configureCell:(TalentListModel *)talent clickBlock:(ClickCourseBlock)click{
+    self.clickBlock = click;
     [self.head_btn sd_setImageWithURL:[NSURL URLWithString:talent.avatar] forState:UIControlStateNormal];
     [self.btn0 sd_setImageWithURL:[NSURL URLWithString:talent.list[0].host_pic] forState:UIControlStateNormal];
     [self.btn1 sd_setImageWithURL:[NSURL URLWithString:talent.list[1].host_pic] forState:UIControlStateNormal];
     [self.btn2 sd_setImageWithURL:[NSURL URLWithString:talent.list[2].host_pic] forState:UIControlStateNormal];
     self.name_lab.text = talent.nick_name;
     self.info_lab.text = [NSString stringWithFormat:@"%@个教程 | %@条手工圈",talent.course_count,talent.opus_count];
+}
+
+- (void)btnClick:(UIButton *)sender{
+    self.clickBlock(sender.tag);
 }
 
 
@@ -85,8 +91,6 @@
     [self.guan_btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.head_btn.mas_top).offset(8);
         make.right.mas_equalTo(self.containView.mas_right).offset(-10);
-//        make.height.mas_equalTo(30);
-//        make.width.mas_equalTo(70);
     }];
     
     [self.btn0 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -162,16 +166,7 @@
 - (UIButton *)guan_btn{
     if (!_guan_btn) {
         _guan_btn = [UIButton new];
-//        _guan_btn.backgroundColor = [UIColor whiteColor];
-//        _guan_btn.layer.shouldRasterize = YES;
-//        _guan_btn.layer.cornerRadius = 4.0f;
-//        _guan_btn.layer.rasterizationScale = [UIScreen mainScreen].scale;
-//        _guan_btn.layer.borderColor = mainColor.CGColor;
-//        _guan_btn.layer.borderWidth = 1.0f;
-//        _guan_btn.tag = -2;
         [_guan_btn setImage:[UIImage imageNamed:@"sgk_icon_attention_no_list"] forState:UIControlStateNormal];
-//        [_guan_btn setTitle:@"关注" forState:UIControlStateNormal];
-//        [_guan_btn setTitleColor:mainColor forState:UIControlStateNormal];
     }
     return _guan_btn;
 }
@@ -182,6 +177,7 @@
         _btn0.backgroundColor = [UIColor whiteColor];
         _btn0.imageView.contentMode = UIViewContentModeScaleAspectFill;
         _btn0.tag = 0;
+        [_btn0 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _btn0;
 }
@@ -192,6 +188,7 @@
         _btn1.backgroundColor = [UIColor whiteColor];
         _btn1.imageView.contentMode = UIViewContentModeScaleAspectFill;
         _btn1.tag = 1;
+        [_btn1 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _btn1;
 }
@@ -202,6 +199,7 @@
         _btn2.backgroundColor = [UIColor whiteColor];
         _btn2.imageView.contentMode = UIViewContentModeScaleAspectFill;
         _btn2.tag = 2;
+        [_btn2 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _btn2;
 }

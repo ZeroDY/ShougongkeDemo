@@ -42,8 +42,20 @@
     
     [self createTitleView];
     [self createContainerView];
-    self.automaticallyAdjustsScrollViewInsets = NO;//关键
-    
+    self.automaticallyAdjustsScrollViewInsets = NO;//关键 防止 segment 上下滑动
+    [self getCategoryArrayData];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.bottom.mas_equalTo(self.view);
+    }];
+}
+
+/**
+ *	获取分类数据
+ */
+- (void)getCategoryArrayData{
     [DYNetworking getCourseCategoryData:^(NSArray *array) {
         self.categoryArray = [array copy];
         self.pictureVC.dataModel.categoryArray = self.categoryArray;
@@ -55,7 +67,10 @@
     }];
 }
 
--(void)createTitleView
+/**
+ *	navigation 标题栏
+ */
+- (void)createTitleView
 {
     __weak typeof(self) weakSelf = self;
     self.titleView = [[SGKCourseControllerTitleView alloc] initWithFrame:CGRectMake(0, 0, 200, 40)
@@ -64,8 +79,10 @@
     }];
     self.navigationItem.titleView = self.titleView;
 }
-
--(void)createContainerView
+/**
+ *	controller容器 view
+ */
+- (void)createContainerView
 {
     self.pictureVC = [[SGKCoursePicViewController alloc]init];
     self.videoVC = [[SGKCourseVideoViewController alloc]init];
@@ -85,9 +102,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void)showleft{
-    NSLog(@"left");
+/**
+ *	发布
+ */
+- (void)publishClick{
     [SGKPublishView showPublishViewAddedTo:self];
 }
 
@@ -95,20 +113,13 @@
     NSLog(@"right");
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.bottom.mas_equalTo(self.view);
-    }];
-}
-
 #pragma mark - getter and setter
-
 - (UIBarButtonItem *)leftItem{
     if (!_leftItem) {
         UIButton *publisButton = [UIButton buttonWithType:UIButtonTypeCustom];
         publisButton.frame = CGRectMake(0, 0, 25, 25);
         [publisButton setBackgroundImage:[UIImage imageNamed:@"sgk_bt_userhome_publish2"] forState:UIControlStateNormal];
-        [publisButton addTarget:self action:@selector(showleft) forControlEvents:UIControlEventTouchUpInside];
+        [publisButton addTarget:self action:@selector(publishClick) forControlEvents:UIControlEventTouchUpInside];
         _leftItem = [[UIBarButtonItem alloc] initWithCustomView:publisButton];
     }
     return _leftItem;
@@ -124,16 +135,5 @@
     }
     return _searchItem;
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -24,6 +24,8 @@
 #import "SGKTalentListViewController.h"
 #import "SGKRefreshHeader.h"
 #import "UIViewController+SGKViewControllerCategory.h"
+#import "Slide.h"
+#import "SGKActivityDetailViewController.h"
 
 static NSString *slideCellIdentifier = @"SGKSlideCell";
 static NSString *relationCellIdentifier = @"SGKRelationCell";
@@ -67,7 +69,9 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
     self.navigationController.hidesBarsOnSwipe = NO;//关闭滑动隐藏 navigation
     [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
-
+/**
+ *	加载数据
+ */
 - (void)loadNewData{
     [DYNetworking getHomeViewControllerData:^(HomeViewModel *homeViewModel) {
         self.homeViewModel = homeViewModel;
@@ -77,12 +81,15 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
         [self.tableView.mj_header endRefreshing];
     }];
 }
-
+/**
+ *	添加下拉刷新
+ */
 - (void)addRefresh{
     self.tableView.mj_header = [SGKRefreshHeader addRefreshHeaderWithRrefreshingBlock:^{
         [self loadNewData];
     }];
 }
+
 /**
  *	签到
  */
@@ -90,7 +97,25 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
     NSLog(@"签到");
 }
 
+
+/**
+ *	发布
+ */
+- (void)publishClick{
+    [SGKPublishView showPublishViewAddedTo:self];
+}
+
+- (void)showright{
+    NSLog(@"right");
+}
+
 #pragma mark - tableView delegate
+/**
+ *	tabeView的 section 与 cell 种类比较多，结构略复杂
+ *  暂未使用SGKTableViewControllerDataSource 对 tableview 数据进行代理
+ *	后期优化SGKTableViewControllerDataSource 的功能，使其能代理复杂结构的数据
+ *  对 controller 进行瘦身
+ */
 -(CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) return 0.1f;
@@ -163,7 +188,7 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
         newViewController = [SGKTalentListViewController new];
     }
     else if (indexPath.section == 3) {
-        TopicObject *topic = self.homeViewModel.topicArray[indexPath.row];
+        HomeTopic *topic = self.homeViewModel.topicArray[indexPath.row];
         SGKSubjectDetailViewController *viewController = [SGKSubjectDetailViewController new];
         viewController.url = topic.mob_h5_url;
         newViewController = viewController;
@@ -218,20 +243,31 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
 }
 
 #pragma mark -- DYBanner delegate
+/**
+ *	统一 DYBannerView 数据加载样式
+ */
 - (void)bannerImageView:(UIImageView *)imageView loadImage:(NSString *)nameOrUrl{
     [imageView sd_setImageWithURL:[NSURL URLWithString:nameOrUrl] placeholderImage:[UIImage imageNamed:@"slide_bg"]];
 }
-
+/**
+ *	DYBannerView 点击回调
+ */
 - (void)bannerView:(DYBannerView *)bannerView didSelectAtIndex:(NSUInteger)index{
-    NSLog(@"--%@",self.homeViewModel.bannerImageArray[index]);
-}
-
-- (void)showleft{
-    [SGKPublishView showPublishViewAddedTo:self];
-}
-
-- (void)showright{
-    NSLog(@"right");
+    Slide *slide = self.homeViewModel.slideArray[index];
+    if ([slide.itemtype isEqualToString:@"event"]) {
+        SGKActivityDetailViewController *viewController = [SGKActivityDetailViewController new];
+        viewController.activityC_id = slide.hand_id;
+        viewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewController animated:YES];
+        return;
+    }
+    if ([slide.itemtype isEqualToString:@"topic_detail_h5"]) {
+        SGKSubjectDetailViewController *viewController = [SGKSubjectDetailViewController new];
+        viewController.url = slide.hand_id;
+        viewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewController animated:YES];
+        return;
+    }
 }
 
 #pragma mark - getter and setter
@@ -240,7 +276,7 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
         UIButton *publisButton = [UIButton buttonWithType:UIButtonTypeCustom];
         publisButton.frame = CGRectMake(0, 0, 25, 25);
         [publisButton setBackgroundImage:[UIImage imageNamed:@"sgk_bt_userhome_publish2"] forState:UIControlStateNormal];
-        [publisButton addTarget:self action:@selector(showleft) forControlEvents:UIControlEventTouchUpInside];
+        [publisButton addTarget:self action:@selector(publishClick) forControlEvents:UIControlEventTouchUpInside];
         _leftItem = [[UIBarButtonItem alloc] initWithCustomView:publisButton];
     }
     return _leftItem;

@@ -44,13 +44,17 @@ static NSString *picViewControllerCellIdentifier = @"SGKCoursePicCollectionViewC
         make.left.right.bottom.mas_equalTo(self.view);
     }];
 }
-
+/**
+ *	下拉刷新
+ */
 - (void)addRefresh{
     self.collectionView.mj_header = [SGKRefreshHeader addRefreshHeaderWithRrefreshingBlock:^{
         [self getViewControllerDataModel];
     }];
 }
-
+/**
+ *	获取数据
+ */
 - (void)getViewControllerDataModel{
     [DYNetworking getCoursePicListDataWithParam:self.dataModel.requestParamDic
                                           block:^(NSArray *array) {
@@ -61,7 +65,9 @@ static NSString *picViewControllerCellIdentifier = @"SGKCoursePicCollectionViewC
                                               [self.collectionView.mj_header endRefreshing];
                                           }];
 }
-
+/**
+ *	创建配置菜单view
+ */
 - (void)configureMenuView{
     if (self.dataModel.menuDataArr) {
         [self.menuView configureViewWith:self.dataModel.menuDataArr selectIndex:^(NSInteger itemIndex, NSInteger cellIndex) {
@@ -71,7 +77,9 @@ static NSString *picViewControllerCellIdentifier = @"SGKCoursePicCollectionViewC
         }];
     }
 }
-
+/**
+ *	通过SGKCollectionViewControllerDelegate创建CollectionView
+ */
 - (void)creatCollectionView{
     self.collectionDelegate =
     [[SGKCollectionViewControllerDelegate alloc]initWithItems:nil
@@ -85,13 +93,14 @@ static NSString *picViewControllerCellIdentifier = @"SGKCoursePicCollectionViewC
                                                courseDetailVC.hidesBottomBarWhenPushed = YES;
                                                [self.navigationController pushViewController:courseDetailVC animated:YES];
                                            }];
+    //CollectionView布局配置
     CGSize cellSize = CGSizeMake((SCREENWIDTH-30)/2.0f, (SCREENWIDTH-30)/2.0f+80);
     self.collectionDelegate.flowLayout.itemSize = cellSize;
     self.collectionDelegate.flowLayout.minimumLineSpacing = 10.0f;
     self.collectionDelegate.flowLayout.minimumInteritemSpacing = 10.0f;
     self.collectionDelegate.flowLayout.sectionInset = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
-    
     self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:self.collectionDelegate.flowLayout];
+    
     self.collectionView.backgroundColor = [UIColor whiteColor];
     [self.collectionView registerClass:[SGKCoursePicCollectionViewCell class]
             forCellWithReuseIdentifier:picViewControllerCellIdentifier];

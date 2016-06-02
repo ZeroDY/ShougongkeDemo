@@ -39,8 +39,10 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
         make.edges.mas_equalTo(0);
     }];
 }
-
-- (void)loadNewData{
+/**
+ *	获取数据
+ */
+- (void)getSubjectListData{
     [DYNetworking getCourseSubjectListDataTageid:self.tag_id
                                            block:^(NSArray *array) {
                                                self.topicArray = array;
@@ -51,19 +53,23 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
                                                [self.tableView.mj_header endRefreshing];
                                            }];
 }
-
+/**
+ *	下拉刷新
+ */
 - (void)addRefresh{
     self.tableView.mj_header = [SGKRefreshHeader addRefreshHeaderWithRrefreshingBlock:^{
-        [self loadNewData];
+        [self getSubjectListData];
     }];
 }
-
+/**
+ *	SGKTableViewControllerDataSource配置 tableview
+ */
 - (void)setupTableView
 {
     self.dyTableViewControllerDataSource =
     [[SGKTableViewControllerDataSource alloc]initWithItems:self.topicArray
                                             cellIdentifier:courseVideoSubCellIdentifier
-                                        configureCellBlock:^(SGKCourseVideoSubCell *cell, TopicObject *topic) {
+                                        configureCellBlock:^(SGKCourseVideoSubCell *cell, HomeTopic *topic) {
                                             [cell configureCellWithTopic:topic];
                                         }];
     
@@ -80,13 +86,12 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    TopicObject *topic = self.topicArray[indexPath.row];
+    HomeTopic *topic = self.topicArray[indexPath.row];
     SGKSubjectDetailViewController *viewController = [SGKSubjectDetailViewController new];
     viewController.url = topic.mob_h5_url;
     viewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:viewController animated:YES];
 }
-
 
 #pragma mark - getter and setter
 - (UITableView *)tableView{

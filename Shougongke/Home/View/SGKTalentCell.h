@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TalentObject.h"
+#import "Talent.h"
 
 @interface SGKTalentCell : UITableViewCell
 
-@property (nonatomic, strong) TalentObject *talent;
+@property (nonatomic, strong) Talent *talent;
 
 @end

@@ -29,7 +29,10 @@
         make.edges.mas_equalTo(0);
     }];
 }
-
+#pragma  mark - UIScrollViewDelegate
+/**
+ *	判断上下滑动，回调控制 joinBtn 上下移动
+ */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat panTranslationY = [scrollView.panGestureRecognizer translationInView:self.webView].y;

@@ -38,7 +38,9 @@ static NSString *cellIdentifier = @"SGKActivityCell";
     [self setupTableView];
     [self addRefresh];
 }
-
+/**
+ *	加载数据
+ */
 - (void)loadNewData{
     [DYNetworking getActivityControllerData:^(NSArray *activityArr) {
         self.dyTableViewControllerDataSource.items = activityArr;
@@ -49,13 +51,17 @@ static NSString *cellIdentifier = @"SGKActivityCell";
         [self.tableView.mj_header endRefreshing];
     }];
 }
-
+/**
+ *	下拉刷新
+ */
 - (void)addRefresh{
     self.tableView.mj_header = [SGKRefreshHeader addRefreshHeaderWithRrefreshingBlock:^{
         [self loadNewData];
     }];
 }
-
+/**
+ *	SGKTableViewControllerDataSource配置 tableview
+ */
 - (void)setupTableView
 {
     TableViewCellConfigureBlock configureCell = ^(SGKActivityCell *cell, Activity *activity) {
@@ -80,8 +86,7 @@ static NSString *cellIdentifier = @"SGKActivityCell";
     }];
 }
 
-#pragma mark - tableView
-
+#pragma mark - tableView delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 10;
 }
@@ -93,24 +98,22 @@ static NSString *cellIdentifier = @"SGKActivityCell";
         [cell configureCell:self.dyTableViewControllerDataSource.items[indexPath.row]];
     }];
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     SGKActivityDetailViewController *viewController = [SGKActivityDetailViewController new];
-    viewController.activity = self.dyTableViewControllerDataSource.items[indexPath.row];
+    Activity *activity = self.dyTableViewControllerDataSource.items[indexPath.row];
+    viewController.activityC_id = activity.c_id;
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([cell respondsToSelector:@selector(setSeparatorInset:)])
-    {
+    //cell 分割线左对齐
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)])  {
         [cell setSeparatorInset:UIEdgeInsetsZero];
     }
-    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)])
-    {
+    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
         [cell setPreservesSuperviewLayoutMargins:NO];
     }
-    if ([cell respondsToSelector:@selector(setLayoutMargins:)])
-    {
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
 }

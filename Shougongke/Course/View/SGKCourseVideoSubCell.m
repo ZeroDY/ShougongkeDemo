@@ -56,7 +56,7 @@
 }
 
 
-- (void)configureCellWithTopic:(TopicObject *)topic{
+- (void)configureCellWithTopic:(HomeTopic *)topic{
     [self.bg_imgView sd_setImageWithURL:[NSURL URLWithString:topic.pic]];
     self.title_lab.text = topic.subject;
 }

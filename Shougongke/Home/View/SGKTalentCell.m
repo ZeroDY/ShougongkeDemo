@@ -47,7 +47,6 @@
     [self.bg_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.contentView).insets(UIEdgeInsetsMake(0, 10, 10, 10));
         make.height.mas_equalTo(height);
-//        make.height.mas_equalTo(self.bg_imgView.mas_width).multipliedBy(210/320.0f);
     }];
     
     [self.head_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -90,7 +89,7 @@
 }
 
 #pragma mark - getter setter
-- (void)setTalent:(TalentObject *)talent{
+- (void)setTalent:(Talent *)talent{
     _talent = talent;
     [self.bg_imgView sd_setImageWithURL:[NSURL URLWithString:talent.bg_image]
                        placeholderImage:[UIImage imageNamed:@"personalpage_bg"]];

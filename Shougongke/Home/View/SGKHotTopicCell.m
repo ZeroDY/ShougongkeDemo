@@ -51,7 +51,7 @@
 
 #pragma mark - getter setter
 
-- (void)setTopic:(TopicObject *)topic{
+- (void)setTopic:(HomeTopic *)topic{
     _topic = topic;
     [self.bg_imgView sd_setImageWithURL:[NSURL URLWithString:topic.pic]];
     self.title_lab.text = topic.subject;

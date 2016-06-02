@@ -47,12 +47,16 @@
     UIButton *selectBtn = self.btnArr[index];
     [self changeSelectBtn:selectBtn];
 }
-
+/**
+ *	点击回调
+ */
 -(void)titleClick:(UIButton *)sender
 {
     self.titleClickBlock(sender);
 }
-
+/**
+ *	改变选中状态
+ */
 -(void)changeSelectBtn:(UIButton *)btn
 {
     self.previousBtn = self.currentBtn;

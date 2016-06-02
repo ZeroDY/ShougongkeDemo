@@ -34,10 +34,15 @@
     [self.view addSubview:self.author_lab];
     [self.view addSubview:self.author_Btn];
     [self.view addSubview:self.info_lab];
-    [self layout];
     [self configureController];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [self layout];
+}
+/**
+ *	创建子控件，因为有点多，又有点简单，所以暂时不用懒加载，后期优化
+ */
 - (void)createSubViews{
     self.title_lab = [self getaLabel:20];
     self.title_lab.textAlignment = NSTextAlignmentCenter;
@@ -56,7 +61,9 @@
     self.author_Btn.layer.shouldRasterize = YES;
     self.author_Btn.layer.masksToBounds = YES;
 }
-
+/**
+ *	配置视图显示内容
+ */
 - (void)configureController{
     [self.backgroundImgView sd_setImageWithURL:[NSURL URLWithString:self.courseDetail.host_pic_m]];
     self.title_lab.text = self.courseDetail.subject;
@@ -70,7 +77,9 @@
                       self.courseDetail.comment_num,self.courseDetail.laud];
     self.info_lab.text = info;
 }
-
+/**
+ *	布局
+ */
 - (void)layout{
     [self.backgroundImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);

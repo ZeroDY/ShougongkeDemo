@@ -7,7 +7,7 @@
 //
 
 #import "DYNetworking+CourseSubjectListHttpRequest.h"
-#import "TopicObject.h"
+#import "HomeTopic.h"
 
 @implementation DYNetworking (CourseSubjectListHttpRequest)
 
@@ -21,7 +21,7 @@
                      success:^(id response) {
                          NSDictionary *resultDic = (NSDictionary *)response;
                          if ([resultDic[@"status"] integerValue] == 1) {
-                             NSArray *array = [TopicObject mj_objectArrayWithKeyValuesArray:resultDic[@"data"]];
+                             NSArray *array = [HomeTopic mj_objectArrayWithKeyValuesArray:resultDic[@"data"]];
                              dataBlock(array);
                          }
                      } fail:^(NSError *error) {

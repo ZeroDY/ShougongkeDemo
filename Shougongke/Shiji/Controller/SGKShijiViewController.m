@@ -45,12 +45,9 @@
         make.left.right.bottom.mas_equalTo(self.view);
     }];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+/**
+ *	创建滑动菜单
+ */
 -(void)createSegmentView
 {
     __weak typeof(self) weakSelf = self;
@@ -64,7 +61,9 @@
     }];
     [self.view addSubview:self.segmentView];
 }
-
+/**
+ *	创建滑动容器视图
+ */
 -(void)createContainerView
 {
     __weak typeof(self) weakSelf = self;
@@ -76,7 +75,6 @@
 
 
 #pragma mark - getter and setter
-
 - (NSMutableArray *)viewControllerArr{
     if (!_viewControllerArr) {
         _viewControllerArr = [NSMutableArray array];
@@ -115,5 +113,9 @@
     return _rightItem;
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end

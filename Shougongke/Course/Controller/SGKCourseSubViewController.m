@@ -42,7 +42,9 @@
         make.left.right.bottom.mas_equalTo(self.view);
     }];
 }
-
+/**
+ *	创建配置分段选择栏
+ */
 - (void)createSegmentView
 {
     __weak typeof(self) weakSelf = self;
@@ -54,7 +56,9 @@
     }];
     [self.view addSubview:self.segmentView];
 }
-
+/**
+ *	创建配置视图容器 View
+ */
 - (void)createContainerView
 {
     __weak typeof(self) weakSelf = self;
@@ -63,8 +67,8 @@
     }];
     [self.view addSubview:self.containerView];
 }
-#pragma mark -  getter setter
 
+#pragma mark -  getter setter
 - (NSMutableArray *)viewControllerArr{
     if (!_viewControllerArr) {
         NSArray *tagIdArr = @[@"53",@"57",@"52",@"28",@"54",@"1",@"55",@"3",@"45"];
@@ -78,7 +82,7 @@
     }
     return _viewControllerArr;
 }
-
+#warning 这个地方的分段栏标题及相关 id 是需要通过接口获取的，暂时未捕获相关接口，需要改进
 - (NSArray *)titleArr{
     if (!_titleArr) {
         _titleArr = @[@"热门教程",@"精选手工圈",@"一周精选",@"入坑指南",@"达人推荐",@"小编推荐",@"创意DIY",@"吃货属性",@"萌属性"];

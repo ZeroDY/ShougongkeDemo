@@ -53,7 +53,9 @@ static NSString *activityCollectViewCellIdentifier = @"SGKActivityCollectionView
         [self getViewControllerDataModel];
     }];
 }
-
+/**
+ *	 通过SGKCollectionViewControllerDelegate 配置 collectionView
+ */
 - (void)creatCollectionView{
     self.collectionDelegate =
     [[SGKCollectionViewControllerDelegate alloc]initWithItems:nil
@@ -61,8 +63,9 @@ static NSString *activityCollectViewCellIdentifier = @"SGKActivityCollectionView
                                            configureCellBlock:^(SGKActivityCollectionViewCell *cell, id data) {
                                                [cell configuraCellWith:data];
                                            } selectCellBlock:^(NSIndexPath *index, ActivityOpus *data) {
-                                               NSLog(@"----%@",data.subject);
+                                               NSLog(@"----%@",data.subject);//此处跳转活动作品
                                            }];
+    //配置布局参数
     CGSize cellSize = CGSizeMake((SCREENWIDTH-30)/2.0f, (SCREENWIDTH-30)/2.0f+70);
     self.collectionDelegate.flowLayout.itemSize = cellSize;
     self.collectionDelegate.flowLayout.minimumLineSpacing = 10.0f;
@@ -82,7 +85,9 @@ static NSString *activityCollectViewCellIdentifier = @"SGKActivityCollectionView
 }
 
 #pragma mark -- scroll delegate
-
+/**
+ *	判断上下滑动，回调控制 joinBtn 上下移动
+ */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat panTranslationY = [scrollView.panGestureRecognizer translationInView:self.collectionView].y;

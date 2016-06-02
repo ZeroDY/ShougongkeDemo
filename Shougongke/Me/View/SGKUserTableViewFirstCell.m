@@ -11,7 +11,6 @@
 @interface SGKUserTableViewFirstCell ()
 
 @property (nonatomic, strong) UIImageView *headImgView;
-//@property (nonatomic, strong) UILabel *name_lab;
 
 @end
 
@@ -21,7 +20,6 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-//        [self.contentView addSubview:self.headImgView];
         [self.contentView addSubview:self.name_lab];
         [self layout];
     }
@@ -47,12 +45,6 @@
     if (!_name_lab) {
         _name_lab = [UILabel new];
         _name_lab.textColor = [UIColor darkGrayColor];
-//        NSString *str = @"点击这里登录";
-//        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:str];
-//        [attrStr addAttribute:NSForegroundColorAttributeName
-//                        value:[UIColor redColor]
-//                        range:NSMakeRange(4, 2)];
-//        _name_lab.text = str;
     }
     return _name_lab;
 }

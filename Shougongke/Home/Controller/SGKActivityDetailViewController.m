@@ -60,6 +60,11 @@
     }];
 }
 
+/**
+ *  参加活动按钮动画回调 block
+ *
+ *	@param upOrDown 向上或向下
+ */
 - (void)changeLayout:(JionButtonLayout) upOrDown{
     if (upOrDown == JionButtonLayoutUp) {
         [self.joinBtn mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -77,6 +82,9 @@
     }];
 }
 
+/**
+ *	创建自定义分段滑动控制器
+ */
 -(void)createSegmentView
 {
     __weak typeof(self) weakSelf = self;
@@ -92,7 +100,9 @@
     }];
     [self.view addSubview:self.segmentView];
 }
-
+/**
+ *	创建子 controller 容器 View
+ */
 -(void)createContainerView
 {
     __weak typeof(self) weakSelf = self;
@@ -103,12 +113,14 @@
 }
 
 #pragma mark - getter and setter
-
+/**
+ *	子 controller 数组
+ */
 - (NSMutableArray *)viewControllerArr{
     if (!_viewControllerArr) {
         _viewControllerArr = [NSMutableArray array];
         SGKActivityIntroduceViewController *introduceVC = [SGKActivityIntroduceViewController new];
-        introduceVC.cid = self.activity.c_id;
+        introduceVC.cid = self.activityC_id;
         introduceVC.block = ^(NSInteger upOrDown){
             [self changeLayout:upOrDown];
         };
@@ -116,7 +128,7 @@
         [_viewControllerArr addObject:introduceVC];
         
         SGKActivityNewViewController *newVC = [SGKActivityNewViewController new];
-        newVC.cid = self.activity.c_id;
+        newVC.cid = self.activityC_id;
         newVC.order = @"new";
         newVC.block = ^(NSInteger upOrDown){
             [self changeLayout:upOrDown];
@@ -125,7 +137,7 @@
         [_viewControllerArr addObject:newVC];
         
         SGKActivityNewViewController *votesVC = [SGKActivityNewViewController new];
-        votesVC.cid = self.activity.c_id;
+        votesVC.cid = self.activityC_id;
         votesVC.order = @"votes";
         votesVC.block = ^(NSInteger upOrDown){
             [self changeLayout:upOrDown];
@@ -153,7 +165,6 @@
     }
     return _joinBtn;
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

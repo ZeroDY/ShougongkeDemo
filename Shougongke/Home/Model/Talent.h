@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class LevelObject;
-@interface TalentObject : NSObject
+@interface Talent : NSObject
 
 
 @property (nonatomic, copy) NSString *videocollect;

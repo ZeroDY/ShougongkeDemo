@@ -8,8 +8,8 @@
 
 #import "DYNetworking+HomeHttpRequest.h"
 #import "Slide.h"
-#import "TalentObject.h"
-#import "TopicObject.h"
+#import "Talent.h"
+#import "HomeTopic.h"
 #import "HomeViewModel.h"
 #import "Relation.h"
 
@@ -32,7 +32,7 @@
                                  [bannerImages addObject:slide.host_pic];
                              }
                              // Talent
-                             TalentObject *talent = [TalentObject mj_objectWithKeyValues:dataDic[@"daren"]];
+                             Talent *talent = [Talent mj_objectWithKeyValues:dataDic[@"daren"]];
                              // relation
                              NSDictionary *relationDic = dataDic[@"relations"];
                              Relation *relation0 =
@@ -49,7 +49,7 @@
                                                       pic_url:relationDic[@"competition"][@"pic"]];
                              NSArray *relationArr = @[relation0,relation1,relation2];
                              // hottopic
-                             NSArray *topicArr = [TopicObject mj_objectArrayWithKeyValuesArray:dataDic[@"hotTopic"]];
+                             NSArray *topicArr = [HomeTopic mj_objectArrayWithKeyValuesArray:dataDic[@"hotTopic"]];
                              
                              homeModel.slideArray = slideArr;
                              homeModel.bannerImageArray = bannerImages;

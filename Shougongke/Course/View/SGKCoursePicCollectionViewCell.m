@@ -50,7 +50,9 @@
         self.info_lab.text = [NSString stringWithFormat:@"%@人气 / %@收藏",model.view,model.collect];
     }
 }
-
+/**
+ *	布局
+ */
 - (void)layout{
     [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
@@ -89,7 +91,7 @@
         make.bottom.mas_equalTo(self.author_lab.mas_top);
     }];
 }
-
+#pragma mark - getter setter
 - (UIImageView *)titleImgView{
     if (!_titleImgView) {
         _titleImgView = [UIImageView new];

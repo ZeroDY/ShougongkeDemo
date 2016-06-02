@@ -13,6 +13,7 @@
 #import "DYNetworking+TalentListHttpRequest.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "SGKRefreshHeader.h"
+#import "SGKCourseDetailViewController.h"
 
 static NSString *cellIdentifier = @"SGKTalentListCell";
 
@@ -26,12 +27,10 @@ static NSString *cellIdentifier = @"SGKTalentListCell";
 
 @implementation SGKTalentListViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"手工达人";
-    
-    [self.navigationItem setHidesBackButton:YES];
+    [self.navigationItem setHidesBackButton:YES];//隐藏返回按钮
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.toolBar];
@@ -49,7 +48,9 @@ static NSString *cellIdentifier = @"SGKTalentListCell";
         make.bottom.right.left.mas_equalTo(self.view);
     }];
 }
-
+/**
+ *	加载数据
+ */
 - (void)loadNewData{
     [DYNetworking getTalentListControllerData:^(NSArray *array) {
         self.dyTableViewControllerDataSource.items = array;
@@ -60,20 +61,29 @@ static NSString *cellIdentifier = @"SGKTalentListCell";
         [self.tableView.mj_header endRefreshing];
     }];
 }
-
+/**
+ *	下拉刷新
+ */
 - (void)addRefresh{
     self.tableView.mj_header = [SGKRefreshHeader addRefreshHeaderWithRrefreshingBlock:^{
         [self loadNewData];
     }];
 }
-
+/**
+ *	通过SGKTableViewControllerDataSource配置 tableview
+ */
 - (void)setupTableView
 {
     self.dyTableViewControllerDataSource =
     [[SGKTableViewControllerDataSource alloc]initWithItems:nil
-                                           cellIdentifier:cellIdentifier
-                                       configureCellBlock:^(SGKTalentListCell *cell, TalentListModel *talent) {
-                                           [cell configureCell:talent];
+                                            cellIdentifier:cellIdentifier
+                                        configureCellBlock:^(SGKTalentListCell *cell, TalentListModel *talent) {
+                                           [cell configureCell:talent clickBlock:^(NSInteger index) {
+                                               SGKCourseDetailViewController *courseDetailVC = [SGKCourseDetailViewController new];
+                                               courseDetailVC.cid = talent.list[index].hand_id;
+                                               courseDetailVC.hidesBottomBarWhenPushed = YES;
+                                               [self.navigationController pushViewController:courseDetailVC animated:YES];
+                                           }];
                                        }];
     
     self.tableView.dataSource = self.dyTableViewControllerDataSource;
@@ -90,21 +100,21 @@ static NSString *cellIdentifier = @"SGKTalentListCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [tableView fd_heightForCellWithIdentifier:cellIdentifier cacheByIndexPath:indexPath configuration:^(SGKTalentListCell *cell) {
-        [cell configureCell:self.dyTableViewControllerDataSource.items[indexPath.row]];
+        [cell configureCell:self.dyTableViewControllerDataSource.items[indexPath.row] clickBlock:nil];
     }];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([cell respondsToSelector:@selector(setSeparatorInset:)])
-    {
+    /**
+     *	设置 cell 分割线最左对其
+     */
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]){
         [cell setSeparatorInset:UIEdgeInsetsZero];
     }
-    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)])
-    {
+    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]){
         [cell setPreservesSuperviewLayoutMargins:NO];
     }
-    if ([cell respondsToSelector:@selector(setLayoutMargins:)])
-    {
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]){
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
 }

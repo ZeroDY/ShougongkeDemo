@@ -34,6 +34,11 @@ static NSString *cellReuseIdentifier = @"SGKUserTableViewFirstCell";
 }
 
 #pragma mark - tableView
+/**
+ *	tabeView结构简单，数据固定
+ *  不使用SGKTableViewControllerDataSource 对 tableview 数据进行代理更有利于数据处理
+ *  并且后期需要改动的不大，可以使用原生的datasourse，delegate
+ */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 4;
 }

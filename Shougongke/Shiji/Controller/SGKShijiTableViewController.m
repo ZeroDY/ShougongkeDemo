@@ -65,6 +65,13 @@ static NSString *topicCellIdentifier = @"SGKCourseVideoSubCell";
 }
 
 #pragma mark - tableView
+
+/**
+ *	tabeView的 section 与 cell 种类比较多，结构略复杂
+ *  暂未使用SGKTableViewControllerDataSource 对 tableview 数据进行代理
+ *	后期优化SGKTableViewControllerDataSource的功能，使其能代理复杂结构的数据
+ *  对 controller 进行瘦身
+ */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     if (self.shijiModel) {
         return 4;

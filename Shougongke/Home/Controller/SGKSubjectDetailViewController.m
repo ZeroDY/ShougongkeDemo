@@ -6,6 +6,11 @@
 //  Copyright © 2016年 周德艺. All rights reserved.
 //
 
+/**
+ *	专题详情
+ *
+ */
+
 #import "SGKSubjectDetailViewController.h"
 
 @interface SGKSubjectDetailViewController ()<UIWebViewDelegate>

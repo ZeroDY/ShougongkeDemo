@@ -43,13 +43,17 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
         make.left.right.bottom.mas_equalTo(self.view);
     }];
 }
-
+/**
+ *	下拉刷新
+ */
 - (void)addRefresh{
     self.tableView.mj_header = [SGKRefreshHeader addRefreshHeaderWithRrefreshingBlock:^{
         [self getViewControllerDataModel];
     }];
 }
-
+/**
+ *	获取数据
+ */
 - (void)getViewControllerDataModel{
     [DYNetworking getCourseVideoListDataWithParam:self.dataModel.requestParamDic
                                             block:^(NSArray *array) {
@@ -61,7 +65,9 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
         [self.tableView.mj_header endRefreshing];
     }];
 }
-
+/**
+ *	创建配置菜单栏
+ */
 - (void)configureMenuView{
     if (self.dataModel.menuDataArr) {
         [self.menuView configureViewWith:self.dataModel.menuDataArr selectIndex:^(NSInteger itemIndex, NSInteger cellIndex) {
@@ -71,6 +77,9 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
         }];
     }
 }
+/**
+ *	通过SGKTableViewControllerDataSource配置 tableview
+ */
 - (void)setupTableView
 {
     self.dyTableViewControllerDataSource =
@@ -82,7 +91,7 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
     
     self.tableView.dataSource = self.dyTableViewControllerDataSource;
 }
-
+#pragma  mark - tableView delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [tableView fd_heightForCellWithIdentifier:courseVideoSubCellIdentifier
                                     cacheByIndexPath:indexPath

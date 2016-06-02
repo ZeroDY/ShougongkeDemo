@@ -6,9 +6,9 @@
 //  Copyright © 2016年 周德艺. All rights reserved.
 //
 
-#import "TalentObject.h"
+#import "Talent.h"
 
-@implementation TalentObject
+@implementation Talent
 
 @end
 
