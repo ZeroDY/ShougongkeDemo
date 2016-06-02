@@ -68,6 +68,7 @@
     if (!_imageView) {
         _imageView = [UIImageView new];
         _imageView.backgroundColor = [UIColor lightGrayColor];
+        _imageView.layer.masksToBounds = YES;
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
     }
     return _imageView;

@@ -191,6 +191,7 @@ static NSString *hotTopicCellIdentifier = @"SGKHotTopicCell";
         HomeTopic *topic = self.homeViewModel.topicArray[indexPath.row];
         SGKSubjectDetailViewController *viewController = [SGKSubjectDetailViewController new];
         viewController.url = topic.mob_h5_url;
+        viewController.topicId = topic.topic_id;
         newViewController = viewController;
     }else{
         newViewController = [SGKLoginViewController new];

@@ -11,5 +11,6 @@
 @interface SGKSubjectDetailViewController : UIViewController
 
 @property (nonatomic, copy) NSString *url;
+@property (nonatomic, copy) NSString *topicId;
 
 @end

@@ -165,6 +165,7 @@ static NSString *topicCellIdentifier = @"SGKCourseVideoSubCell";
         ShijiTopic *topic = self.shijiModel.topic[indexPath.row];
         SGKSubjectDetailViewController *viewController = [SGKSubjectDetailViewController new];
         viewController.url = topic.mob_h5_url;
+        viewController.topicId = topic.topic_id;
         viewController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:viewController animated:YES];
     }

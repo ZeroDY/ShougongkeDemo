@@ -89,6 +89,7 @@ static NSString *courseVideoSubCellIdentifier = @"SGKCourseVideoSubCell";
     HomeTopic *topic = self.topicArray[indexPath.row];
     SGKSubjectDetailViewController *viewController = [SGKSubjectDetailViewController new];
     viewController.url = topic.mob_h5_url;
+    viewController.topicId = topic.topic_id;
     viewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:viewController animated:YES];
 }

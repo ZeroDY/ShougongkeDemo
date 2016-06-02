@@ -29,7 +29,11 @@
     [self.view addSubview:self.webView];
     [self.view addSubview:self.activityIndicatorView];
     self.webView.delegate = self;
+    if (!self.url) {
+        self.url = [NSString stringWithFormat:@"http://www.shougongke.com/index.php?m=Topic&a=topicDetail&topic_id=%@&topic_type=shiji",self.topicId];
+    }
     NSURL *url = [NSURL URLWithString:self.url];
+    
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
