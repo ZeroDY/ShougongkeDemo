@@ -75,17 +75,11 @@ Swift 虽然有用过，但还是Objective-C比较熟练
 * 其他的如SDWebImage、MWPhotoBrowser、IQKeyboardManager不做多解释
 
 ## 部分效果展示
-* 首页
+* 首页 [首页.gif](http://o76hg1e0m.bkt.clouddn.com/sgk-show01.gif)
 
-![首页](http://o76hg1e0m.bkt.clouddn.com/sgk-show01.gif)
+* 教程 [教程.gif](http://o76hg1e0m.bkt.clouddn.com/sgk-show02.gif)
 
-* 教程
-
-![教程](http://o76hg1e0m.bkt.clouddn.com/sgk-show02.gif)
-
-* 市集
-
-![市集](http://o76hg1e0m.bkt.clouddn.com/sgk-show04.gif)
+* 市集 [市集.gif](http://o76hg1e0m.bkt.clouddn.com/sgk-show04.gif)
 
 ## 问题说明
 * 由于接口自己抓取、缺少设计文档、自己的不注意等种种原因，接口中数据的使用可能会不准确，页面布局在其他机型可能不合理，造成项目中经常会出现诸如无法跳转、图片过大、文字越界等问题，后期将逐步优化。
