@@ -1,4 +1,8 @@
 # ShougongkeDemo （仿“手工客”iOS App）
+
+
+<img src="http://o76hg1e0m.bkt.clouddn.com/IMG_4480.JPG" height=380 width=640 alt="iOS学习网站、博客" align=center />
+
 ># 郑重声明 #
 >本项目用于自身学习，以及为找工作做准备。
 >如无意间对您有所冒犯，请联系 deyi233@gmail.com
