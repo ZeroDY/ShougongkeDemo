@@ -91,6 +91,8 @@ Swift 虽然有用过，但还是Objective-C比较熟练
 
 * 市集  [市集.gif](http://o76hg1e0m.bkt.clouddn.com/sgk-show04.gif)
 
+<iframe height=568 width=320 src="http://player.youku.com/embed/XMTU5NjEzMjE3Mg==" frameborder=0 allowfullscreen></iframe>
+
 # 最后
 水平不高，能力有限，望多指正。
 开发中遇到的问题，代码整理，经验总结等，请移步 [我的博客](http://www.zerody.me)
