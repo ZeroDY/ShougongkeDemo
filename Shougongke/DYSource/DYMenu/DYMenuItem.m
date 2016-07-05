@@ -11,7 +11,7 @@
 
 @implementation DYMenuItem
 
--(void)layoutSubviews
+- (void)layoutSubviews
 {
     [super layoutSubviews];
     CGRect selfFrame = self.frame;
