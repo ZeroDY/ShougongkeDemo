@@ -51,6 +51,7 @@
 		1949AE891CEDD754005A85AD /* SGKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE741CEDD754005A85AD /* SGKHomeViewController.m */; };
 		1949AE8A1CEDD754005A85AD /* SGKUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE7B1CEDD754005A85AD /* SGKUserViewController.m */; };
 		1949AE8B1CEDD754005A85AD /* SGKShijiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949AE831CEDD754005A85AD /* SGKShijiViewController.m */; };
+		1954405A1D829D44008F22CE /* libReveal.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 195440591D829D44008F22CE /* libReveal.dylib */; };
 		1968C36B1CFBDB2F00B38952 /* ActivityOpus.m in Sources */ = {isa = PBXBuildFile; fileRef = 1968C36A1CFBDB2F00B38952 /* ActivityOpus.m */; };
 		1968C36E1CFBDB7B00B38952 /* DYNetworking+ActivityOpusHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1968C36D1CFBDB7B00B38952 /* DYNetworking+ActivityOpusHttpRequest.m */; };
 		1976401A1CF8107E0076F850 /* SGKPicViewControllerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 197640191CF8107E0076F850 /* SGKPicViewControllerDataModel.m */; };
@@ -190,6 +191,7 @@
 		1949AE821CEDD754005A85AD /* SGKShijiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKShijiViewController.h; sourceTree = "<group>"; };
 		1949AE831CEDD754005A85AD /* SGKShijiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKShijiViewController.m; sourceTree = "<group>"; };
 		1949AE8C1CEDD7FA005A85AD /* Public.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Public.h; sourceTree = "<group>"; };
+		195440591D829D44008F22CE /* libReveal.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libReveal.dylib; sourceTree = "<group>"; };
 		1968C3691CFBDB2F00B38952 /* ActivityOpus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityOpus.h; sourceTree = "<group>"; };
 		1968C36A1CFBDB2F00B38952 /* ActivityOpus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityOpus.m; sourceTree = "<group>"; };
 		1968C36C1CFBDB7B00B38952 /* DYNetworking+ActivityOpusHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DYNetworking+ActivityOpusHttpRequest.h"; sourceTree = "<group>"; };
@@ -765,6 +767,7 @@
 		DA92130C71EF562F7DC62136 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				195440591D829D44008F22CE /* libReveal.dylib */,
 				22CDB22086622D49F8DBC98B /* libPods-Shougongke.a */,
 			);
 			name = Frameworks;
@@ -783,6 +786,7 @@
 				19D20A121CE9D7B400614167 /* Resources */,
 				87308F4C356A7D7EEE96A371 /* 📦 Embed Pods Frameworks */,
 				0093BA9794C2AAC8C04EFAE4 /* 📦 Copy Pods Resources */,
+				195440581D8298DA008F22CE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -804,6 +808,7 @@
 				TargetAttributes = {
 					19D20A131CE9D7B400614167 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = Y52E493QH5;
 					};
 				};
 			};
@@ -830,6 +835,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1954405A1D829D44008F22CE /* libReveal.dylib in Resources */,
 				19D20A271CE9D7B400614167 /* LaunchScreen.storyboard in Resources */,
 				197884CB1CF728BC00CBF0E1 /* up_back.png in Resources */,
 				197884CA1CF728BC00CBF0E1 /* dymenu_selected.png in Resources */,
@@ -855,6 +861,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Shougongke/Pods-Shougongke-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		195440581D8298DA008F22CE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nif [ -n \"${CODE_SIGN_IDENTITY}\" ]; then\ncodesign -fs \"${CODE_SIGN_IDENTITY}\" \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}/libReveal.dylib\"\nfi";
 		};
 		87308F4C356A7D7EEE96A371 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1088,11 +1107,59 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Deyi Zhou (4ZFDU9T4JQ)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Shougongke/PrefixHeader.pch";
 				INFOPLIST_FILE = Shougongke/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DACircularProgress\"",
+					"-l\"FMDB\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"MWPhotoBrowser\"",
+					"-l\"Masonry\"",
+					"-l\"ReactiveCocoa\"",
+					"-l\"SDWebImage\"",
+					"-l\"UITableView+FDTemplateLayoutCell\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"Photos\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zerody.Shougongke;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1105,11 +1172,59 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Deyi Zhou (4ZFDU9T4JQ)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Shougongke/PrefixHeader.pch";
 				INFOPLIST_FILE = Shougongke/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"DACircularProgress\"",
+					"-l\"FMDB\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"MWPhotoBrowser\"",
+					"-l\"Masonry\"",
+					"-l\"ReactiveCocoa\"",
+					"-l\"SDWebImage\"",
+					"-l\"UITableView+FDTemplateLayoutCell\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"Photos\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zerody.Shougongke;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
